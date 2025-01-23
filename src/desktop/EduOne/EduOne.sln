@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne", "EduOne\EduOne.csproj", "{9CE5C0CF-AED5-42E1-830D-297DD197D9A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.Data", "..\EduOne.Data\EduOne.Data.csproj", "{9D892D86-7685-4E7B-94E5-C9A8D82B33AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.Repositories", "..\EduOne.Repositories\EduOne.Repositories.csproj", "{A05FFFBB-F15A-45FE-B284-F587DFCE31A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE5C0CF-AED5-42E1-830D-297DD197D9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE5C0CF-AED5-42E1-830D-297DD197D9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE5C0CF-AED5-42E1-830D-297DD197D9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE5C0CF-AED5-42E1-830D-297DD197D9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D892D86-7685-4E7B-94E5-C9A8D82B33AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D892D86-7685-4E7B-94E5-C9A8D82B33AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D892D86-7685-4E7B-94E5-C9A8D82B33AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D892D86-7685-4E7B-94E5-C9A8D82B33AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05FFFBB-F15A-45FE-B284-F587DFCE31A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05FFFBB-F15A-45FE-B284-F587DFCE31A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05FFFBB-F15A-45FE-B284-F587DFCE31A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05FFFBB-F15A-45FE-B284-F587DFCE31A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
