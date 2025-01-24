@@ -1,0 +1,13 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using EduOne.Fr.RestServices.Helpers;
+global using Microsoft.EntityFrameworkCore;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using Microsoft.EntityFrameworkCore;
+global using EduOne.Fr.RestServices.Entities;
+global using Microsoft.AspNetCore.Http.HttpResults;
+global using Microsoft.AspNetCore.OpenApi;

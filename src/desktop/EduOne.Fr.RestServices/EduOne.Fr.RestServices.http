@@ -1,0 +1,6 @@
+@EduOne.Fr.RestServices_HostAddress = http://localhost:5111
+
+GET {{EduOne.Fr.RestServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

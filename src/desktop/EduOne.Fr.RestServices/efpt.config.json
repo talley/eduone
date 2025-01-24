@@ -1,0 +1,68 @@
+﻿{
+   "CodeGenerationMode": 5,
+   "ContextClassName": "EduOne_FrContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "EduOne.Fr.RestServices",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[ApplicationForms]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ApplicationFormsSecurity]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ApplicationRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ApplicationUsers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[func_decrypt_password]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[func_encrypt_password]",
+         "ObjectType": 2
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}
