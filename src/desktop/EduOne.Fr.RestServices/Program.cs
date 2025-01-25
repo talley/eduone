@@ -1,4 +1,4 @@
-﻿using EduOne.Fr.RestServices;
+﻿using EduOne.Fr.RestServices.EndPoints;
 
 namespace EduOne.Fr.RestServices
 {
@@ -67,6 +67,8 @@ namespace EduOne.Fr.RestServices
             app.MapControllers();
 
                         app.MapApplicationUsersEndpoints();
+
+                        app.MapApplicationRolesEndpoints();
 
             app.Run();
         }

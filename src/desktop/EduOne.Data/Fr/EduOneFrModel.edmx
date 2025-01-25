@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EduOne_FrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EduOne_FrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ApplicationForms">
           <Key>
             <PropertyRef Name="Id" />
@@ -49,11 +49,11 @@
           <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Utilisateur" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varbinary(max)" Nullable="false" />
-          <Property Name="Staut" Type="bit" Nullable="false" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
           <Property Name="Nom" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Prenom" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="DateNaissance" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="Age" Type="smallint" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="AjouterAu" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="AjouterPar" Type="nvarchar" MaxLength="80" Nullable="false" />
@@ -84,7 +84,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Applicati__RoleI__36B12243">
+        <Association Name="FK__Applicati__RoleI__403A8C7D">
           <End Role="ApplicationRoles" Type="Self.ApplicationRoles" Multiplicity="1" />
           <End Role="ApplicationUsers" Type="Self.ApplicationUsers" Multiplicity="*" />
           <ReferentialConstraint>
@@ -103,6 +103,9 @@
         <Function Name="func_encrypt_password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varbinary(max)">
           <Parameter Name="password" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="func_get_roleId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="uniqueidentifier">
+          <Parameter Name="role" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="EduOne_FrModelStoreContainer">
           <EntitySet Name="ApplicationForms" EntityType="Self.ApplicationForms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ApplicationFormsSecurity" EntityType="Self.ApplicationFormsSecurity" Schema="dbo" store:Type="Tables" />
@@ -116,28 +119,45 @@
             <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
             <End Role="ApplicationFormsSecurity" EntitySet="ApplicationFormsSecurity" />
           </AssociationSet>
-          <AssociationSet Name="FK__Applicati__RoleI__36B12243" Association="Self.FK__Applicati__RoleI__36B12243">
+          <AssociationSet Name="FK__Applicati__RoleI__403A8C7D" Association="Self.FK__Applicati__RoleI__403A8C7D">
             <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
             <End Role="ApplicationUsers" EntitySet="ApplicationUsers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EduOne_FrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EduOne_FrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplicationForms" EntityType="EduOne_FrModel.ApplicationForms" />
+          <EntitySet Name="ApplicationFormsSecurity" EntityType="EduOne_FrModel.ApplicationFormsSecurity" />
+          <EntitySet Name="ApplicationRoles" EntityType="EduOne_FrModel.ApplicationRoles" />
+          <EntitySet Name="ApplicationUsers" EntityType="EduOne_FrModel.ApplicationUsers" />
+          <AssociationSet Name="FK__Applicati__FormI__30F848ED" Association="EduOne_FrModel.FK__Applicati__FormI__30F848ED">
+            <End Role="ApplicationForms" EntitySet="ApplicationForms" />
+            <End Role="ApplicationFormsSecurity" EntitySet="ApplicationFormsSecurity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__RoleI__300424B4" Association="EduOne_FrModel.FK__Applicati__RoleI__300424B4">
+            <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
+            <End Role="ApplicationFormsSecurity" EntitySet="ApplicationFormsSecurity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__RoleI__403A8C7D" Association="EduOne_FrModel.FK__Applicati__RoleI__403A8C7D">
+            <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
+            <End Role="ApplicationUsers" EntitySet="ApplicationUsers" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="ApplicationForms">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Form" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Form" Type="String" Nullable="false" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="AjouterAu" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="AjouterPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="ModifierAu" Type="DateTime" Precision="7" />
           <Property Name="ModifierPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ApplicationFormsSecurity" Relationship="Self.FK__Applicati__FormI__30F848ED" FromRole="ApplicationForms" ToRole="ApplicationFormsSecurity" />
+          <NavigationProperty Name="ApplicationFormsSecurity" Relationship="EduOne_FrModel.FK__Applicati__FormI__30F848ED" FromRole="ApplicationForms" ToRole="ApplicationFormsSecurity" />
         </EntityType>
         <EntityType Name="ApplicationFormsSecurity">
           <Key>
@@ -147,25 +167,25 @@
           <Property Name="RoleId" Type="Guid" Nullable="false" />
           <Property Name="FormId" Type="Guid" Nullable="false" />
           <Property Name="AjouterAu" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="AjouterPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="ModifierAu" Type="DateTime" Precision="7" />
           <Property Name="ModifierPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ApplicationForms" Relationship="Self.FK__Applicati__FormI__30F848ED" FromRole="ApplicationFormsSecurity" ToRole="ApplicationForms" />
-          <NavigationProperty Name="ApplicationRoles" Relationship="Self.FK__Applicati__RoleI__300424B4" FromRole="ApplicationFormsSecurity" ToRole="ApplicationRoles" />
+          <NavigationProperty Name="ApplicationForms" Relationship="EduOne_FrModel.FK__Applicati__FormI__30F848ED" FromRole="ApplicationFormsSecurity" ToRole="ApplicationForms" />
+          <NavigationProperty Name="ApplicationRoles" Relationship="EduOne_FrModel.FK__Applicati__RoleI__300424B4" FromRole="ApplicationFormsSecurity" ToRole="ApplicationRoles" />
         </EntityType>
         <EntityType Name="ApplicationRoles">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="NomRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NomRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="AjouterAu" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="AjouterPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="ModifierAu" Type="DateTime" Precision="7" />
           <Property Name="ModifierPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ApplicationFormsSecurity" Relationship="Self.FK__Applicati__RoleI__300424B4" FromRole="ApplicationRoles" ToRole="ApplicationFormsSecurity" />
-          <NavigationProperty Name="ApplicationUsers" Relationship="Self.FK__Applicati__RoleI__36B12243" FromRole="ApplicationRoles" ToRole="ApplicationUsers" />
+          <NavigationProperty Name="ApplicationFormsSecurity" Relationship="EduOne_FrModel.FK__Applicati__RoleI__300424B4" FromRole="ApplicationRoles" ToRole="ApplicationFormsSecurity" />
+          <NavigationProperty Name="ApplicationUsers" Relationship="EduOne_FrModel.FK__Applicati__RoleI__403A8C7D" FromRole="ApplicationRoles" ToRole="ApplicationUsers" />
         </EntityType>
         <EntityType Name="ApplicationUsers">
           <Key>
@@ -173,23 +193,23 @@
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="RoleId" Type="Guid" Nullable="false" />
-          <Property Name="Utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="Staut" Type="Boolean" Nullable="false" />
-          <Property Name="Nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Prenom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Utilisateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Prenom" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="DateNaissance" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Age" Type="Int16" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="AjouterAu" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="AjouterPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="ModifierAu" Type="DateTime" Precision="7" />
           <Property Name="ModifierPar" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ApplicationRoles" Relationship="Self.FK__Applicati__RoleI__36B12243" FromRole="ApplicationUsers" ToRole="ApplicationRoles" />
+          <NavigationProperty Name="ApplicationRoles" Relationship="EduOne_FrModel.FK__Applicati__RoleI__403A8C7D" FromRole="ApplicationUsers" ToRole="ApplicationRoles" />
         </EntityType>
         <Association Name="FK__Applicati__FormI__30F848ED">
-          <End Role="ApplicationForms" Type="Self.ApplicationForms" Multiplicity="1" />
-          <End Role="ApplicationFormsSecurity" Type="Self.ApplicationFormsSecurity" Multiplicity="*" />
+          <End Type="EduOne_FrModel.ApplicationForms" Role="ApplicationForms" Multiplicity="1" />
+          <End Type="EduOne_FrModel.ApplicationFormsSecurity" Role="ApplicationFormsSecurity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ApplicationForms">
               <PropertyRef Name="Id" />
@@ -200,8 +220,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Applicati__RoleI__300424B4">
-          <End Role="ApplicationRoles" Type="Self.ApplicationRoles" Multiplicity="1" />
-          <End Role="ApplicationFormsSecurity" Type="Self.ApplicationFormsSecurity" Multiplicity="*" />
+          <End Type="EduOne_FrModel.ApplicationRoles" Role="ApplicationRoles" Multiplicity="1" />
+          <End Type="EduOne_FrModel.ApplicationFormsSecurity" Role="ApplicationFormsSecurity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ApplicationRoles">
               <PropertyRef Name="Id" />
@@ -211,9 +231,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Applicati__RoleI__36B12243">
-          <End Role="ApplicationRoles" Type="Self.ApplicationRoles" Multiplicity="1" />
-          <End Role="ApplicationUsers" Type="Self.ApplicationUsers" Multiplicity="*" />
+        <Association Name="FK__Applicati__RoleI__403A8C7D">
+          <End Type="EduOne_FrModel.ApplicationRoles" Role="ApplicationRoles" Multiplicity="1" />
+          <End Type="EduOne_FrModel.ApplicationUsers" Role="ApplicationUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ApplicationRoles">
               <PropertyRef Name="Id" />
@@ -223,24 +243,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EduOne_FrEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ApplicationForms" EntityType="Self.ApplicationForms" />
-          <EntitySet Name="ApplicationFormsSecurity" EntityType="Self.ApplicationFormsSecurity" />
-          <EntitySet Name="ApplicationRoles" EntityType="Self.ApplicationRoles" />
-          <EntitySet Name="ApplicationUsers" EntityType="Self.ApplicationUsers" />
-          <AssociationSet Name="FK__Applicati__FormI__30F848ED" Association="Self.FK__Applicati__FormI__30F848ED">
-            <End Role="ApplicationForms" EntitySet="ApplicationForms" />
-            <End Role="ApplicationFormsSecurity" EntitySet="ApplicationFormsSecurity" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Applicati__RoleI__300424B4" Association="Self.FK__Applicati__RoleI__300424B4">
-            <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
-            <End Role="ApplicationFormsSecurity" EntitySet="ApplicationFormsSecurity" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Applicati__RoleI__36B12243" Association="Self.FK__Applicati__RoleI__36B12243">
-            <End Role="ApplicationRoles" EntitySet="ApplicationRoles" />
-            <End Role="ApplicationUsers" EntitySet="ApplicationUsers" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -250,59 +252,59 @@
           <EntitySetMapping Name="ApplicationForms">
             <EntityTypeMapping TypeName="EduOne_FrModel.ApplicationForms">
               <MappingFragment StoreEntitySet="ApplicationForms">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Form" ColumnName="Form" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
-                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
-                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
                 <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Form" ColumnName="Form" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ApplicationFormsSecurity">
             <EntityTypeMapping TypeName="EduOne_FrModel.ApplicationFormsSecurity">
               <MappingFragment StoreEntitySet="ApplicationFormsSecurity">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="FormId" ColumnName="FormId" />
-                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
-                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
-                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
                 <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ApplicationRoles">
             <EntityTypeMapping TypeName="EduOne_FrModel.ApplicationRoles">
               <MappingFragment StoreEntitySet="ApplicationRoles">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NomRole" ColumnName="NomRole" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
-                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
-                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
                 <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NomRole" ColumnName="NomRole" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ApplicationUsers">
             <EntityTypeMapping TypeName="EduOne_FrModel.ApplicationUsers">
               <MappingFragment StoreEntitySet="ApplicationUsers">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Staut" ColumnName="Staut" />
-                <ScalarProperty Name="Nom" ColumnName="Nom" />
-                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
-                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
-                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
-                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
                 <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

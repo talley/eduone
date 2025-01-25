@@ -96,3 +96,16 @@ begin
 end
 
 
+
+
+CREATE OR ALTER FUNCTION func_get_roleId
+(
+@role  nvarchar(200)
+)
+returns uniqueidentifier
+as
+begin
+  declare @result uniqueidentifier;
+  SET @result =(SELECT Id FROM ApplicationRoles WHERE NomRole=@role);
+  return @result;
+end

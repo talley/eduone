@@ -1,9 +1,8 @@
-﻿
-namespace EduOne.Fr.RestServices;
+﻿namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class ApplicationUsersEndpoints
 {
-    public static void MapApplicationUsersEndpoints (this IEndpointRouteBuilder routes)
+    public static void MapApplicationUsersEndpoints(this IEndpointRouteBuilder routes)
     {
         var group = routes.MapGroup("/api/ApplicationUsers").WithTags(nameof(ApplicationUsers));
 
@@ -57,7 +56,7 @@ public static class ApplicationUsersEndpoints
         {
             db.ApplicationUsers.Add(applicationUsers);
             await db.SaveChangesAsync();
-            return TypedResults.Created($"/api/ApplicationUsers/{applicationUsers.Id}",applicationUsers);
+            return TypedResults.Created($"/api/ApplicationUsers/{applicationUsers.Id}", applicationUsers);
         })
         .WithName("CreateApplicationUsers")
         .WithOpenApi()

@@ -17,7 +17,7 @@ namespace EduOne
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fraAddUser());
+            Application.Run(new fraUsersList());
         }
     }
 }

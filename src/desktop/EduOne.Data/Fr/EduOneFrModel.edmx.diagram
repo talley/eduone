@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7dd00fb79e344d218749070639334f96" Name="Diagram1">
-        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationForms" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationFormsSecurity" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationRoles" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationUsers" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__FormI__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__RoleI__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__RoleI__36B12243" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationForms" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationFormsSecurity" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationRoles" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="EduOne_FrModel.ApplicationUsers" Width="1.5" PointX="3" PointY="7.625" />
+        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__FormI__30F848ED" />
+        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__RoleI__300424B4" />
+        <AssociationConnector Association="EduOne_FrModel.FK__Applicati__RoleI__403A8C7D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

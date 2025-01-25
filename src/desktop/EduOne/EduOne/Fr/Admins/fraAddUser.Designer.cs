@@ -85,7 +85,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(488, 40);
+            this.labelControl4.Location = new System.Drawing.Point(487, 45);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(55, 16);
             this.labelControl4.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(487, 166);
+            this.labelControl6.Location = new System.Drawing.Point(488, 173);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(57, 16);
             this.labelControl6.TabIndex = 5;
@@ -154,7 +154,7 @@
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(569, 36);
+            this.txtpass.Location = new System.Drawing.Point(569, 42);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(266, 22);
             this.txtpass.TabIndex = 12;
@@ -189,6 +189,7 @@
             this.btnadd.Size = new System.Drawing.Size(179, 29);
             this.btnadd.TabIndex = 17;
             this.btnadd.Text = "Ajouter";
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnclear
             // 
@@ -211,7 +212,7 @@
             // dtdob
             // 
             this.dtdob.EditValue = null;
-            this.dtdob.Location = new System.Drawing.Point(569, 163);
+            this.dtdob.Location = new System.Drawing.Point(569, 170);
             this.dtdob.Name = "dtdob";
             this.dtdob.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

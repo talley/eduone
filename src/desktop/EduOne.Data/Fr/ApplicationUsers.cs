@@ -18,11 +18,11 @@ namespace EduOne.Data.Fr
         public System.Guid RoleId { get; set; }
         public string Utilisateur { get; set; }
         public byte[] Password { get; set; }
-        public bool Staut { get; set; }
+        public bool Statut { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public System.DateTime DateNaissance { get; set; }
-        public short Age { get; set; }
+        public string Notes { get; set; }
         public string Email { get; set; }
         public System.DateTime AjouterAu { get; set; }
         public string AjouterPar { get; set; }
