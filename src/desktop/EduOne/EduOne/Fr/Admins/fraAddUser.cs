@@ -17,7 +17,7 @@ using Dapper.Contrib;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
 using System.Net.Http;
-
+using Config = System.Configuration.ConfigurationManager;
 namespace EduOne.Fr.Admins
 {
     public partial class fraAddUser : DevExpress.XtraEditors.XtraForm
@@ -99,7 +99,7 @@ namespace EduOne.Fr.Admins
             }
             else
             {
-                const string apiUrl = "https://localhost:7027/api/ApplicationUsers";//local test only
+                 // "https://localhost:7027/api/ApplicationUsers";//local test only
 
                 var data =new
                 {
@@ -116,6 +116,7 @@ namespace EduOne.Fr.Admins
                     AjouterPar=ApplicationHelpers.GetSystemUser(email)
                 };
 
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "/ApplicationUsers";
                 using (var client = new HttpClient())
                 {
                     try
@@ -144,6 +145,13 @@ namespace EduOne.Fr.Admins
             }
         }
 
+        private bool IsAppInProd()
+        {
+            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
+            return isAppInProd;
+        }
+
+        //WILL BE MOVED TO API
         private async Task<Guid> GetRoleIdAsync(string role)
         {
             var cs = DbHelpers.CS;

@@ -14,7 +14,7 @@ namespace EduOne.Fr.Admins
         public SplashScreen1()
         {
             InitializeComponent();
-            this.labelCopyright.Text = $"Copyright © {DateTime.Now.Year}-Talley Ouro" + DateTime.Now.Year.ToString();
+            this.labelCopyright.Text = $"Copyright © {DateTime.Now.Year}-Talley Ouro"; ;
         }
 
         #region Overrides

@@ -14,10 +14,15 @@ using System.Windows.Forms;
 using Dapper;
 using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using EduOne.Data.Fr;
 using EduOne.Exts;
+using EduOne.Fr.helpers;
 using EduOne.Helpers;
 using Newtonsoft.Json;
+using Telerik.WinControls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using static Humanizer.On;
 
@@ -28,6 +33,13 @@ namespace EduOne.Fr.Admins
         public fraUsersList()
         {
             InitializeComponent();
+            //GridColumn gridColumn = gridView1.Columns.AddVisible("Modifier", string.Empty);
+            //RepositoryItemButtonEdit repositoryItemButtonEdit = new RepositoryItemButtonEdit();
+            //repositoryItemButtonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            //repositoryItemButtonEdit.ButtonClick += repositoryItemButtonEdit1_ButtonClick;
+            //gridControl1.RepositoryItems.Add(repositoryItemButtonEdit);
+            //gridColumn.ColumnEdit = repositoryItemButtonEdit;
+            //gridColumn.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
         }
 
        public struct CustomData
@@ -168,7 +180,7 @@ namespace EduOne.Fr.Admins
 
         public async Task<List<ApplicationUsers>> GetUsersAsync()
         {
-            const string apiUrl = "https://localhost:7027/api/ApplicationUsers";//local test only
+             string apiUrl = WebServerHelpers.GetApiApplicationUrl(false)+"ApplicationUsers";//local test only
             List<ApplicationUsers> users = new List<ApplicationUsers>();
             using (var client = new HttpClient())
             {
@@ -287,5 +299,37 @@ namespace EduOne.Fr.Admins
                 }
             }
         }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var view = gridView1;
+            //MessageBox.Show((string)gridView1.GetFocusedRowCellValue("Id"));
+
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr de vouloir mettre à jour les informations utilisateur?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    //  var Id = (int)view.GetRowCellValue(view.FocusedRowHandle, "coid");
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
+                    var id=Guid.Parse(oid.ToString());
+                     var edit_user_form=new fraEditUser("test@test.com",id);
+                    edit_user_form.ShowDialog();
+
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
+            }
+
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            var ex = sender;
+        }
+
+
     }
 }

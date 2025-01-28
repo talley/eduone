@@ -1,4 +1,4 @@
-﻿using EduOne.Fr.RestServices.EndPoints;
+using EduOne.Fr.RestServices.EndPoints;
 
 namespace EduOne.Fr.RestServices
 {
@@ -7,6 +7,7 @@ namespace EduOne.Fr.RestServices
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.AddServiceDefaults();
 
             builder.Services.AddDbContext<EduOne_FrContext>(option =>
             {
@@ -44,6 +45,8 @@ namespace EduOne.Fr.RestServices
 
             var app = builder.Build();
 
+            app.MapDefaultEndpoints();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -66,9 +69,10 @@ namespace EduOne.Fr.RestServices
 
             app.MapControllers();
 
-                        app.MapApplicationUsersEndpoints();
+            app.MapApplicationUsersEndpoints();
+            app.MapApplicationRolesEndpoints();
+            app.MapCommonEndpoints();
 
-                        app.MapApplicationRolesEndpoints();
 
             app.Run();
         }

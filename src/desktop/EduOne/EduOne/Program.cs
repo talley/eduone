@@ -17,7 +17,7 @@ namespace EduOne
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fraUsersList());
+            Application.Run(new fraUsersList());//fraEditUser("talleyouro@gmail.com",Guid.NewGuid()
         }
     }
 }

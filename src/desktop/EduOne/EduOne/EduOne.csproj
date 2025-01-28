@@ -116,6 +116,7 @@
       <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.9.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
@@ -175,6 +176,12 @@
     <Compile Include="Fr\Admins\fraAddUser.Designer.cs">
       <DependentUpon>fraAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\fraEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\fraEditUser.Designer.cs">
+      <DependentUpon>fraEditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\fraUsersList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,14 +200,19 @@
     <Compile Include="Fr\Admins\WaitForm1.Designer.cs">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fr\helpers\ApplicationHelpers.cs" />
-    <Compile Include="Fr\helpers\DbHelpers.cs" />
-    <Compile Include="Fr\helpers\EmailHelpers.cs" />
+    <Compile Include="Fr\Helpers\ApplicationHelpers.cs" />
+    <Compile Include="Fr\Helpers\ApplicationUsersHelper.cs" />
+    <Compile Include="Fr\Helpers\DbHelpers.cs" />
+    <Compile Include="Fr\Helpers\EmailHelpers.cs" />
     <Compile Include="Helpers\DbHelpers.cs" />
+    <Compile Include="Helpers\WebServerHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\fraEditUser.resx">
+      <DependentUpon>fraEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraUsersList.resx">
       <DependentUpon>fraUsersList.cs</DependentUpon>
@@ -248,6 +260,10 @@
     <ProjectReference Include="..\..\EduOne.Data\EduOne.Data.csproj">
       <Project>{9d892d86-7685-4e7b-94e5-c9a8d82b33af}</Project>
       <Name>EduOne.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EduOne.Fr.Logging\EduOne.Fr.Logging.csproj">
+      <Project>{7657A843-DD04-486F-BA94-D7394716A9CD}</Project>
+      <Name>EduOne.Fr.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\EduOne.Repositories\EduOne.Repositories.csproj">
       <Project>{a05fffbb-f15a-45fe-b284-f587dfce31a9}</Project>

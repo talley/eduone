@@ -8,7 +8,7 @@ public static class ApplicationRolesEndpoints
 {
     public static void MapApplicationRolesEndpoints (this IEndpointRouteBuilder routes)
     {
-        var group = routes.MapGroup("/api/ApplicationRoles").WithTags(nameof(ApplicationRoles));
+        var group = routes.MapGroup("/api/ApplicationRoles").WithTags("ApplicationRoles");
 
         group.MapGet("/", async (EduOne_FrContext db) =>
         {
