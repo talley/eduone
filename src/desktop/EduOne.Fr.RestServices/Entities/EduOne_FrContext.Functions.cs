@@ -22,6 +22,18 @@ namespace EduOne.Fr.RestServices.Entities
             throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
         }
 
+        [DbFunction("func_get_roleId", "dbo")]
+        public static Guid? func_get_roleId(string role)
+        {
+            throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
+        }
+
+        [DbFunction("func_validate_password", "dbo")]
+        public static bool? func_validate_password(string email, string password)
+        {
+            throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
+        }
+
         protected void OnModelCreatingGeneratedFunctions(ModelBuilder modelBuilder)
         {
         }

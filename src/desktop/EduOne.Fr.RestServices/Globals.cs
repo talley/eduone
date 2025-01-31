@@ -11,3 +11,6 @@ global using Microsoft.EntityFrameworkCore;
 global using EduOne.Fr.RestServices.Entities;
 global using Microsoft.AspNetCore.Http.HttpResults;
 global using Microsoft.AspNetCore.OpenApi;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;

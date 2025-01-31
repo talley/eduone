@@ -176,6 +176,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Courses\fraCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\fraCourses.Designer.cs">
+      <DependentUpon>fraCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\fraNewCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\fraNewCourse.Designer.cs">
+      <DependentUpon>fraNewCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,12 +234,20 @@
     <Compile Include="Fr\Helpers\ApplicationUsersHelper.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
+    <Compile Include="Fr\Models\Courses.cs" />
+    <Compile Include="Fr\Models\Departments.cs" />
     <Compile Include="Helpers\DbHelpers.cs" />
     <Compile Include="Helpers\WebServerHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="En\enLogin.resx">
       <DependentUpon>enLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Courses\fraCourses.resx">
+      <DependentUpon>fraCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Courses\fraNewCourse.resx">
+      <DependentUpon>fraNewCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>

@@ -1,4 +1,4 @@
-using EduOne.Fr.RestServices.EndPoints;
+﻿using EduOne.Fr.RestServices.EndPoints;
 
 namespace EduOne.Fr.RestServices
 {
@@ -15,6 +15,11 @@ namespace EduOne.Fr.RestServices
                 option.EnableDetailedErrors();
 
             });
+
+            // Authentication
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<EduOne_FrContext>()
+            .AddDefaultTokenProviders();
 
             // Add CORS services
             builder.Services.AddCors(options =>
@@ -47,6 +52,13 @@ namespace EduOne.Fr.RestServices
 
             app.MapDefaultEndpoints();
 
+            //
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                 InitializeRoles(services);
+            }
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -72,9 +84,42 @@ namespace EduOne.Fr.RestServices
             app.MapApplicationUsersEndpoints();
             app.MapApplicationRolesEndpoints();
             app.MapCommonEndpoints();
+            app.MapCoursesEndpoints();
+            app.MapDepartmentsEndpoints();
+
+
 
 
             app.Run();
         }
+
+        #region Helpers
+        public static async Task InitializeRoles(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            string[] roleNames = { "Admin", "User","Guess","Super" };
+
+            foreach (var roleName in roleNames)
+            {
+                var roleExists = await roleManager.RoleExistsAsync(roleName);
+                if (!roleExists)
+                {
+                    await roleManager.CreateAsync(new IdentityRole(roleName));
+                }
+            }
+        }
+
+        public static async Task AssignUserRole(IServiceProvider serviceProvider, string email, string role)
+        {
+            var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user != null && !await userManager.IsInRoleAsync(user, role))
+            {
+                await userManager.AddToRoleAsync(user, role);
+            }
+        }
+
+        #endregion
     }
 }

@@ -31,11 +31,39 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Courses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Departments]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[StaffRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Staffs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Students]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[func_decrypt_password]",
          "ObjectType": 2
       },
       {
          "Name": "[dbo].[func_encrypt_password]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[func_get_roleId]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[func_validate_password]",
          "ObjectType": 2
       }
    ],

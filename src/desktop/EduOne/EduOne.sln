@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.AppHost", "..\EduOne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.ServiceDefaults", "..\EduOne.ServiceDefaults\EduOne.ServiceDefaults.csproj", "{1A444355-2F0F-4D35-B417-285B56CA8962}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebIdentityApp", "..\..\..\..\..\..\Users\Abibou\source\repos\WebIdentityApp\WebIdentityApp.csproj", "{FC4BE453-40A0-4383-A036-3E18D0E5038B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{1A444355-2F0F-4D35-B417-285B56CA8962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A444355-2F0F-4D35-B417-285B56CA8962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A444355-2F0F-4D35-B417-285B56CA8962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4BE453-40A0-4383-A036-3E18D0E5038B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4BE453-40A0-4383-A036-3E18D0E5038B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4BE453-40A0-4383-A036-3E18D0E5038B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4BE453-40A0-4383-A036-3E18D0E5038B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -140,3 +140,94 @@ BEGIN
 
     RETURN @result;
 END;
+
+/* 01/31/2025 */
+
+CREATE TABLE Students
+(
+ GlobalId uniqueidentifier not null default newid(),
+ Id int identity(1,1) not null,
+ Nom nvarchar(100) not null,
+ Prénom nvarchar(100) not null,
+ Surnom nvarchar(100) not null,
+ LieuNaissance datetime2 not null,
+ DateNaissance datetime2 not null,
+ Genre nvarchar(40) not null,
+ Email nvarchar(200)  null,
+ TelePhone nvarchar(25) not null,
+ Fax nvarchar(25)  null,
+ Addresse nvarchar(200) not null,
+ Addresse2 nvarchar(200)  null,
+ Ville nvarchar(100) not null,
+ État nvarchar(100) not null,
+ Pays nvarchar(100) not null,
+ Date_Inscription datetime null,
+
+ AjouterAu datetime2  not null,
+AjouterPar nvarchar(80) not null,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
+CREATE TABLE StaffRoles
+(
+ Id int identity(1,1) not null,
+ Role nvarchar(100) not null,
+ AjouterAu datetime2  not null,
+AjouterPar nvarchar(80) not null,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
+
+ INSERT INTO StaffRoles(Role,AjouterAu,AjouterPar) VALUES('Professeur',GETDATE(),SYSTEM_USER)
+  INSERT INTO StaffRoles(Role,AjouterAu,AjouterPar) VALUES('Professeure',GETDATE(),SYSTEM_USER);
+    INSERT INTO StaffRoles(Role,AjouterAu,AjouterPar) VALUES('Administrateur',GETDATE(),SYSTEM_USER)
+        INSERT INTO StaffRoles(Role,AjouterAu,AjouterPar) VALUES('Administratrice',GETDATE(),SYSTEM_USER)
+SELECT Role FROM StaffRoles;
+
+CREATE TABLE Staffs
+(
+ Id int identity(1,1) not null,
+  Nom nvarchar(100) not null,
+ Prénom nvarchar(100) not null,
+ Surnom nvarchar(100) not null,
+ LieuNaissance datetime2 not null,
+ DateNaissance datetime2 not null,
+ Genre nvarchar(40) not null,
+ Email nvarchar(200)  null,
+ TelePhone nvarchar(25) not null,
+ Fax nvarchar(25)  null,
+ Date_Embauche datetime2 null,
+ Role nvarchar(100) not null, -- e.g., Teacher, Administrator
+ AjouterAu datetime2  not null,
+AjouterPar nvarchar(80) not null,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
+
+CREATE TABLE Departments
+(
+ Id int identity(1,1) not null,
+ Nom_Département nvarchar(200)  null,
+ ID_Chef_Département int  null,
+ AjouterAu datetime2  not null,
+AjouterPar nvarchar(80) not null,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
+
+CREATE TABLE Courses
+(
+ Cours_Id int identity(1,1) not null,
+ Nom_Cours nvarchar(400) not null,
+ Description nvarchar(max) not null,
+ ID_Department int not null references Departments(Id),
+ AjouterAu datetime2  not null,
+AjouterPar nvarchar(80) not null,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Cours_Id)
+)
