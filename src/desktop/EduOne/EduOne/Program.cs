@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EduOne.En;
+using EduOne.Fr;
 using EduOne.Fr.Admins;
-
+using Config = System.Configuration.ConfigurationManager;
 namespace EduOne
 {
     internal static class Program
@@ -17,7 +19,16 @@ namespace EduOne
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fraUsersList());//fraEditUser("talleyouro@gmail.com",Guid.NewGuid()
+            var appLang = Config.AppSettings["APP_LANG"] as string;
+            if (appLang == "fr")
+            {
+                Application.Run(new frLogin());
+            }
+            else
+            {
+
+                Application.Run(new enLogin());//fraEditUser("talleyouro@gmail.com",Guid.NewGuid()
+            }
         }
     }
 }

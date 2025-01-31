@@ -49,6 +49,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnchangepwd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnclose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtdob.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdob.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drproles.Properties)).BeginInit();
@@ -229,18 +230,29 @@
             // 
             // btnchangepwd
             // 
-            this.btnchangepwd.Location = new System.Drawing.Point(813, 43);
+            this.btnchangepwd.Location = new System.Drawing.Point(813, 40);
             this.btnchangepwd.Name = "btnchangepwd";
             this.btnchangepwd.Size = new System.Drawing.Size(117, 25);
             this.btnchangepwd.TabIndex = 41;
             this.btnchangepwd.Text = "Changer";
             this.btnchangepwd.Click += new System.EventHandler(this.btnchangepwd_Click);
             // 
+            // btnclose
+            // 
+            this.btnclose.Enabled = false;
+            this.btnclose.Location = new System.Drawing.Point(510, 653);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(179, 29);
+            this.btnclose.TabIndex = 42;
+            this.btnclose.Text = "Fermer";
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // fraEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 693);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.btnchangepwd);
             this.Controls.Add(this.dtdob);
             this.Controls.Add(this.drproles);
@@ -302,5 +314,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnchangepwd;
+        private DevExpress.XtraEditors.SimpleButton btnclose;
     }
 }

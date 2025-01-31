@@ -11,6 +11,7 @@ namespace EduOne.Fr.RestServices.EndPoints
 {
     public static class CommonEndPoints
     {
+        private static EduOne_FrContext db=new EduOne_FrContext();
         public static void MapCommonEndpoints(this IEndpointRouteBuilder routes)
         {
             var group = routes.MapGroup("/api/Commons").WithTags("Commons");
@@ -24,14 +25,51 @@ namespace EduOne.Fr.RestServices.EndPoints
                 .WithOpenApi()
                 .RequireCors("ApplicationPolicy");
 
+
+
             group.MapGet("/Security/EncryptPassword/{password}", static async Task<Results<Ok<byte[]>, NotFound>> (string password, EduOne_FrContext db) =>
                 {
-                    var roleId = await EncryptPasswordAsync(password);
-                    return roleId == null ? TypedResults.Ok(roleId) : TypedResults.NotFound();
+                    var result = await EncryptPasswordAsync(password);
+                    return result != null ? TypedResults.Ok(result) : TypedResults.NotFound();
                 })
                 .WithName("EncryptPassword")
                 .WithOpenApi()
                 .RequireCors("ApplicationPolicy");
+
+
+
+            group.MapGet("/Security/DecryptPassword/{password}", static async Task<Results<Ok<string>, NotFound>> (byte[] password, EduOne_FrContext db) =>
+            {
+                var result = await DecryptPasswordAsync(password);
+                return result != null ? TypedResults.Ok(result) : TypedResults.NotFound();
+            })
+                .WithName("DecryptPassword")
+                .WithOpenApi()
+                .RequireCors("ApplicationPolicy");
+
+            group.MapGet("/Security/Authenticate/{email}/{password}", static async Task<Results<Ok<bool>, NotFound>> (string email,string password, EduOne_FrContext db) =>
+            {
+                var result = await AuthenticateUserAsync(email, password);
+                return result==true? TypedResults.Ok(result):TypedResults.NotFound();
+            })
+               .WithName("Authenticate")
+               .WithOpenApi()
+               .RequireCors("ApplicationPolicy");
+        }
+
+        private static async Task<string> DecryptPasswordAsync(byte[] password)
+        {
+            string result;
+
+            var cs = DbHelpers.CS;
+            var query = $"SELECT dbo.func_decrypt_password('{password}','Iamsmart27@')";
+            using (IDbConnection sqlcon = new SqlConnection(cs))
+            {
+                var oresult = await sqlcon.ExecuteScalarAsync<string>(query, commandType: CommandType.Text);
+                result = oresult.ToString();
+            }
+
+            return result;
         }
 
         private static async Task<Guid> GetRoleIdAsync(string role)
@@ -54,9 +92,38 @@ namespace EduOne.Fr.RestServices.EndPoints
             byte[] result;
             using (IDbConnection sqlcon = new SqlConnection(cs))
             {
-                result = await sqlcon.ExecuteScalarAsync<byte[]>(query, commandType: CommandType.Text);
+                var oresult = await sqlcon.ExecuteScalarAsync<byte[]>(query, commandType: CommandType.Text);
+                result = oresult?.ToArray();
             }
 
+            return result;
+        }
+
+        public static async Task<bool> AuthenticateUserAsync(string email, string password)
+        {
+            bool result = false;
+
+            var query = $" SELECT dbo.func_validate_password('{email}','{password}')";
+            var cs = db.Database.GetConnectionString();
+            if (cs != null)
+            {
+                using (var sqlcon = new SqlConnection(cs))
+                {
+                    await sqlcon.OpenAsync();
+
+                    using (var sqlcmd = new SqlCommand(query, sqlcon))
+                    {
+
+                        var oresult=sqlcmd.ExecuteScalar();
+                        result=bool.Parse(oresult?.ToString());
+                    }
+
+                        if (sqlcon.State == ConnectionState.Open)
+                        {
+                            await sqlcon.CloseAsync();
+                        }
+                }
+            }
             return result;
         }
     }

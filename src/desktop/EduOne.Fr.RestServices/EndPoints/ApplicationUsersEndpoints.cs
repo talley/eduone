@@ -28,6 +28,7 @@ public static class ApplicationUsersEndpoints
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (Guid id, ApplicationUsers applicationUsers, EduOne_FrContext db) =>
         {
+           var break1= 1;
             var affected = await db.ApplicationUsers
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters

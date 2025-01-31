@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper;
@@ -100,10 +102,10 @@ namespace EduOne.Fr.Admins
             {
                 username.DisplayErrorFrDialog("Utilisateur");
             }
-            else if (pass.Length == 0)
-            {
-                "".DisplayErrorFrDialog("Password");
-            }
+            //else if (pass.Length == 0)
+            //{
+            //    "".DisplayErrorFrDialog("Password");
+            //}
             else if (lname.Length == 0)
             {
                 "".DisplayErrorFrDialog("Nom");
@@ -134,7 +136,7 @@ namespace EduOne.Fr.Admins
             }
             else
             {
-                var apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "/ApplicationUsers";
+                var apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"ApplicationUsers/{Id}";
                 var user = await GetApplicationUserAsync().ConfigureAwait(false);
                 byte[] apipassword = null;
                 var currentPass=user.Password;
@@ -159,20 +161,35 @@ namespace EduOne.Fr.Admins
                     Notes = notes,
                     Email = email,
                     AjouterAu = DateTime.Now,
-                    AjouterPar = ApplicationHelpers.GetSystemUser(email)
+                    AjouterPar = ApplicationHelpers.GetSystemUser(email),
+                    ModifierAu="",
+                    ModifierPar=""
                 };
 
                 using (var client = new HttpClient())
                 {
                     try
                     {
-                        var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+                        client.DefaultRequestHeaders.Clear();
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
+
+                        var options = new JsonSerializerOptions
+                        {
+                            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                            WriteIndented = true  // Optional: makes the JSON more readable
+                        };
+                        var i = apiUrl;
+                        var jsonData =JsonSerializer.Serialize(data);
 
                         var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                        var response = await client.PostAsync(apiUrl, content).ConfigureAwait(false);
+                        //content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                        var response = await client.PutAsync(apiUrl, content).ConfigureAwait(false);
 
                         if (response.IsSuccessStatusCode)
                         {
+
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                             "".DisplayDialog("L'utilisateur a été modifier");
                             btnedituser.Enabled = false;
@@ -181,6 +198,14 @@ namespace EduOne.Fr.Admins
                         {
                             XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
                         }
+                    }
+                    catch (HttpRequestException ex2)
+                    {
+                        XtraMessageBox.Show($"An error occurred: {ex2.Message}");
+                    }
+                    catch (ArgumentNullException ex3)
+                    {
+                        XtraMessageBox.Show($"An error occurred: {ex3.Message}");
                     }
                     catch (Exception ex)
                     {
@@ -194,17 +219,24 @@ namespace EduOne.Fr.Admins
         {
             byte[] result = null;
             ////api/Commons/Security/EncryptPassword/{password}
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "/Commons/";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Commons/";
             using (var client = new HttpClient())
             {
                 try
                 {
-                    var response = await client.GetAsync(apiUrl+ $"Security/EncryptPassword/{password_plain}").ConfigureAwait(false);
+                    var combUrl = apiUrl + $"Security/EncryptPassword/{password_plain}";
+                    var response = await client.GetAsync(combUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
                     {
                         var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                         result = Encoding.UTF8.GetBytes(responseData);
+                        if (response.StatusCode==System.Net.HttpStatusCode.OK)
+                        {
+                            "".DisplayDialog("L'utilisateur a été mis à jour.");
+                            btnedituser.Enabled = false;
+                            btnclose.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -286,6 +318,11 @@ namespace EduOne.Fr.Admins
         private void btnchangepwd_Click(object sender, EventArgs e)
         {
             txtpass.Enabled = true;
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

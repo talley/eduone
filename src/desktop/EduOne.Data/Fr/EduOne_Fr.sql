@@ -109,3 +109,34 @@ begin
   SET @result =(SELECT Id FROM ApplicationRoles WHERE NomRole=@role);
   return @result;
 end
+
+CREATE OR ALTER FUNCTION func_validate_password
+(
+    @email nvarchar(200),
+    @password nvarchar(100)
+)
+RETURNS bit
+AS
+BEGIN
+    DECLARE @result bit = 0;
+    DECLARE @encrypted_password varbinary(max);
+
+    -- Retrieve the encrypted password from the database
+    SELECT @encrypted_password = au.[Password]
+    FROM ApplicationUsers AS au
+    WHERE au.Email = @email;
+
+    -- Check if the email exists
+    IF @encrypted_password IS NOT NULL
+    BEGIN
+        -- Decrypt the stored password
+        DECLARE @decrypted_value nvarchar(max);
+        SET @decrypted_value = dbo.func_decrypt_password('Iam123@#$', @encrypted_password);
+
+        -- Compare decrypted password with user input
+        IF @decrypted_value = @password
+            SET @result = 1;
+    END
+
+    RETURN @result;
+END;

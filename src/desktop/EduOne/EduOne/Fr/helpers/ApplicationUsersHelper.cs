@@ -144,5 +144,37 @@ namespace EduOne.Fr.Helpers
             }
             return roles;
         }
+
+
+        public static async Task<List<ApplicationUsers>> DecryptPassword(string password)
+        {
+            List<ApplicationUsers> users = new List<ApplicationUsers>();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Commons/Security/DecryptPassword/";
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    ///var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+
+                    //var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        users = JsonConvert.DeserializeObject<List<ApplicationUsers>>(responseData);
+                    }
+                    else
+                    {
+                        "".DisplayDialog($"Failed to call the web service. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    "".DisplayDialog($"An error occurred: {ex.Message}");
+                }
+            }
+            return users;
+        }
     }
 }
