@@ -182,11 +182,23 @@
     <Compile Include="Fr\Admins\Courses\fraCourses.Designer.cs">
       <DependentUpon>fraCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Courses\fraEditCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\fraEditCourse.Designer.cs">
+      <DependentUpon>fraEditCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\Courses\fraNewCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fr\Admins\Courses\fraNewCourse.Designer.cs">
       <DependentUpon>fraNewCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\SplashScreen2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Courses\SplashScreen2.Designer.cs">
+      <DependentUpon>SplashScreen2.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
@@ -232,6 +244,7 @@
     </Compile>
     <Compile Include="Fr\Helpers\ApplicationHelpers.cs" />
     <Compile Include="Fr\Helpers\ApplicationUsersHelper.cs" />
+    <Compile Include="Fr\Helpers\CommonHelpers.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
     <Compile Include="Fr\Models\Courses.cs" />
@@ -246,8 +259,14 @@
     <EmbeddedResource Include="Fr\Admins\Courses\fraCourses.resx">
       <DependentUpon>fraCourses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Courses\fraEditCourse.resx">
+      <DependentUpon>fraEditCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Courses\fraNewCourse.resx">
       <DependentUpon>fraNewCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Courses\SplashScreen2.resx">
+      <DependentUpon>SplashScreen2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>
@@ -300,6 +319,7 @@
     <Folder Include="Logos\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DevExpress.Notes.txt" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
   </ItemGroup>
   <ItemGroup>

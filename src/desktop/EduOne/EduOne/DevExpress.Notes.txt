@@ -1,0 +1,21 @@
+﻿------------------repository button-------------
+ var view = gridView1;
+            //MessageBox.Show((string)gridView1.GetFocusedRowCellValue("Id"));
+
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr de vouloir mettre à jour les informations utilisateur?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    //  var Id = (int)view.GetRowCellValue(view.FocusedRowHandle, "coid");
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
+                    var id=Guid.Parse(oid.ToString());
+                     var edit_user_form=new fraEditUser("test@test.com",id);
+                    edit_user_form.ShowDialog();
+
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
+            }
