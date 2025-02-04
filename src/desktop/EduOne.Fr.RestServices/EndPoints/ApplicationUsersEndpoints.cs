@@ -28,11 +28,10 @@ public static class ApplicationUsersEndpoints
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (Guid id, ApplicationUsers applicationUsers, EduOne_FrContext db) =>
         {
-           var break1= 1;
             var affected = await db.ApplicationUsers
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.Id, applicationUsers.Id)
+                    //.SetProperty(m => m.Id, applicationUsers.Id)
                     .SetProperty(m => m.RoleId, applicationUsers.RoleId)
                     .SetProperty(m => m.Utilisateur, applicationUsers.Utilisateur)
                     .SetProperty(m => m.Password, applicationUsers.Password)

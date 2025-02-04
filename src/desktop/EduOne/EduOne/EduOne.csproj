@@ -200,6 +200,12 @@
     <Compile Include="Fr\Admins\Courses\SplashScreen2.Designer.cs">
       <DependentUpon>SplashScreen2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartments.Designer.cs">
+      <DependentUpon>fraDepartments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Courses\SplashScreen2.resx">
       <DependentUpon>SplashScreen2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Departments\fraDepartments.resx">
+      <DependentUpon>fraDepartments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>

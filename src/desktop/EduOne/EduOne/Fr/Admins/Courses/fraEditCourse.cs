@@ -105,8 +105,8 @@ namespace EduOne.Fr.Admins.Courses
                     Statut = ckstatus.Checked,
                     AjouterAu = DateTime.Now,
                     AjouterPar = ApplicationHelpers.GetSystemUser(_email),
-                    ModifierAu="",
-                    ModifierPar=""
+                    ModifierAu = DateTime.Now,
+                    ModifierPar=ApplicationHelpers.GetSystemUser(_email)
                 };
 
                 string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"Courses/{_id}";
@@ -118,38 +118,61 @@ namespace EduOne.Fr.Admins.Courses
                         var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
                         var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
+                        var content1 = new StringContent(jsonData, Encoding.Default, "application/json");
+
                         var response = await client.PutAsync(apiUrl, content).ConfigureAwait(false);
 
                         if (response.IsSuccessStatusCode)
                         {
+
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            "".DisplayDialog($"Ce cours ({course} ) a été mis a jour");
-                            btnedit.Enabled = false;
+                            Invoke(new Action(() =>
+                            {
+                                "".DisplayDialog($"Ce cours ({course} ) a été mis a jour");
+                                btnedit.Enabled = false;
+
+
+                            }));
                         }
                         else
                         {
-                            XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+
+                            Invoke(new Action(() =>
+                            {
+                                XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                            }));
                         }
                     }
                     catch (ArgumentNullException ex)
                     {
-                        XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        Invoke(new Action(() =>
+                        {
+                            XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        }));
                     }
                     catch (HttpRequestException ex)
                     {
-                        XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                        Invoke(new Action(() =>
+                        {
+                            XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        }));
                     }
                     catch (Exception ex)
                     {
-                        XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        Invoke(new Action(() =>
+                        {
+                            XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        }));
+
                     }
                 }
             }
 
         }
-        private async Task<List<Departments>> GetDepartmentAsync()
+        private async Task<List<Models.Departments>> GetDepartmentAsync()
         {
-            var dpts = new List<Departments>();
+            var dpts = new List<Models.Departments>();
             string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
 
             using (var client = new HttpClient())
@@ -162,7 +185,7 @@ namespace EduOne.Fr.Admins.Courses
                     if (response.IsSuccessStatusCode)
                     {
                         var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        dpts = JsonConvert.DeserializeObject<List<Departments>>(responseData);
+                        dpts = JsonConvert.DeserializeObject<List<Models.Departments>>(responseData);
                     }
                     else
                     {

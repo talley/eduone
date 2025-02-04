@@ -7,6 +7,7 @@ using EduOne.En;
 using EduOne.Fr;
 using EduOne.Fr.Admins;
 using EduOne.Fr.Admins.Courses;
+using EduOne.Fr.Admins.Departments;
 using Config = System.Configuration.ConfigurationManager;
 namespace EduOne
 {
@@ -23,7 +24,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new fraCourses("test@test.com"));
+                Application.Run(new fraDepartments("test@test.com"));
             }
             else
             {

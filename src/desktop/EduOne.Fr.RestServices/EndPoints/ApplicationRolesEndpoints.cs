@@ -35,7 +35,7 @@ public static class ApplicationRolesEndpoints
             var affected = await db.ApplicationRoles
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.Id, applicationRoles.Id)
+                    //.SetProperty(m => m.Id, applicationRoles.Id)
                     .SetProperty(m => m.NomRole, applicationRoles.NomRole)
                     .SetProperty(m => m.Description, applicationRoles.Description)
                     .SetProperty(m => m.AjouterAu, applicationRoles.AjouterAu)

@@ -65,9 +65,9 @@ namespace EduOne.Fr.Admins.Courses
             gridView1.BestFitColumns();
         }
 
-        private async Task<List<Departments>> GetDepartmentAsync()
+        private async Task<List<Models.Departments>> GetDepartmentAsync()
         {
-            var dpts = new List<Departments>();
+            var dpts = new List<Models.Departments>();
             string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
 
             using (var client = new HttpClient())
@@ -80,7 +80,7 @@ namespace EduOne.Fr.Admins.Courses
                     if (response.IsSuccessStatusCode)
                     {
                         var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        dpts = JsonConvert.DeserializeObject<List<Departments>>(responseData);
+                        dpts = JsonConvert.DeserializeObject<List<Models.Departments>>(responseData);
                     }
                     else
                     {

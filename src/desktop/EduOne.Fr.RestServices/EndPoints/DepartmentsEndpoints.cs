@@ -34,7 +34,7 @@ public static class DepartmentsEndpoints
             var affected = await db.Departments
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.Id, departments.Id)
+                   // .SetProperty(m => m.Id, departments.Id)
                     .SetProperty(m => m.Nom_Département, departments.Nom_Département)
                     .SetProperty(m => m.ID_Chef_Département, departments.ID_Chef_Département)
                     .SetProperty(m => m.AjouterAu, departments.AjouterAu)

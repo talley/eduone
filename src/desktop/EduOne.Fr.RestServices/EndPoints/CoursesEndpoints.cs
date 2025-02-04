@@ -2,6 +2,7 @@
 using EduOne.Fr.RestServices.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.OpenApi;
+using Microsoft.AspNetCore.Mvc;
 namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class CoursesEndpoints
@@ -28,12 +29,14 @@ public static class CoursesEndpoints
         .WithName("GetCoursesById")
         .WithOpenApi();
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int cours_id, Courses courses, EduOne_FrContext db) =>
+
+        // group.MapPut("/{id}", async Task<Results<Ok, NotFound>> ([FromRoute] int cours_id, Courses courses, EduOne_FrContext db) =>
+        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> ( int id, Courses courses, EduOne_FrContext db) =>
         {
             var affected = await db.Courses
-                .Where(model => model.Cours_Id == cours_id)
+                .Where(model => model.Cours_Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.Cours_Id, courses.Cours_Id)
+                   // .SetProperty(m => m.Cours_Id, courses.Cours_Id)
                     .SetProperty(m => m.Nom_Cours, courses.Nom_Cours)
                     .SetProperty(m => m.Description, courses.Description)
                     .SetProperty(m => m.ID_Department, courses.ID_Department)
@@ -47,6 +50,8 @@ public static class CoursesEndpoints
         })
         .WithName("UpdateCourses")
         .WithOpenApi();
+
+
 
         group.MapPost("/", async (Courses courses, EduOne_FrContext db) =>
         {

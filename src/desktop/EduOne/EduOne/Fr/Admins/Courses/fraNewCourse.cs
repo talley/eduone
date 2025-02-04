@@ -13,6 +13,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraRichEdit.Import.Doc;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
+using EduOne.Fr.Helpers;
 using EduOne.Fr.Models;
 using EduOne.Helpers;
 using Newtonsoft.Json;
@@ -31,7 +32,8 @@ namespace EduOne.Fr.Admins.Courses
 
         private async void fraNewCourse_Load(object sender, EventArgs e)
         {
-            var departments = await GetDepartmentAsync();
+            var helper = new CommonHelpers();
+            var departments = await helper.GetDepartmentsAsync();
             if(departments != null)
             {
                 var needed = departments.Select(x => new {x.Id,x.Nom_Département }).ToList();
@@ -43,43 +45,7 @@ namespace EduOne.Fr.Admins.Courses
 
         }
 
-        private async Task<List<Departments>> GetDepartmentAsync()
-        {
-            var dpts=new List<Departments>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
 
-            using (var client = new HttpClient())
-            {
-                try
-                {
-
-                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                         dpts=JsonConvert.DeserializeObject<List<Departments>>(responseData);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
-                    }
-                }
-                catch (ArgumentNullException ex)
-                {
-                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
-                }
-                catch (HttpRequestException ex)
-                {
-                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
-                }
-            }
-            return dpts;
-        }
 
         private void btnclose_Click(object sender, EventArgs e)
         {
