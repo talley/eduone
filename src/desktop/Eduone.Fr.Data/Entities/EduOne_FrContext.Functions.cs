@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
 using System.Linq;
-using EduOne.Fr.RestServices.Entities;
+using Eduone.Fr.Data.Entities;
 
-namespace EduOne.Fr.RestServices.Entities
+namespace Eduone.Fr.Data.Entities
 {
     public partial class EduOne_FrContext
     {

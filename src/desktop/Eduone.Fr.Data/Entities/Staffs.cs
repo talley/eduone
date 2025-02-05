@@ -6,12 +6,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
-public partial class Students
+public partial class Staffs
 {
-    public Guid GlobalId { get; set; }
-
     [Key]
     public int Id { get; set; }
 
@@ -45,27 +43,11 @@ public partial class Students
     [StringLength(25)]
     public string Fax { get; set; }
 
-    [Required]
-    [StringLength(200)]
-    public string Addresse { get; set; }
-
-    [StringLength(200)]
-    public string Addresse2 { get; set; }
+    public DateTime? Date_Embauche { get; set; }
 
     [Required]
     [StringLength(100)]
-    public string Ville { get; set; }
-
-    [Required]
-    [StringLength(100)]
-    public string État { get; set; }
-
-    [Required]
-    [StringLength(100)]
-    public string Pays { get; set; }
-
-    [Column(TypeName = "datetime")]
-    public DateTime? Date_Inscription { get; set; }
+    public string Role { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

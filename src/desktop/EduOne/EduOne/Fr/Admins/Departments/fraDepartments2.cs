@@ -17,24 +17,43 @@ using EduOne.Fr.Helpers;
 
 namespace EduOne.Fr.Admins.Departments
 {
-    public partial class fraDepartments : DevExpress.XtraEditors.XtraForm
+    public partial class fraDepartments2 : DevExpress.XtraEditors.XtraForm
     {
         string _email;
         internal CommonHelpers _commonHelpers = new CommonHelpers();
-        public fraDepartments(string email)
+        public fraDepartments2(string email)
         {
             InitializeComponent();
             _email = email;
         }
 
-        private async void fraDepartments_Load(object sender, EventArgs e)
+        private async void btnsearch_Click(object sender, EventArgs e)
+        {
+            var dpt = drpdepts.Text;
+            if (dpt == "")
+            {
+                ".".DisplayErrorFrDialog("Département");
+            }
+            else
+            {
+                var depts = await _commonHelpers.GetDepartmentsAsync();
+                var id = drpdepts.EditValue.ToString();
+                var result = depts.Where(x => x.Nom_Département == id).ToList();
+
+                gridControl1.DataSource = result;
+                gridView1.BestFitColumns();
+
+            }
+        }
+
+        private async void fraDepartments2_Load(object sender, EventArgs e)
         {
             var helper = new CommonHelpers();
-            var depts=await helper.GetDepartmentAsync();
+            var depts = await helper.GetDepartmentAsync();
 
-            var drpdeptsdata = depts.OrderBy(x => x.Nom_Département).Select(x=>new { x.Id, x.Nom_Département }).ToList();
+            var drpdeptsdata = depts.OrderBy(x => x.Nom_Département).Select(x => new { x.Id, x.Nom_Département }).ToList();
 
-            drpdepts.Properties.DataSource= drpdeptsdata;
+            drpdepts.Properties.DataSource = drpdeptsdata;
             drpdepts.Properties.DisplayMember = "Nom_Département";
             drpdepts.Properties.ValueMember = "Nom_Département";
             drpdepts.Properties.BestFit();
@@ -43,46 +62,19 @@ namespace EduOne.Fr.Admins.Departments
             gridView1.BestFitColumns();
         }
 
-        private async void btnsearch_Click(object sender, EventArgs e)
-        {
-            var dpt = drpdepts.Text;
-            if(dpt == "")
-            {
-                ".".DisplayErrorFrDialog("Département");
-            }
-            else
-            {
-                var depts= await _commonHelpers.GetDepartmentsAsync();
-                var id=drpdepts.EditValue.ToString();
-                var result=depts.Where(x=>x.Nom_Département==id).ToList();
-
-                gridControl1.DataSource = result;
-                gridView1.BestFitColumns();
-
-            }
-        }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var view = gridView1;
-            //MessageBox.Show((string)gridView1.GetFocusedRowCellValue("Id"));
 
             if (gridControl1.MainView is GridView)
             {
                 DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr que vous vouliez voir les cours de cet département", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
                 if (ds == DialogResult.Yes)
                 {
-                    //  var Id = (int)view.GetRowCellValue(view.FocusedRowHandle, "coid");
                     var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
                     var id = int.Parse(oid.ToString());
                     var courses_form = new fraDepartmentCourses("test@test.com", id);
                     courses_form.ShowDialog();
-
                 }
                 else
                 {
@@ -93,7 +85,23 @@ namespace EduOne.Fr.Admins.Departments
 
         private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            var view = gridView1;
 
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr que vous vouliez modifier de cet département", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
+                    var id = int.Parse(oid.ToString());
+                    var courses_form = new fraEditDepartment("test@test.com", id);
+                    courses_form.ShowDialog();
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
+            }
         }
 
         private void btnpdf_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
 [Index("Email", Name = "UQ__tmp_ms_x__A9D105346B62C2D8", IsUnique = true)]
 [Index("Nom", Name = "UQ__tmp_ms_x__C7D1C61E1DC4A4C3", IsUnique = true)]

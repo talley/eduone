@@ -29,8 +29,8 @@ CREATE TABLE ApplicationForms
 Id uniqueidentifier not null default NEWID(),
 Form nvarchar(800) not null unique,
 [Description] nvarchar(200) not null,
-AjouterAu datetime2  not null,
-AjouterPar nvarchar(80) not null,
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
 ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(Id)
@@ -230,4 +230,19 @@ AjouterPar nvarchar(80) not null,
 ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(Cours_Id)
+)
+
+CREATE TABLE DepartmentHeads
+(
+ Id int identity(1,1) not null,
+ Nom nvarchar(200) not null,
+ Prénom nvarchar(200) not null,
+ TelePhone  nvarchar(25) not null,
+ Fax  nvarchar(25) null,
+ Email  nvarchar(200) not null,
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
 )

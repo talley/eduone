@@ -200,11 +200,29 @@
     <Compile Include="Fr\Admins\Courses\SplashScreen2.Designer.cs">
       <DependentUpon>SplashScreen2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fr\Admins\Departments\fraDepartments.cs">
+    <Compile Include="Fr\Admins\Departments\fraAddDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fr\Admins\Departments\fraDepartments.Designer.cs">
-      <DependentUpon>fraDepartments.cs</DependentUpon>
+    <Compile Include="Fr\Admins\Departments\fraAddDepartment.Designer.cs">
+      <DependentUpon>fraAddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartmentCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartmentCourses.Designer.cs">
+      <DependentUpon>fraDepartmentCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartments2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraDepartments2.Designer.cs">
+      <DependentUpon>fraDepartments2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraEditDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Departments\fraEditDepartment.Designer.cs">
+      <DependentUpon>fraEditDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
@@ -254,6 +272,7 @@
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
     <Compile Include="Fr\Models\Courses.cs" />
+    <Compile Include="Fr\Models\DepartmentHeads.cs" />
     <Compile Include="Fr\Models\Departments.cs" />
     <Compile Include="Helpers\DbHelpers.cs" />
     <Compile Include="Helpers\WebServerHelpers.cs" />
@@ -274,8 +293,17 @@
     <EmbeddedResource Include="Fr\Admins\Courses\SplashScreen2.resx">
       <DependentUpon>SplashScreen2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fr\Admins\Departments\fraDepartments.resx">
-      <DependentUpon>fraDepartments.cs</DependentUpon>
+    <EmbeddedResource Include="Fr\Admins\Departments\fraAddDepartment.resx">
+      <DependentUpon>fraAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Departments\fraDepartmentCourses.resx">
+      <DependentUpon>fraDepartmentCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Departments\fraDepartments2.resx">
+      <DependentUpon>fraDepartments2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Departments\fraEditDepartment.resx">
+      <DependentUpon>fraEditDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>
@@ -328,6 +356,7 @@
     <Folder Include="Logos\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cs.txt" />
     <Content Include="DevExpress.Notes.txt" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
   </ItemGroup>

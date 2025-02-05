@@ -146,5 +146,46 @@ namespace EduOne.Fr.Helpers
             department = xdepartment.Nom_Département;
             return department;
         }
+
+        public async Task<List<DepartmentHeads>> GetDepartmentHeadsAsync()
+        {
+            var dpts = new List<DepartmentHeads>();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "DepartmentHeads";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        dpts = JsonConvert.DeserializeObject<List<DepartmentHeads>>(responseData);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (HttpRequestException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+            return dpts;
+        }
+
+
+
     }
 }

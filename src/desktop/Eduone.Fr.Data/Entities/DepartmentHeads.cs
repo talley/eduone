@@ -6,16 +6,31 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
-public partial class ApplicationFormsSecurity
+public partial class DepartmentHeads
 {
     [Key]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
-    public Guid RoleId { get; set; }
+    [Required]
+    [StringLength(200)]
+    public string Nom { get; set; }
 
-    public Guid FormId { get; set; }
+    [Required]
+    [StringLength(200)]
+    public string Prénom { get; set; }
+
+    [Required]
+    [StringLength(25)]
+    public string TelePhone { get; set; }
+
+    [StringLength(25)]
+    public string Fax { get; set; }
+
+    [Required]
+    [StringLength(200)]
+    public string Email { get; set; }
 
     public DateTime AjouterAu { get; set; }
 
@@ -27,12 +42,4 @@ public partial class ApplicationFormsSecurity
 
     [StringLength(80)]
     public string ModifierPar { get; set; }
-
-    [ForeignKey("FormId")]
-    [InverseProperty("ApplicationFormsSecurity")]
-    public virtual ApplicationForms Form { get; set; }
-
-    [ForeignKey("RoleId")]
-    [InverseProperty("ApplicationFormsSecurity")]
-    public virtual ApplicationRoles Role { get; set; }
 }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
 public partial class Departments
 {
@@ -17,6 +17,8 @@ public partial class Departments
     public string Nom_Département { get; set; }
 
     public int? ID_Chef_Département { get; set; }
+
+    public string Description { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

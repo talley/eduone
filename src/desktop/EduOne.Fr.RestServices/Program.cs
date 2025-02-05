@@ -1,4 +1,7 @@
-﻿using EduOne.Fr.RestServices.EndPoints;
+﻿using System.Text.Json.Serialization;
+using System.Text.Json;
+using EduOne.Fr.RestServices.EndPoints;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace EduOne.Fr.RestServices
 {
@@ -41,6 +44,17 @@ namespace EduOne.Fr.RestServices
 
             // Add services to the container.
             builder.Services.AddControllers();
+            /*
+            builder.Services.AddControllers(options =>
+            {
+                options.OutputFormatters.RemoveType<SystemTextJsonOutputFormatter>();
+                options.OutputFormatters.Add(new SystemTextJsonOutputFormatter(new JsonSerializerOptions(JsonSerializerDefaults.Web)
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve,
+                }));
+            });
+            */
+
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
@@ -86,6 +100,8 @@ namespace EduOne.Fr.RestServices
             app.MapCommonEndpoints();
             app.MapCoursesEndpoints();
             app.MapDepartmentsEndpoints();
+
+                        app.MapDepartmentHeadsEndpoints();
 
 
 

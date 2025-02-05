@@ -1,4 +1,5 @@
-﻿namespace EduOne.Fr.RestServices.EndPoints;
+﻿
+namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class ApplicationUsersEndpoints
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using EduOne.Fr.RestServices.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.OpenApi;
+using Eduone.Fr.Data.Entities;
 namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class DepartmentsEndpoints
@@ -37,6 +37,7 @@ public static class DepartmentsEndpoints
                    // .SetProperty(m => m.Id, departments.Id)
                     .SetProperty(m => m.Nom_Département, departments.Nom_Département)
                     .SetProperty(m => m.ID_Chef_Département, departments.ID_Chef_Département)
+                    .SetProperty(m=>m.Description, departments.Description)
                     .SetProperty(m => m.AjouterAu, departments.AjouterAu)
                     .SetProperty(m => m.AjouterPar, departments.AjouterPar)
                     .SetProperty(m => m.ModifierAu, departments.ModifierAu)
@@ -47,6 +48,8 @@ public static class DepartmentsEndpoints
         .WithName("UpdateDepartments")
         .WithOpenApi();
 
+
+
         group.MapPost("/", async (Departments departments, EduOne_FrContext db) =>
         {
             db.Departments.Add(departments);
@@ -55,6 +58,8 @@ public static class DepartmentsEndpoints
         })
         .WithName("CreateDepartments")
         .WithOpenApi();
+
+
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int id, EduOne_FrContext db) =>
         {

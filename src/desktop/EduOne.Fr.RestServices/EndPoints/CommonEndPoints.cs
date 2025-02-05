@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Eduone.Fr.Data.Entities;
 
 namespace EduOne.Fr.RestServices.EndPoints
 {

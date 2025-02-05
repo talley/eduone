@@ -24,7 +24,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new fraDepartments("test@test.com"));
+                Application.Run(new fraDepartments2("test@test.com"));
             }
             else
             {

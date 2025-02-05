@@ -6,17 +6,17 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
-[Index("Form", Name = "UQ__Applicat__386CF3FD7B48B19D", IsUnique = true)]
-public partial class ApplicationForms
+[Index("NomRole", Name = "UQ__Applicat__ADB14FA697F4B30C", IsUnique = true)]
+public partial class ApplicationRoles
 {
     [Key]
     public Guid Id { get; set; }
 
     [Required]
-    [StringLength(800)]
-    public string Form { get; set; }
+    [StringLength(50)]
+    public string NomRole { get; set; }
 
     [Required]
     [StringLength(200)]
@@ -33,6 +33,9 @@ public partial class ApplicationForms
     [StringLength(80)]
     public string ModifierPar { get; set; }
 
-    [InverseProperty("Form")]
+    [InverseProperty("Role")]
     public virtual ICollection<ApplicationFormsSecurity> ApplicationFormsSecurity { get; set; } = new List<ApplicationFormsSecurity>();
+
+    [InverseProperty("Role")]
+    public virtual ICollection<ApplicationUsers> ApplicationUsers { get; set; } = new List<ApplicationUsers>();
 }

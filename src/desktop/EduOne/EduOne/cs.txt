@@ -1,0 +1,23 @@
+﻿   JsonSerializerOptions options =new JsonSerializerOptions()
+                        {
+                            ReferenceHandler = ReferenceHandler.IgnoreCycles,
+                            WriteIndented = true
+                        };
+                        var jsonData = System.Text.Json.JsonSerializer.Serialize(data,options);
+
+                        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                        var response = await client.PostAsync(apiUrl, content).ConfigureAwait(false);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            "".DisplayDialog("Le département a été créé");
+                            btnadd.Enabled = false;
+                        }
+                        else
+                        {
+                            Invoke(new Action(() =>
+                               XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                              ));
+
+                        }

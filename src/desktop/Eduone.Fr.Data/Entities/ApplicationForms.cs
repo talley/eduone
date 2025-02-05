@@ -6,23 +6,21 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
-public partial class Courses
+[Index("Form", Name = "UQ__Applicat__386CF3FD7B48B19D", IsUnique = true)]
+public partial class ApplicationForms
 {
     [Key]
-    public int Cours_Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required]
-    [StringLength(400)]
-    public string Nom_Cours { get; set; }
+    [StringLength(800)]
+    public string Form { get; set; }
 
     [Required]
+    [StringLength(200)]
     public string Description { get; set; }
-
-    public int ID_Department { get; set; }
-
-    public bool Statut { get; set; }
 
     public DateTime AjouterAu { get; set; }
 
@@ -35,7 +33,6 @@ public partial class Courses
     [StringLength(80)]
     public string ModifierPar { get; set; }
 
-    [ForeignKey("ID_Department")]
-    [InverseProperty("Courses")]
-    public virtual Departments ID_DepartmentNavigation { get; set; }
+    [InverseProperty("Form")]
+    public virtual ICollection<ApplicationFormsSecurity> ApplicationFormsSecurity { get; set; } = new List<ApplicationFormsSecurity>();
 }

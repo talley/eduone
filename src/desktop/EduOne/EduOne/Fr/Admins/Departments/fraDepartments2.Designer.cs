@@ -1,6 +1,6 @@
 ﻿namespace EduOne.Fr.Admins.Departments
 {
-    partial class fraDepartments
+    partial class fraDepartments2
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,18 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnpdf = new DevExpress.XtraEditors.SimpleButton();
+            this.btnexcel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnhtml = new DevExpress.XtraEditors.SimpleButton();
+            this.btnsearch = new DevExpress.XtraEditors.SimpleButton();
+            this.drpdepts = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -48,6 +60,9 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpdepts.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -60,30 +75,98 @@
             // 
             splashScreenManager1.ClosingDelay = 500;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.btnpdf);
+            this.groupControl1.Controls.Add(this.btnexcel);
+            this.groupControl1.Controls.Add(this.btnhtml);
+            this.groupControl1.Controls.Add(this.btnsearch);
+            this.groupControl1.Controls.Add(this.drpdepts);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1385, 92);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Options";
+            // 
+            // btnpdf
+            // 
+            this.btnpdf.Location = new System.Drawing.Point(1054, 39);
+            this.btnpdf.Name = "btnpdf";
+            this.btnpdf.Size = new System.Drawing.Size(94, 29);
+            this.btnpdf.TabIndex = 26;
+            this.btnpdf.Text = "PDF";
+            this.btnpdf.Click += new System.EventHandler(this.btnpdf_Click);
+            // 
+            // btnexcel
+            // 
+            this.btnexcel.Location = new System.Drawing.Point(1154, 39);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(94, 29);
+            this.btnexcel.TabIndex = 25;
+            this.btnexcel.Text = "Excel";
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
+            // 
+            // btnhtml
+            // 
+            this.btnhtml.Location = new System.Drawing.Point(1265, 39);
+            this.btnhtml.Name = "btnhtml";
+            this.btnhtml.Size = new System.Drawing.Size(94, 29);
+            this.btnhtml.TabIndex = 24;
+            this.btnhtml.Text = "HTML";
+            this.btnhtml.Click += new System.EventHandler(this.btnhtml_Click);
+            // 
+            // btnsearch
+            // 
+            this.btnsearch.Location = new System.Drawing.Point(515, 39);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(94, 29);
+            this.btnsearch.TabIndex = 23;
+            this.btnsearch.Text = "Recherche";
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
+            // 
+            // drpdepts
+            // 
+            this.drpdepts.Location = new System.Drawing.Point(168, 43);
+            this.drpdepts.Name = "drpdepts";
+            this.drpdepts.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpdepts.Properties.NullText = "";
+            this.drpdepts.Size = new System.Drawing.Size(341, 22);
+            this.drpdepts.TabIndex = 22;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 46);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(150, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Choisissez le département";
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(0, 0);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(15);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 92);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1487, 378);
+            this.groupControl2.Size = new System.Drawing.Size(1385, 629);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Départements";
             // 
             // gridControl1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(15);
-            this.gridControl1.Location = new System.Drawing.Point(2, 181);
+            this.gridControl1.Location = new System.Drawing.Point(2, 25);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(15);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1483, 195);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(1381, 602);
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -149,7 +232,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "Cours", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Cours", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -209,20 +292,25 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Modifier", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit2_ButtonClick);
             // 
-            // fraDepartments
+            // fraDepartments2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 694);
+            this.ClientSize = new System.Drawing.Size(1385, 721);
             this.Controls.Add(this.groupControl2);
-            this.Name = "fraDepartments";
-            this.Text = "fraDepartments";
-            this.Load += new System.EventHandler(this.fraDepartments_Load);
+            this.Controls.Add(this.groupControl1);
+            this.Name = "fraDepartments2";
+            this.Load += new System.EventHandler(this.fraDepartments2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpdepts.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -234,6 +322,8 @@
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -248,5 +338,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LookUpEdit drpdepts;
+        private DevExpress.XtraEditors.SimpleButton btnsearch;
+        private DevExpress.XtraEditors.SimpleButton btnpdf;
+        private DevExpress.XtraEditors.SimpleButton btnexcel;
+        private DevExpress.XtraEditors.SimpleButton btnhtml;
     }
 }

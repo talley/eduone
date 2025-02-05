@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using EduOne.Fr.RestServices.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.AspNetCore.Mvc;
+using Eduone.Fr.Data.Entities;
 namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class CoursesEndpoints

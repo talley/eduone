@@ -6,16 +6,23 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduOne.Fr.RestServices.Entities;
+namespace Eduone.Fr.Data.Entities;
 
-public partial class StaffRoles
+public partial class Courses
 {
     [Key]
-    public int Id { get; set; }
+    public int Cours_Id { get; set; }
 
     [Required]
-    [StringLength(100)]
-    public string Role { get; set; }
+    [StringLength(400)]
+    public string Nom_Cours { get; set; }
+
+    [Required]
+    public string Description { get; set; }
+
+    public int ID_Department { get; set; }
+
+    public bool Statut { get; set; }
 
     public DateTime AjouterAu { get; set; }
 
@@ -27,4 +34,8 @@ public partial class StaffRoles
 
     [StringLength(80)]
     public string ModifierPar { get; set; }
+
+    [ForeignKey("ID_Department")]
+    [InverseProperty("Courses")]
+    public virtual Departments ID_DepartmentNavigation { get; set; }
 }
