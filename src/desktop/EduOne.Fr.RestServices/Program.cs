@@ -103,6 +103,8 @@ namespace EduOne.Fr.RestServices
 
                         app.MapDepartmentHeadsEndpoints();
 
+                        //app.MapDepartmentHeadsEndpoints();
+
 
 
 

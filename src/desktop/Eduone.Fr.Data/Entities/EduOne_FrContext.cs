@@ -97,7 +97,11 @@ public partial class EduOne_FrContext : DbContext
 
         modelBuilder.Entity<DepartmentHeads>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Departme__3214EC0743802E6A");
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07B0A0C16F");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.Statut).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Departments>(entity =>

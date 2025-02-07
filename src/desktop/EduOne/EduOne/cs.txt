@@ -21,3 +21,10 @@
                               ));
 
                         }
+
+
+
+                            Invoke(new Action(() =>
+                        {
+                            XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                        }));

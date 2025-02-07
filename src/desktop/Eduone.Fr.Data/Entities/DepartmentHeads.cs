@@ -25,12 +25,18 @@ public partial class DepartmentHeads
     [StringLength(25)]
     public string TelePhone { get; set; }
 
+    public DateTime? DateNaissance { get; set; }
+
     [StringLength(25)]
     public string Fax { get; set; }
 
     [Required]
     [StringLength(200)]
     public string Email { get; set; }
+
+    public string Notes { get; set; }
+
+    public bool Statut { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

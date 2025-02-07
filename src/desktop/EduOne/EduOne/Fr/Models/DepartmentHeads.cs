@@ -31,6 +31,12 @@ namespace EduOne.Fr.Models
         [StringLength(200)]
         public string Email { get; set; }
 
+        public string Notes { get; set; }
+
+        public DateTime? DateNaissance { get; set; }
+
+        public bool Statut { get; set; }
+
         public DateTime AjouterAu { get; set; }
 
         [Required]
