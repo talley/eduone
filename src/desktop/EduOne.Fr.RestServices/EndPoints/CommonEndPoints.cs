@@ -53,10 +53,42 @@ namespace EduOne.Fr.RestServices.EndPoints
                 var result = await AuthenticateUserAsync(email, password);
                 return result==true? TypedResults.Ok(result):TypedResults.NotFound();
             })
-               .WithName("Authenticate")
-               .WithOpenApi()
-               .RequireCors("ApplicationPolicy");
-        }
+            .WithName("Authenticate")
+            .WithOpenApi()
+            .RequireCors("ApplicationPolicy");
+
+
+            group.MapPost("/UploadImage/{id}", async Task<Results<Ok<StudentIdentifications>, BadRequest>> (int id, IFormFile file, EduOne_FrContext db) =>
+            {
+                if (file == null || file.Length == 0)
+                    return TypedResults.BadRequest();
+
+                using var memoryStream = new MemoryStream();
+                await file.CopyToAsync(memoryStream);
+
+                var studentIdentification = new StudentIdentifications
+                {
+                    UID=Guid.NewGuid(),
+                    Id = id,
+                    FileData = memoryStream.ToArray() ,
+                    ContentType = file.ContentType,
+                    FileName = file.FileName,
+                    AjouterAu=DateTime.Now,
+                    AjouterPar=Environment.MachineName
+                };
+
+                db.StudentIdentifications.Add(studentIdentification);
+                var result = await db.SaveChangesAsync();
+
+                return result > 0 ? TypedResults.Ok(studentIdentification) : TypedResults.BadRequest();
+                })
+                .WithName("UpdateStudent0Identification")
+                .WithOpenApi()
+                .RequireCors("ApplicationPolicy");
+
+
+
+        } //end class
 
         private static async Task<string> DecryptPasswordAsync(byte[] password)
         {

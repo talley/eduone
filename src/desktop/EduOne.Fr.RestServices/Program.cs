@@ -100,11 +100,11 @@ namespace EduOne.Fr.RestServices
             app.MapCommonEndpoints();
             app.MapCoursesEndpoints();
             app.MapDepartmentsEndpoints();
+            app.MapDepartmentHeadsEndpoints();
 
-                        app.MapDepartmentHeadsEndpoints();
+                        app.MapStudentsEndpoints();
 
-                        //app.MapDepartmentHeadsEndpoints();
-
+                        app.MapStudentIdentificationsEndpoints();
 
 
 

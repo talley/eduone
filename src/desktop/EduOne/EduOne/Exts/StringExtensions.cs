@@ -20,6 +20,11 @@ namespace EduOne.Exts
         {
             XtraMessageBox.Show($"{message}", ApplicationHelpers.AppName);
         }
+
+        public static void DisplayExportErrorDialog(this string field, string program)
+        {
+            XtraMessageBox.Show($"Ce fichier est ouvert dans {program}. Veuillez d'abord le fermer.", ApplicationHelpers.AppName);
+        }
         public static bool IsEmailValid(this string email)
         {
             return IsValidEmail(email);

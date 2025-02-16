@@ -9,6 +9,7 @@ using EduOne.Helpers;
 
 using Config = System.Configuration.ConfigurationManager;
 using Newtonsoft.Json;
+using System.Globalization;
 namespace EduOne.Fr.Helpers
 {
     public class CommonHelpers
@@ -185,7 +186,91 @@ namespace EduOne.Fr.Helpers
             return dpts;
         }
 
+        public  List<string> GetAllCountrysNames()
+        {
+            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
 
+            return cultures
+                    .Select(cult => (new RegionInfo(cult.LCID)).DisplayName)
+                    .Distinct()
+                    .OrderBy(q => q)
+                    .ToList();
+        }
 
+        internal async Task<List<Students>> GetStudentsAsync()
+        {
+            var students = new List<Students>();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Students";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        students = JsonConvert.DeserializeObject<List<Students>>(responseData);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (HttpRequestException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+            return students;
+        }
+
+        internal async Task<List<StudentIdentifications>> GetStudentsIdentificationsAsync()
+        {
+            var students = new List<StudentIdentifications>();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "StudentIdentifications";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        students = JsonConvert.DeserializeObject<List<StudentIdentifications>>(responseData);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (HttpRequestException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+            return students;
+        }
     }
 }

@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -55,11 +56,13 @@
     <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -163,6 +166,12 @@
     <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\GalleryViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\GalleryViewer.Designer.cs">
+      <DependentUpon>GalleryViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="En\enLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,11 +275,35 @@
     <Compile Include="Fr\Admins\fraWelcome.Designer.cs">
       <DependentUpon>fraWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\frGalleryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\frGalleryViewer.Designer.cs">
+      <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fr\Admins\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraAddStudent.Designer.cs">
+      <DependentUpon>fraAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraEditStudent.Designer.cs">
+      <DependentUpon>fraEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraManageStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Students\fraManageStudents.Designer.cs">
+      <DependentUpon>fraManageStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -292,10 +325,15 @@
     <Compile Include="Fr\Models\Courses.cs" />
     <Compile Include="Fr\Models\DepartmentHeads.cs" />
     <Compile Include="Fr\Models\Departments.cs" />
+    <Compile Include="Fr\Models\StudentIdentifications.cs" />
+    <Compile Include="Fr\Models\Students.cs" />
     <Compile Include="Helpers\DbHelpers.cs" />
     <Compile Include="Helpers\WebServerHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomControls\GalleryViewer.resx">
+      <DependentUpon>GalleryViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="En\enLogin.resx">
       <DependentUpon>enLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,8 +382,20 @@
     <EmbeddedResource Include="Fr\Admins\fraWelcome.resx">
       <DependentUpon>fraWelcome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\frGalleryViewer.resx">
+      <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Students\fraAddStudent.resx">
+      <DependentUpon>fraAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Students\fraEditStudent.resx">
+      <DependentUpon>fraEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Students\fraManageStudents.resx">
+      <DependentUpon>fraManageStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>

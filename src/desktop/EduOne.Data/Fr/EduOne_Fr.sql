@@ -246,3 +246,17 @@ ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(Id)
 )
+
+CREATE TABLE StudentIdentifications
+(
+ [UID] uniqueidentifier not null default newid(),
+ Id int not null,
+ FileName NVARCHAR(255),
+ ContentType NVARCHAR(100),
+ FileData VARBINARY(MAX),
+ AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key([UID])
+)

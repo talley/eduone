@@ -19,3 +19,27 @@
                     "".DisplayDialog("La transaction a été annulée.");
                 }
             }
+
+
+
+     private void btnpdf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var pdf_file = Path.Combine(Path.GetTempPath(), "Students.pdf");
+                if (File.Exists(pdf_file)) { File.Delete(pdf_file); }
+                if (gridView1.RowCount > 0)
+                {
+                    gridView1.Columns["Id"].Visible = false;
+                    gridView1.Columns["AjouterAu"].Visible = false;
+                    gridView1.Columns["ModifierAu"].Visible = false;
+                    gridView1.BestFitColumns();
+                    gridControl1.ExportToPdf(pdf_file);
+                    Process.Start(pdf_file);
+                }
+            }
+            catch (Exception ex)
+            {
+                ".".DisplayExportErrorDialog($"Adobe Reader,Erreur :{ex.Message}");
+            }
+        }

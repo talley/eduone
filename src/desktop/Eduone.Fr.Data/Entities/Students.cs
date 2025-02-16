@@ -27,7 +27,9 @@ public partial class Students
     [StringLength(100)]
     public string Surnom { get; set; }
 
-    public DateTime LieuNaissance { get; set; }
+    [Required]
+    [StringLength(200)]
+    public string LieuNaissance { get; set; }
 
     public DateTime DateNaissance { get; set; }
 
@@ -66,6 +68,10 @@ public partial class Students
 
     [Column(TypeName = "datetime")]
     public DateTime? Date_Inscription { get; set; }
+
+    public string Notes { get; set; }
+
+    public bool Statut { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

@@ -36,10 +36,11 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<Staffs> Staffs { get; set; }
 
+    public virtual DbSet<StudentIdentifications> StudentIdentifications { get; set; }
+
     public virtual DbSet<Students> Students { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer(DbHelpers.CS);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -119,11 +120,21 @@ public partial class EduOne_FrContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Staffs__3214EC070297356B");
         });
 
+        modelBuilder.Entity<StudentIdentifications>(entity =>
+        {
+            entity.HasKey(e => e.UID).HasName("PK__StudentI__C5B19602F22FFA6A");
+
+            entity.Property(e => e.UID).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+        });
+
         modelBuilder.Entity<Students>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Students__3214EC07D99C9738");
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC0701D96B9B");
 
             entity.Property(e => e.GlobalId).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Statut).HasDefaultValue(true);
         });
 
         OnModelCreatingGeneratedFunctions(modelBuilder);
