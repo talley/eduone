@@ -272,5 +272,52 @@ namespace EduOne.Fr.Helpers
             }
             return students;
         }
+
+        internal  List<string> GetGenders()
+        {
+            return new List<string>
+            {
+                "Mâle","Feminin"
+            };
+        }
+
+        internal async Task<List<StaffRoles>> GettStaffRolesAsync()
+        {
+            var roles= new List<StaffRoles>();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "StaffRoles";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        roles = JsonConvert.DeserializeObject<List<StaffRoles>>(responseData);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (HttpRequestException ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+
+            return roles;
+        }
     }
 }

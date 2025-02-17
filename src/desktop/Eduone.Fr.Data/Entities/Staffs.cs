@@ -25,7 +25,8 @@ public partial class Staffs
     [StringLength(100)]
     public string Surnom { get; set; }
 
-    public DateTime LieuNaissance { get; set; }
+    [Required]
+    public string LieuNaissance { get; set; }
 
     public DateTime DateNaissance { get; set; }
 
@@ -48,6 +49,10 @@ public partial class Staffs
     [Required]
     [StringLength(100)]
     public string Role { get; set; }
+
+    public string Notes { get; set; }
+
+    public bool Status { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

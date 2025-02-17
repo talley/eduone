@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(932, 772);
             this.Controls.Add(this.pictureEdit1);
             this.Name = "frGalleryViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gallery Viewer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);

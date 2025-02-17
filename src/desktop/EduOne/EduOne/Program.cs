@@ -9,6 +9,7 @@ using EduOne.Fr.Admins;
 using EduOne.Fr.Admins.Courses;
 using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
+using EduOne.Fr.Admins.Staffs;
 using EduOne.Fr.Admins.Students;
 using Config = System.Configuration.ConfigurationManager;
 namespace EduOne
@@ -26,7 +27,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new fraManageStudents("test@test.com"));
+                Application.Run(new fraManageStaffs("test@test.com"));
             }
             else
             {

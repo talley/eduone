@@ -107,6 +107,13 @@ namespace EduOne.Fr.RestServices
                         app.MapStudentIdentificationsEndpoints();
 
 
+                        app.MapStaffRolesEndpoints();
+
+                        app.MapStaffsEndpoints();
+
+
+
+
 
             app.Run();
         }

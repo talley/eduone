@@ -287,6 +287,18 @@
     <Compile Include="Fr\Admins\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraManageStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraManageStaffs.Designer.cs">
+      <DependentUpon>fraManageStaffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraNewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraNewStaff.Designer.cs">
+      <DependentUpon>fraNewStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\Students\fraAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +337,8 @@
     <Compile Include="Fr\Models\Courses.cs" />
     <Compile Include="Fr\Models\DepartmentHeads.cs" />
     <Compile Include="Fr\Models\Departments.cs" />
+    <Compile Include="Fr\Models\StaffRoles.cs" />
+    <Compile Include="Fr\Models\Staffs.cs" />
     <Compile Include="Fr\Models\StudentIdentifications.cs" />
     <Compile Include="Fr\Models\Students.cs" />
     <Compile Include="Helpers\DbHelpers.cs" />
@@ -387,6 +401,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Staffs\fraManageStaffs.resx">
+      <DependentUpon>fraManageStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Staffs\fraNewStaff.resx">
+      <DependentUpon>fraNewStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Students\fraAddStudent.resx">
       <DependentUpon>fraAddStudent.cs</DependentUpon>
