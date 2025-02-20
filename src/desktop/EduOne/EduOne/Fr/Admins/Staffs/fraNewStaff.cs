@@ -1,8 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.XtraEditors;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
+using EduOne.Fr.Models;
 using EduOne.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Humanizer.On;
 
 namespace EduOne.Fr.Admins.Staffs
 {
@@ -153,8 +157,10 @@ namespace EduOne.Fr.Admins.Staffs
                         if (response.IsSuccessStatusCode)
                         {
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            Invoke(new Action(() =>
+                            var staff = JsonConvert.DeserializeObject<Models.Staffs>(responseData);
+                            Invoke(new Action(async () =>
                             {
+                                await AddStaffNoteAsync(staff.Id, txtnotes.Text);
                                 "".DisplayDialog($"Le personnel a été créé");
                                 btnadd.Enabled = false;
                             }));
@@ -168,6 +174,50 @@ namespace EduOne.Fr.Admins.Staffs
                 }
 
             }
+        }
+
+        private async Task<Models.StaffNotes> AddStaffNoteAsync(int id, string note)
+        {
+            var result = new StaffNotes();
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(helpers.IsAppInProd()) + "StaffNotes";
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var data = new
+                    {
+                    Id=0,
+                    EId=id,
+                    Notes=txtnotes.Text,
+                    AjouterAu=DateTime.Now,
+                    AjouterPar=ApplicationHelpers.GetSystemUser(_email)
+                    };
+
+                    var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+
+                    var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync(apiUrl, content).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        var staff = JsonConvert.DeserializeObject<Models.Staffs>(responseData);
+                        Invoke(new Action(async () =>
+                        {
+                            await AddStaffNoteAsync(staff.Id, txtnotes.Text);
+                            "".DisplayDialog($"Le personnel a été créé");
+                            btnadd.Enabled = false;
+                        }));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+
+            return result;
         }
     }
 

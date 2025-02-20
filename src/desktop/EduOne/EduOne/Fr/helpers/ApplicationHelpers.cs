@@ -8,7 +8,7 @@ using Config = System.Configuration.ConfigurationManager;
 
 namespace EduOne.Fr.helpers
 {
-    public class ApplicationHelpers
+    public static class ApplicationHelpers
     {
         private static string version = "1.0.0";
         public static string AppName = $"EduOne Version:{version}";

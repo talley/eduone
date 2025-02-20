@@ -319,5 +319,59 @@ namespace EduOne.Fr.Helpers
 
             return roles;
         }
+
+        internal async Task<List<Models.Staffs>> GetStaffsAsync()
+        {
+            var result = new List<Models.Staffs>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Staffs";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<Models.Staffs>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+        internal async Task<List<StaffNotes>> GetStaffNotesAsync()
+        {
+            var result = new List<Models.StaffNotes>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "StaffNotes";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<Models.StaffNotes>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
     }
 }

@@ -43,6 +43,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[StaffNotes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[StaffRoles]",
          "ObjectType": 0
       },

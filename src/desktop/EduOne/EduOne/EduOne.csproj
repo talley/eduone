@@ -52,6 +52,7 @@
     <Reference Include="DevExpress.Images.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -60,9 +61,11 @@
     <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -287,6 +290,18 @@
     <Compile Include="Fr\Admins\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraAllStaffNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraAllStaffNotes.Designer.cs">
+      <DependentUpon>fraAllStaffNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraEditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraEditStaff.Designer.cs">
+      <DependentUpon>fraEditStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\Staffs\fraManageStaffs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +313,12 @@
     </Compile>
     <Compile Include="Fr\Admins\Staffs\fraNewStaff.Designer.cs">
       <DependentUpon>fraNewStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraStaffNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Staffs\fraStaffNotes.Designer.cs">
+      <DependentUpon>fraStaffNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\Students\fraAddStudent.cs">
       <SubType>Form</SubType>
@@ -337,6 +358,7 @@
     <Compile Include="Fr\Models\Courses.cs" />
     <Compile Include="Fr\Models\DepartmentHeads.cs" />
     <Compile Include="Fr\Models\Departments.cs" />
+    <Compile Include="Fr\Models\StaffNotes.cs" />
     <Compile Include="Fr\Models\StaffRoles.cs" />
     <Compile Include="Fr\Models\Staffs.cs" />
     <Compile Include="Fr\Models\StudentIdentifications.cs" />
@@ -402,11 +424,20 @@
     <EmbeddedResource Include="Fr\Admins\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Staffs\fraAllStaffNotes.resx">
+      <DependentUpon>fraAllStaffNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Staffs\fraEditStaff.resx">
+      <DependentUpon>fraEditStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Staffs\fraManageStaffs.resx">
       <DependentUpon>fraManageStaffs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Staffs\fraNewStaff.resx">
       <DependentUpon>fraNewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Staffs\fraStaffNotes.resx">
+      <DependentUpon>fraStaffNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Students\fraAddStudent.resx">
       <DependentUpon>fraAddStudent.cs</DependentUpon>

@@ -111,6 +111,8 @@ namespace EduOne.Fr.RestServices
 
                         app.MapStaffsEndpoints();
 
+                        app.MapStaffNotesEndpoints();
+
 
 
 

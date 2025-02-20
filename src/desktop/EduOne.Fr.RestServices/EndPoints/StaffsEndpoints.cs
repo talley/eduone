@@ -30,10 +30,11 @@ public static class StaffsEndpoints
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int id, Staffs staffs, EduOne_FrContext db) =>
         {
+            var x = 122;
             var affected = await db.Staffs
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.Id, staffs.Id)
+                    //.SetProperty(m => m.Id, staffs.Id)
                     .SetProperty(m => m.Nom, staffs.Nom)
                     .SetProperty(m => m.Prénom, staffs.Prénom)
                     .SetProperty(m => m.Surnom, staffs.Surnom)
@@ -61,7 +62,7 @@ public static class StaffsEndpoints
         {
             db.Staffs.Add(staffs);
             await db.SaveChangesAsync();
-            return TypedResults.Created($"/api/Staffs/{staffs.Id}",staffs);
+            return TypedResults.Ok(staffs);//reated($"/api/Staffs/{staffs.Id}",staffs);
         })
         .WithName("CreateStaffs")
         .WithOpenApi();

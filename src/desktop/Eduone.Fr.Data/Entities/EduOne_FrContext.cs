@@ -32,6 +32,8 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<Departments> Departments { get; set; }
 
+    public virtual DbSet<StaffNotes> StaffNotes { get; set; }
+
     public virtual DbSet<StaffRoles> StaffRoles { get; set; }
 
     public virtual DbSet<Staffs> Staffs { get; set; }
@@ -41,7 +43,6 @@ public partial class EduOne_FrContext : DbContext
     public virtual DbSet<Students> Students { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer(DbHelpers.CS);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -109,6 +110,14 @@ public partial class EduOne_FrContext : DbContext
         modelBuilder.Entity<Departments>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07596CF2F3");
+        });
+
+        modelBuilder.Entity<StaffNotes>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__StaffNot__3214EC073210925E");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
         });
 
         modelBuilder.Entity<StaffRoles>(entity =>

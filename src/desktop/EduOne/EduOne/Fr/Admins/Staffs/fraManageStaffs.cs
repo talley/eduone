@@ -1,7 +1,9 @@
 ﻿using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.Office.Utils;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using EduOne.Exts;
+using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
 using EduOne.Fr.Models;
 using EduOne.Helpers;
@@ -34,8 +36,27 @@ namespace EduOne.Fr.Admins.Staffs
         private async void fraManageStaffs_Load(object sender, EventArgs e)
         {
             var staffs=await GetStaffsAsync();
-            gridControl1.DataSource = staffs;
-            gridView1.BestFitColumns();
+            if (staffs.Any())
+            {
+                var listStaff = staffs.Select(x => new
+                {
+                    x.Id,
+                    Nom = x.Prénom + " " + x.Nom,
+                    x.TelePhone,
+                    x.Email,
+                    x.Date_Embauche,
+                    x.Fax
+                }).ToList();
+
+                drpstaff.Properties.DataSource = listStaff;
+                drpstaff.Properties.DisplayMember = "Nom";
+                drpstaff.Properties.ValueMember = "Id";
+                drpstaff.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+
+
+                gridControl1.DataSource = staffs;
+                gridView1.BestFitColumns();
+            }
         }
 
         private async Task<List<Models.Staffs>> GetStaffsAsync()
@@ -131,6 +152,70 @@ namespace EduOne.Fr.Admins.Staffs
             catch (Exception)
             {
                 " ".DisplayExportErrorDialog(" Adobe Reader");
+            }
+        }
+
+        private async void btnsearch_Click(object sender, EventArgs e)
+        {
+            var searchText = drpstaff.Text;
+            if (searchText.Length == 0)
+            {
+                ".".DisplayErrorFrDialog(" Personnelle(Personnel)");
+            }
+            else
+            {
+                var id = int.Parse(drpstaff.EditValue.ToString());
+                var staffs = await GetStaffsAsync();
+                if (staffs.Any())
+                {
+                    var result = staffs.Where(x => x.Id == id).ToList();
+                    gridControl1.DataSource = result;
+                    gridView1.BestFitColumns();
+
+                }
+            }
+
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var view = gridView1;
+
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr de vouloir les informations sur les notes?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
+                    var id = int.Parse(oid.ToString());
+                    var staff_form = new fraAllStaffNotes("test@test.com", id);
+                    staff_form.ShowDialog();
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
+            }
+        }
+
+        private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var view = gridView1;
+
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, $"Êtes-vous sûr de vouloir les informations de l`enseignant(te) ?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "Id");
+                    var id = int.Parse(oid.ToString());
+                    var staff_form = new fraEditStaff("test@test.com", id);
+                    staff_form.ShowDialog();
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
             }
         }
     }
