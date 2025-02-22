@@ -52,13 +52,13 @@ namespace EduOne.Fr.Admins.Departments
             if (department != null)
             {
                 var head=dptheads.SingleOrDefault(x=>x.Id==department.ID_Chef_Département.Value);
-                var fullname= head?.Prénom + " " + head?.Nom;
+                var fullname= head?.Nom + " " + head?.Prénom;
 
                 lblhead.Text = fullname;
 
                 txtdept.Text = department.Nom_Département;
                 txtdesc.Text = department.Description;
-                drpdepts.EditValue = fullname;
+                drpdepts.Text = fullname;
             }
         }
 

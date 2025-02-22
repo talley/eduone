@@ -26,11 +26,15 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<ApplicationUsers> ApplicationUsers { get; set; }
 
+    public virtual DbSet<Classrooms> Classrooms { get; set; }
+
     public virtual DbSet<Courses> Courses { get; set; }
 
     public virtual DbSet<DepartmentHeads> DepartmentHeads { get; set; }
 
     public virtual DbSet<Departments> Departments { get; set; }
+
+    public virtual DbSet<Enrollments> Enrollments { get; set; }
 
     public virtual DbSet<StaffNotes> StaffNotes { get; set; }
 
@@ -43,6 +47,7 @@ public partial class EduOne_FrContext : DbContext
     public virtual DbSet<Students> Students { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer(DbHelpers.CS);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -87,6 +92,15 @@ public partial class EduOne_FrContext : DbContext
                 .HasConstraintName("FK__Applicati__RoleI__403A8C7D");
         });
 
+        modelBuilder.Entity<Classrooms>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07624C2442");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.Statut).HasDefaultValue(true);
+        });
+
         modelBuilder.Entity<Courses>(entity =>
         {
             entity.HasKey(e => e.Cours_Id).HasName("PK__tmp_ms_x__C79C8A3FF1E3849D");
@@ -110,6 +124,15 @@ public partial class EduOne_FrContext : DbContext
         modelBuilder.Entity<Departments>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07596CF2F3");
+        });
+
+        modelBuilder.Entity<Enrollments>(entity =>
+        {
+            entity.HasKey(e => e.InscriptionID).HasName("PK__Enrollme__3332B196AC13305C");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.Statut).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<StaffNotes>(entity =>

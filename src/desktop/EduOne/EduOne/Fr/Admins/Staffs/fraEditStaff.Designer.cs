@@ -394,6 +394,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 757);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "fraEditStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fraEditStaff";
             this.Load += new System.EventHandler(this.fraEditStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();

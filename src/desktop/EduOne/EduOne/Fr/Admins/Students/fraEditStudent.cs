@@ -290,7 +290,8 @@ namespace EduOne.Fr.Admins.Students
             }
             else
             {
-
+                var students =await helper.GetStudentsAsync();
+                var edit = students.SingleOrDefault(x => x.Id == _id);
                 var data = new
                 {
                     Id = Id,
@@ -311,8 +312,10 @@ namespace EduOne.Fr.Admins.Students
                     Date_Inscription = DateTime.Parse(dtdateinsc.EditValue.ToString()),
                     Notes = notes,
                     Statut = status,
-                    AjouterAu = DateTime.Now,
-                    AjouterPar = ApplicationHelpers.GetSystemUser(email)
+                    ModifierAu = DateTime.Now,
+                    ModifierPar = ApplicationHelpers.GetSystemUser(email),
+                    AjouterAu =edit.AjouterAu,
+                    AjouterPar =edit.AjouterPar
                 };
 
                 string apiUrl = WebServerHelpers.GetApiApplicationUrl(helper.IsAppInProd()) + $"Students/{Id}";

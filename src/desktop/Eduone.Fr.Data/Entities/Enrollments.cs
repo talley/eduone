@@ -8,20 +8,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Eduone.Fr.Data.Entities;
 
-public partial class StaffNotes
+public partial class Enrollments
 {
     [Key]
-    public int Id { get; set; }
+    public int InscriptionID { get; set; }
 
-    public int EId { get; set; }
+    public int EleveId { get; set; }
 
-    [Required]
-    public string Notes { get; set; }
+    public int CoursId { get; set; }
+
+    public DateTime Date_Inscription { get; set; }
+
+    [Column(TypeName = "decimal(18, 0)")]
+    public decimal? Grade { get; set; }
+
+    public bool Statut { get; set; }
+
+    public byte[] Notes { get; set; }
 
     public DateTime AjouterAu { get; set; }
 
     [Required]
-    [StringLength(300)]
+    [StringLength(80)]
     public string AjouterPar { get; set; }
 
     public DateTime? ModifierAu { get; set; }

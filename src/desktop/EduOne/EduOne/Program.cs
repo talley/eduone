@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using EduOne.En;
 using EduOne.Fr;
 using EduOne.Fr.Admins;
+using EduOne.Fr.Admins.Classrooms;
 using EduOne.Fr.Admins.Courses;
 using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
@@ -27,7 +28,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new fraManageStaffs("test@test.com"));
+                Application.Run(new frManageClassRooms(""));// fraManageStaffs("test@test.com"));
             }
             else
             {

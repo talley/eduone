@@ -39,7 +39,7 @@ namespace EduOne.Fr.Admins.Students
             gridView1.BestFitColumns();
 
             gridView1.Columns["GlobalId"].Visible = false;
-            gridView1.Columns["ModifierAu"].Visible = false;
+            gridView1.Columns["ModifierAu"].Visible = true;
             gridView1.Columns["Notes"].Visible = false;
             gridView1.Columns["Fax"].Visible = false;
             gridView1.Columns["Addresse2"].Visible = false;

@@ -116,7 +116,7 @@ namespace EduOne.Fr.Admins
                     AjouterPar=ApplicationHelpers.GetSystemUser(email)
                 };
 
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "/ApplicationUsers";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationUsers";
                 using (var client = new HttpClient())
                 {
                     try

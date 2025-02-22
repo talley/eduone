@@ -260,3 +260,34 @@ ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key([UID])
 )
+
+CREATE TABLE Classrooms
+(
+ Id int identity(1,1) not null,
+ NuméroChambre NVARCHAR(200) not null,
+ Bâtiment NVARCHAR(200) not null,
+ Capacité int not null,
+ Statut bit not null default 1,
+ Notes VARBINARY(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
+
+CREATE TABLE Enrollments
+(
+InscriptionID int identity(1,1) not null,
+EleveId int not null,
+CoursId int not null,
+Date_Inscription datetime2 not null,
+Grade decimal null, --NULL if the course is in progress
+Statut bit not null default 1,
+Notes VARBINARY(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(InscriptionID)
+)

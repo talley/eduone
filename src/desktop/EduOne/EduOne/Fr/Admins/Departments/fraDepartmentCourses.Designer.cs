@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(937, 620);
             this.Controls.Add(this.gridControl1);
             this.Name = "fraDepartmentCourses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.fraDepartmentCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();

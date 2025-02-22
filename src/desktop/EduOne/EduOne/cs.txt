@@ -28,3 +28,31 @@
                         {
                             XtraMessageBox.Show($"An error occurred: {ex.Message}");
                         }));
+
+=============================================
+ string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "/ApplicationUsers";
+                using (var client = new HttpClient())
+                {
+                    try
+                    {
+                        var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+
+                        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                        var response = await client.PostAsync(apiUrl,content).ConfigureAwait(false);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            "".DisplayDialog("L'utilisateur a été créé");
+                            btnadd.Enabled = false;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                    }
+                }

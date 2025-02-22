@@ -31,6 +31,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Classrooms]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Courses]",
          "ObjectType": 0
       },
@@ -40,6 +44,10 @@
       },
       {
          "Name": "[dbo].[Departments]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Enrollments]",
          "ObjectType": 0
       },
       {

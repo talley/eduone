@@ -113,6 +113,10 @@ namespace EduOne.Fr.RestServices
 
                         app.MapStaffNotesEndpoints();
 
+                        app.MapClassroomsEndpoints();
+
+                        app.MapEnrollmentsEndpoints();
+
 
 
 

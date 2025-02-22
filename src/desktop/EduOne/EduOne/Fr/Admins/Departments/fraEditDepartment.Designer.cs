@@ -135,6 +135,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "fraEditDepartment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fraEditDepartment";
             this.Load += new System.EventHandler(this.fraEditDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drpdepts.Properties)).EndInit();
