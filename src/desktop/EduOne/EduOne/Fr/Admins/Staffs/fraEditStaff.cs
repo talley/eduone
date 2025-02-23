@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using EduOne.Fr.Helpers;
 using EduOne.Exts;
@@ -14,8 +10,6 @@ using EduOne.Fr.helpers;
 using EduOne.Helpers;
 using Newtonsoft.Json;
 using System.Net.Http;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace EduOne.Fr.Admins.Staffs
 {

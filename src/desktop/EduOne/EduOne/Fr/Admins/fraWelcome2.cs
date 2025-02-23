@@ -2,17 +2,12 @@
 using EduOne.Fr.Admins.Courses;
 using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
+using EduOne.Fr.Admins.Semesters;
 using EduOne.Fr.Admins.Staffs;
 using EduOne.Fr.Admins.Students;
 using EduOne.Fr.helpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
 namespace EduOne.Fr.Admins
@@ -177,6 +172,29 @@ namespace EduOne.Fr.Admins
                         break;
                     case "Gestion Des Eleves":
                         var form2 = new fraManageStudents(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView7_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+            var selText = kryptonTreeView7.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Semestre":
+                        var form1 = new fraAddSemester(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Des Semestres":
+                        var form2 = new fraSemesters(_email);
                         ShowFormInPanel(form2, splitPanel2);
                         break;
                     default:

@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.XtraEditors;
 using EduOne.Exts;
-using EduOne.Fr.Models;
 using EduOne.Helpers;
-using EduOne.Fr.Models;
 
 using Config = System.Configuration.ConfigurationManager;
 using Newtonsoft.Json;

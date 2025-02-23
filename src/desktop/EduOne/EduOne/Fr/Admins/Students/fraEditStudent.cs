@@ -1,13 +1,9 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraRichEdit.Export.Doc;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
-using EduOne.Fr.Models;
 using EduOne.Helpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -16,12 +12,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Card;
 using DevExpress.XtraBars.Ribbon.Gallery;
 using DevExpress.XtraBars.Ribbon;
-using System.Threading;
 
 namespace EduOne.Fr.Admins.Students
 {

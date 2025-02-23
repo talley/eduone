@@ -1,23 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using DevExpress.ClipboardSource.SpreadsheetML;
-using DevExpress.XtraEditors;
 using EduOne.Data.Fr;
 using EduOne.Exts;
 using EduOne.Helpers;
 using Config = System.Configuration.ConfigurationManager;
-using Newtonsoft;
 using Newtonsoft.Json;
-using DevExpress.Office.Utils;
-using System.Data.SqlClient;
-using System.Data;
-using Dapper;
-using static DevExpress.XtraEditors.Mask.MaskSettings;
-using static Humanizer.On;
 
 
 namespace EduOne.Fr.Helpers

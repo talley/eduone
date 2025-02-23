@@ -283,6 +283,24 @@
     <Compile Include="Fr\Admins\Departments\fraEditDepartment.Designer.cs">
       <DependentUpon>fraEditDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraEditEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraEditEnrollment.Designer.cs">
+      <DependentUpon>fraEditEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraEnrollmentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraEnrollmentManager.Designer.cs">
+      <DependentUpon>fraEnrollmentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\frNewEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\frNewEnrollment.Designer.cs">
+      <DependentUpon>frNewEnrollment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +336,24 @@
     </Compile>
     <Compile Include="Fr\Admins\frGalleryViewer.Designer.cs">
       <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraAddSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraAddSemester.Designer.cs">
+      <DependentUpon>fraAddSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraEditSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraEditSemester.Designer.cs">
+      <DependentUpon>fraEditSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraSemesters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Semesters\fraSemesters.Designer.cs">
+      <DependentUpon>fraSemesters.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\SplashScreen1.cs">
       <SubType>Form</SubType>
@@ -390,10 +426,12 @@
     <Compile Include="Fr\Helpers\CommonHelpers.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
+    <Compile Include="Fr\Models\Semesters.cs" />
     <Compile Include="Fr\Models\ClassRooms.cs" />
     <Compile Include="Fr\Models\Courses.cs" />
     <Compile Include="Fr\Models\DepartmentHeads.cs" />
     <Compile Include="Fr\Models\Departments.cs" />
+    <Compile Include="Fr\Models\Enrollments.cs" />
     <Compile Include="Fr\Models\StaffNotes.cs" />
     <Compile Include="Fr\Models\StaffRoles.cs" />
     <Compile Include="Fr\Models\Staffs.cs" />
@@ -463,6 +501,15 @@
     <EmbeddedResource Include="Fr\Admins\Departments\fraEditDepartment.resx">
       <DependentUpon>fraEditDepartment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Enrollments\fraEditEnrollment.resx">
+      <DependentUpon>fraEditEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Enrollments\fraEnrollmentManager.resx">
+      <DependentUpon>fraEnrollmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Enrollments\frNewEnrollment.resx">
+      <DependentUpon>frNewEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +527,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\frGalleryViewer.resx">
       <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Semesters\fraAddSemester.resx">
+      <DependentUpon>fraAddSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Semesters\fraEditSemester.resx">
+      <DependentUpon>fraEditSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Semesters\fraSemesters.resx">
+      <DependentUpon>fraSemesters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>

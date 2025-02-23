@@ -1,5 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
@@ -8,16 +7,11 @@ using EduOne.Helpers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Humanizer.On;
 
 namespace EduOne.Fr.Admins.Staffs
 {

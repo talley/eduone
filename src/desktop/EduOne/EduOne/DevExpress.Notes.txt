@@ -20,7 +20,24 @@
                 }
             }
 
+==================card view======================================
+using DevExpress.XtraGrid.Views.Card;
 
+if (gridControl1.MainView is CardView cardView)
+{
+    var oid = cardView.GetRowCellValue(cardView.FocusedRowHandle, "Id");
+    // Convert oid to the proper type if needed
+    Guid id = Guid.Parse(oid.ToString());
+    var edit_user_form = new fraEditUser("test@test.com", id);
+    edit_user_form.ShowDialog();
+}
+else
+{
+    "".DisplayDialog("La transaction a été annulée.");
+}
+
+
+================
 
      private void btnpdf_Click(object sender, EventArgs e)
         {

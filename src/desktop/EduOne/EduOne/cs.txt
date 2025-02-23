@@ -56,3 +56,45 @@
                         XtraMessageBox.Show($"An error occurred: {ex.Message}");
                     }
                 }
+===================Not yet computed=================================
+
+var needed_courses = await Task.WhenAll(
+    courses.Select(async x => new
+    {
+        x.Cours_Id,
+        x.Nom_Cours,
+        x.Description,
+        Département = await GetDepartmentNameAsync(x.ID_Department).ConfigureAwait(false),
+        x.Statut,
+        x.AjouterAu,
+        x.AjouterPar,
+        x.ModifierAu,
+        x.ModifierPar
+    })
+);
+
+var neededCoursesList = needed_courses.ToList();
+========================================================================================================
+This code below is throwing this error :"System.InvalidOperationException: 'Cross-thread operation not valid: Control 'drpcourseid' accessed from a thread other than the thread it was created on.'"
+
+  Invoke(new Action(async() =>
+
+  {
+
+      drpcourseid.Text = await GetCourseName(edit.CoursId).ConfigureAwait(false);
+
+      drpstudentid.Text = await GetStudentAsync(edit.EleveId).ConfigureAwait(false);
+
+  }));
+
+  solution:
+
+  var courseName = await GetCourseName(edit.CoursId).ConfigureAwait(false);
+var studentName = await GetStudentAsync(edit.EleveId).ConfigureAwait(false);
+
+Invoke(new Action(() =>
+{
+    drpcourseid.Text = courseName;
+    drpstudentid.Text = studentName;
+}));
+

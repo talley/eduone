@@ -36,6 +36,12 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<Enrollments> Enrollments { get; set; }
 
+    public virtual DbSet<Fees> Fees { get; set; }
+
+    public virtual DbSet<FeesStatus> FeesStatus { get; set; }
+
+    public virtual DbSet<Semesters> Semesters { get; set; }
+
     public virtual DbSet<StaffNotes> StaffNotes { get; set; }
 
     public virtual DbSet<StaffRoles> StaffRoles { get; set; }
@@ -128,10 +134,36 @@ public partial class EduOne_FrContext : DbContext
 
         modelBuilder.Entity<Enrollments>(entity =>
         {
-            entity.HasKey(e => e.InscriptionID).HasName("PK__Enrollme__3332B196AC13305C");
+            entity.HasKey(e => e.InscriptionID).HasName("PK__tmp_ms_x__3332B196816AB29C");
 
             entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.Statut).HasDefaultValue(true);
+        });
+
+        modelBuilder.Entity<Fees>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK__Fees__3214EC27C88B0364");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+        });
+
+        modelBuilder.Entity<FeesStatus>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK__FeesStat__3214EC270AA537F0");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+        });
+
+        modelBuilder.Entity<Semesters>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK__tmp_ms_x__3214EC2755C6817B");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.Année).HasDefaultValueSql("(datepart(year,getdate()))");
             entity.Property(e => e.Statut).HasDefaultValue(true);
         });
 

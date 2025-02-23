@@ -24,7 +24,7 @@ public partial class Enrollments
 
     public bool Statut { get; set; }
 
-    public byte[] Notes { get; set; }
+    public string Notes { get; set; }
 
     public DateTime AjouterAu { get; set; }
 

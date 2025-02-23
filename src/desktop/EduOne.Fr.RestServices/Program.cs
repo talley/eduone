@@ -117,6 +117,10 @@ namespace EduOne.Fr.RestServices
 
                         app.MapEnrollmentsEndpoints();
 
+                        app.MapSemestersEndpoints();
+
+
+
 
 
 

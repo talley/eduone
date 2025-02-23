@@ -51,6 +51,18 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Fees]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FeesStatus]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Semesters]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[StaffNotes]",
          "ObjectType": 0
       },

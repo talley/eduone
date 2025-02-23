@@ -284,10 +284,58 @@ CoursId int not null,
 Date_Inscription datetime2 not null,
 Grade decimal null, --NULL if the course is in progress
 Statut bit not null default 1,
-Notes VARBINARY(MAX),
+Notes nvarchar(MAX),
 AjouterAu datetime2  not null default getdate(),
 AjouterPar nvarchar(80) not null default system_user,
 ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(InscriptionID)
+)
+
+CREATE TABLE Semesters
+(
+ID int identity(1,1) not null,
+Année int not null default YEAR(GETDATE()),
+Semestre  nvarchar(200) not null ,
+Notes nvarchar(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
+)
+
+CREATE TABLE FeesStatus
+(
+ID int identity(1,1) not null,
+Statut varchar(100) not null,
+Notes nvarchar(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
+)
+
+INSERT INTO FeesStatus(Statut,Notes) VALUES('Payé','Payé');
+INSERT INTO FeesStatus(Statut,Notes) VALUES('En attente','En attente');
+INSERT INTO FeesStatus(Statut,Notes) VALUES('En retard','En retard');
+
+select * from FeesStatus;
+
+
+CREATE TABLE Fees
+(
+ID int identity(1,1) not null,
+SemestreID  int not null ,
+EleveID int not null,
+Frais decimal not null,
+Date_Echéance datetime null,
+Frais_Statut nvarchar(100) not null,
+Notes nvarchar(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
 )

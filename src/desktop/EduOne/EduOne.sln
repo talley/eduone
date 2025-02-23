@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eduone.Fr.Data", "..\Eduone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockingDemo", "..\..\..\..\..\..\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\DockingDemo.csproj", "{31C226BA-C247-470D-95B6-AD7AFEC3A561}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpressVSDemo", "..\..\..\..\..\..\Users\Abibou\source\repos\DevExpressVSDemo\DevExpressVSDemo.csproj", "{01D61FB5-F17F-4176-B534-B353DAB95C0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{31C226BA-C247-470D-95B6-AD7AFEC3A561}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31C226BA-C247-470D-95B6-AD7AFEC3A561}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31C226BA-C247-470D-95B6-AD7AFEC3A561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D61FB5-F17F-4176-B534-B353DAB95C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D61FB5-F17F-4176-B534-B353DAB95C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D61FB5-F17F-4176-B534-B353DAB95C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D61FB5-F17F-4176-B534-B353DAB95C0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

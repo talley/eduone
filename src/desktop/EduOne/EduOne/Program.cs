@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EduOne.En;
-using EduOne.Fr;
 using EduOne.Fr.Admins;
-using EduOne.Fr.Admins.Classrooms;
-using EduOne.Fr.Admins.Courses;
-using EduOne.Fr.Admins.DepartmentHeads;
-using EduOne.Fr.Admins.Departments;
-using EduOne.Fr.Admins.Staffs;
-using EduOne.Fr.Admins.Students;
+using EduOne.Fr.Admins.Enrollments;
+using EduOne.Fr.Admins.Semesters;
 using Config = System.Configuration.ConfigurationManager;
 namespace EduOne
 {
@@ -28,7 +20,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new frManageClassRooms(""));// fraManageStaffs("test@test.com"));
+                Application.Run(new fraWelcome2(""));// fraManageStaffs("test@test.com"));
             }
             else
             {
