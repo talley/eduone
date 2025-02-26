@@ -351,3 +351,32 @@ ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(ID)
 )
+
+
+CREATE TABLE ApplicationSettings
+(
+ID int identity(1,1) not null,
+AppKey nvarchar(500) NOT NULL,
+AppValue nvarchar(500) NOT NULL,
+Notes nvarchar(MAX),
+Statut bit  not null default 1,
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
+)
+
+CREATE TABLE ApplicationUserExportPermissions
+(
+ID int identity(1,1) not null,
+Email nvarchar(500) NOT NULL,
+CanExportToExcel bit  not null default 0,
+CanExportToPDF bit  not null default 0,
+CanExportToHTML bit  not null default 0,
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
+)

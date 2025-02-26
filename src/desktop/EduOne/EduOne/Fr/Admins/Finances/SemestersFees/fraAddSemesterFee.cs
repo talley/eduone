@@ -112,7 +112,11 @@ namespace EduOne.Fr.Admins.Finances.SemestersFees
                 gridControl1.DataSource = semesterfees;
                 gridView1.BestFitColumns();
             }
-
+            //var x2 = drpsemesters.
+            //if (x2 == null)
+            //{
+            //    lblmsg.Text = "Tous les semestres ont des frais.";
+            //}
 
         }
 

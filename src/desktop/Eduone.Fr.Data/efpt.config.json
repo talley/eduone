@@ -27,6 +27,14 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[ApplicationSettings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ApplicationUserExportPermissions]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[ApplicationUsers]",
          "ObjectType": 0
       },

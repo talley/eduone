@@ -24,6 +24,10 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<ApplicationRoles> ApplicationRoles { get; set; }
 
+    public virtual DbSet<ApplicationSettings> ApplicationSettings { get; set; }
+
+    public virtual DbSet<ApplicationUserExportPermissions> ApplicationUserExportPermissions { get; set; }
+
     public virtual DbSet<ApplicationUsers> ApplicationUsers { get; set; }
 
     public virtual DbSet<Classrooms> Classrooms { get; set; }
@@ -87,6 +91,24 @@ public partial class EduOne_FrContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Applicat__3214EC077A5C8C51");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+        });
+
+        modelBuilder.Entity<ApplicationSettings>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK__tmp_ms_x__3214EC272D5603F3");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+            entity.Property(e => e.CanBeAltered).HasDefaultValue(true);
+            entity.Property(e => e.Statut).HasDefaultValue(true);
+        });
+
+        modelBuilder.Entity<ApplicationUserExportPermissions>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PK__Applicat__3214EC2731D1FA06");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
         });
 
         modelBuilder.Entity<ApplicationUsers>(entity =>

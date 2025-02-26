@@ -173,6 +173,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
@@ -376,6 +378,24 @@
     <Compile Include="Fr\Admins\Semesters\fraSemesters.Designer.cs">
       <DependentUpon>fraSemesters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Settings\fraAddApplicationSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Settings\fraAddApplicationSetting.Designer.cs">
+      <DependentUpon>fraAddApplicationSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Settings\fraEditAppSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Settings\fraEditAppSetting.Designer.cs">
+      <DependentUpon>fraEditAppSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Settings\fraManageAppSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Settings\fraManageAppSettings.Designer.cs">
+      <DependentUpon>fraManageAppSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +463,7 @@
       <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Helpers\ApplicationHelpers.cs" />
+    <Compile Include="Fr\Models\ApplicationSettings.cs" />
     <Compile Include="Fr\Helpers\ApplicationUsersHelper.cs" />
     <Compile Include="Fr\Helpers\CommonHelpers.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
@@ -567,6 +588,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Semesters\fraSemesters.resx">
       <DependentUpon>fraSemesters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Settings\fraAddApplicationSetting.resx">
+      <DependentUpon>fraAddApplicationSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Settings\fraEditAppSetting.resx">
+      <DependentUpon>fraEditAppSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Settings\fraManageAppSettings.resx">
+      <DependentUpon>fraManageAppSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>

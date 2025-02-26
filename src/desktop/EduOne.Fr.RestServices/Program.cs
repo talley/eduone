@@ -122,6 +122,11 @@ namespace EduOne.Fr.RestServices
                         app.MapSemesestersFeesEndpoints();
 
 
+                        app.MapApplicationUserExportPermissionsEndpoints();
+
+                        app.MapApplicationSettingsEndpoints();
+
+
 
 
 
