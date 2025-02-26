@@ -98,3 +98,7 @@ Invoke(new Action(() =>
     drpstudentid.Text = studentName;
 }));
 
+==========================================================================================
+I entered 2750.07 on the text box and got this error:  "System.FormatException: 'Input string was not in a correct format.'"
+
+SemestreId = int.Parse(txtsemester.ToString())==>SemestreId = int.Parse(txtsemester.Text.ToString()),

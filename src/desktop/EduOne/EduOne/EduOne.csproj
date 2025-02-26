@@ -99,6 +99,9 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.9.0.1\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="MoreLinq, Version=4.4.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.4.4.0\lib\netstandard2.0\MoreLinq.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -301,6 +304,24 @@
     <Compile Include="Fr\Admins\Enrollments\frNewEnrollment.Designer.cs">
       <DependentUpon>frNewEnrollment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Finances\fraFeesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\fraFeesManager.Designer.cs">
+      <DependentUpon>fraFeesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraAddSemesterFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraAddSemesterFee.Designer.cs">
+      <DependentUpon>fraAddSemesterFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.Designer.cs">
+      <DependentUpon>fraEditSemesterFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +447,7 @@
     <Compile Include="Fr\Helpers\CommonHelpers.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
+    <Compile Include="Fr\Models\SemesestersFees.cs" />
     <Compile Include="Fr\Models\Semesters.cs" />
     <Compile Include="Fr\Models\ClassRooms.cs" />
     <Compile Include="Fr\Models\Courses.cs" />
@@ -509,6 +531,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Enrollments\frNewEnrollment.resx">
       <DependentUpon>frNewEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Finances\fraFeesManager.resx">
+      <DependentUpon>fraFeesManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Finances\SemestersFees\fraAddSemesterFee.resx">
+      <DependentUpon>fraAddSemesterFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.resx">
+      <DependentUpon>fraEditSemesterFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>

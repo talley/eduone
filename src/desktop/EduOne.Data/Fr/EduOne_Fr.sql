@@ -323,6 +323,18 @@ INSERT INTO FeesStatus(Statut,Notes) VALUES('En retard','En retard');
 
 select * from FeesStatus;
 
+CREATE TABLE SemesestersFees
+(
+ Id int identity(1,1) not null,
+ SemestreId int not null,
+ Frais decimal not null,
+ Notes nvarchar(MAX),
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(Id)
+)
 
 CREATE TABLE Fees
 (

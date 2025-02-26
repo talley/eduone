@@ -454,5 +454,32 @@ namespace EduOne.Fr.Helpers
             }
             return result;
         }
+
+        internal async Task<List<SemesestersFees>> GetSemestersFeesAsync()
+        {
+            var result = new List<Models.SemesestersFees>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "SemesestersFees";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<Models.SemesestersFees>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
     }
 }

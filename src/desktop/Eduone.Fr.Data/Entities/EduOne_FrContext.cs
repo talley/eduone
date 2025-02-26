@@ -40,6 +40,8 @@ public partial class EduOne_FrContext : DbContext
 
     public virtual DbSet<FeesStatus> FeesStatus { get; set; }
 
+    public virtual DbSet<SemesestersFees> SemesestersFees { get; set; }
+
     public virtual DbSet<Semesters> Semesters { get; set; }
 
     public virtual DbSet<StaffNotes> StaffNotes { get; set; }
@@ -152,6 +154,14 @@ public partial class EduOne_FrContext : DbContext
         modelBuilder.Entity<FeesStatus>(entity =>
         {
             entity.HasKey(e => e.ID).HasName("PK__FeesStat__3214EC270AA537F0");
+
+            entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");
+        });
+
+        modelBuilder.Entity<SemesestersFees>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Semesest__3214EC075D12AA4B");
 
             entity.Property(e => e.AjouterAu).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.AjouterPar).HasDefaultValueSql("(suser_sname())");

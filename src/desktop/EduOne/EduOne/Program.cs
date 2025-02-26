@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using EduOne.En;
 using EduOne.Fr.Admins;
 using EduOne.Fr.Admins.Enrollments;
+using EduOne.Fr.Admins.Finances.SemestersFees;
 using EduOne.Fr.Admins.Semesters;
 using Config = System.Configuration.ConfigurationManager;
 namespace EduOne
@@ -20,7 +21,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
-                Application.Run(new fraWelcome2(""));// fraManageStaffs("test@test.com"));
+                Application.Run(new fraAddSemesterFee(""));// fraManageStaffs("test@test.com"));
             }
             else
             {

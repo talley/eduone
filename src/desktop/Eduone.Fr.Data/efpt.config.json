@@ -59,6 +59,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[SemesestersFees]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Semesters]",
          "ObjectType": 0
       },
