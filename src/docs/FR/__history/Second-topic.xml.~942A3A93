@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2025-03-05T14:37:47.337-05:00" lasteditedby="Abibou" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Auteur</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Auteur</para>
+    </header>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:11px; margin-left:0px; line-height:1.07; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><text styleclass="" style="font-family:Aptos; font-size:11pt; color:#000000;">Auteur: Talley Ouro</text></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:11px; margin-left:0px; line-height:1.07; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><text styleclass="" style="font-family:Aptos; font-size:11pt; color:#000000;">Profession : Ingénieur logiciel (Software Engineer)</text></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:11px; margin-left:0px; line-height:1.07; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><text styleclass="" style="font-family:Aptos; font-size:11pt; color:#000000;">Citoyenneté : USA/Togo</text></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:11px; margin-left:0px; line-height:1.07; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><text styleclass="" style="font-family:Aptos; font-size:11pt; color:#000000;">Courriel : </text><link displaytype="text" defaultstyle="true" type="weblink" href="mailto:talleyouro@gmail.com" target="_blank" styleclass="" style="font-family:Aptos; font-size:11pt; text-decoration:underline; color:#467886;">talleyouro@gmail.com</link></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:11px; margin-left:0px; line-height:1.07; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"></para>
+  </body>
+</topic>

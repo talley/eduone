@@ -76,6 +76,7 @@
     <Reference Include="DevExpress.Images.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.1.Drawing, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.PivotGrid.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -85,6 +86,7 @@
     <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPivotGrid.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -548,6 +550,12 @@
     <Compile Include="Fr\Admins\WaitForm1.Designer.cs">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\frDocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\frDocs.Designer.cs">
+      <DependentUpon>frDocs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -770,6 +778,9 @@
     <EmbeddedResource Include="Fr\Admins\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\frDocs.resx">
+      <DependentUpon>frDocs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -828,6 +839,7 @@
     <Content Include="Logos\school_background.jpg" />
     <Content Include="Logos\school_background.png" />
     <None Include="Resources\1715966311695.jpeg" />
+    <Content Include="repo_path.txt" />
     <Content Include="Tricks.sql" />
   </ItemGroup>
   <ItemGroup>

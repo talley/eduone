@@ -1,0 +1,4 @@
+﻿C:\MyApps\NET\eduone
+C:\MyApps\NET\eduone\screenshots
+
+C:\MyApps\NET\eduone\src\docs\FR\EduOneProject.pdf

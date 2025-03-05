@@ -317,13 +317,30 @@ namespace EduOne.Fr.Admins
 
         private void kryptonTreeView12_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            var selText = kryptonTreeView11.SelectedNode.Text;
+            var selText = kryptonTreeView12.SelectedNode.Text;
             if (selText.Length > 0)
             {
                 switch (selText)
                 {
                     case "Lancer":
                         var form2 = new AboutMe();
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView13_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView13.SelectedNode.Text;
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Lancer":
+                        var form2 = new frDocs();
                         ShowFormInPanel(form2, splitPanel2);
                         break;
                     default:

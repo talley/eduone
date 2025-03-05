@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2025-03-05T14:33:27.155-05:00" lasteditedby="Abibou" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Introduction</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Bienvenue sur Eduone</para>
+    </header>
+    <para styleclass="Normal">Eduone est un logiciel puissant pour les écoles et les universités.</para>
+  </body>
+</topic>
