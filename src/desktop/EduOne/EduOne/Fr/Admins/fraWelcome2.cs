@@ -4,6 +4,7 @@ using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
 using EduOne.Fr.Admins.Enrollments;
 using EduOne.Fr.Admins.Finances.SemestersFees;
+using EduOne.Fr.Admins.Reports;
 using EduOne.Fr.Admins.Semesters;
 using EduOne.Fr.Admins.Settings;
 using EduOne.Fr.Admins.Staffs;
@@ -259,6 +260,71 @@ namespace EduOne.Fr.Admins
                     case "Gestion Des Clés":
                         var form3 = new fraManageAppSettings(_email);
                         ShowFormInPanel(form3, splitPanel2);
+                        break;//
+                    case "Gérer les paiements des étudiants(eleves)":
+                        var form4 = new fraEnrollmentManager(_email);
+                        ShowFormInPanel(form4, splitPanel2);
+                        break;//
+                    case "Gestion Des Frais":
+                        var form = new fraStudentEnrollementFeesManager(_email);
+                        ShowFormInPanel(form, splitPanel2);
+                        break;//Gestion Des Frais
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void fraWelcome2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fraWelcome2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void kryptonTreeView11_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //
+            var selText = kryptonTreeView11.SelectedNode.Text;
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Rapport Des Utilisateurs":
+                        var form2 = new frarptAllUsers(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    case "Rapport des chefs de département":
+                        var form3 = new frDepartmentHeads(_email);
+                        ShowFormInPanel(form3, splitPanel2);
+                        break;
+                    case "Rapport Des Départements":
+                        var form4 = new frarptDepartments(_email);
+                        ShowFormInPanel(form4, splitPanel2);
+                        break;//
+                    case "Rapport Du Personnel":
+                        var form5 = new frarptStaffs(_email);
+                        ShowFormInPanel(form5, splitPanel2);
+                        break;//Rapport Du Personnel
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView12_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView11.SelectedNode.Text;
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Lancer":
+                        var form2 = new AboutMe();
+                        ShowFormInPanel(form2, splitPanel2);
                         break;
                     default:
                         break;

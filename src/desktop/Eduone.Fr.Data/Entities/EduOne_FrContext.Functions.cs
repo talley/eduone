@@ -22,6 +22,18 @@ namespace Eduone.Fr.Data.Entities
             throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
         }
 
+        [DbFunction("func_get_department_head_name", "dbo")]
+        public static string func_get_department_head_name(int? department_head_id, int? department_id)
+        {
+            throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
+        }
+
+        [DbFunction("func_get_french_date", "dbo")]
+        public static string func_get_french_date(bool? as_today, DateTime? date)
+        {
+            throw new NotSupportedException("This method can only be called from Entity Framework Core queries");
+        }
+
         [DbFunction("func_get_roleId", "dbo")]
         public static Guid? func_get_roleId(string role)
         {

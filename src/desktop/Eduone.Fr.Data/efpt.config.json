@@ -71,6 +71,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[SemesterEnrollmentFees]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Semesters]",
          "ObjectType": 0
       },
@@ -95,11 +99,39 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[proc_rpt_department_heads]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[proc_rpt_departments]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[proc_rpt_get_all_users]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[proc_rpt_get_department_heads]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[proc_rpt_staffs]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[func_decrypt_password]",
          "ObjectType": 2
       },
       {
          "Name": "[dbo].[func_encrypt_password]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[func_get_department_head_name]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[func_get_french_date]",
          "ObjectType": 2
       },
       {

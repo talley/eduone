@@ -10,6 +10,7 @@ using EduOne.Helpers;
 using Config = System.Configuration.ConfigurationManager;
 using Newtonsoft.Json;
 using System.Globalization;
+using EduOne.Fr.Admins.Finances.SemestersFees;
 namespace EduOne.Fr.Helpers
 {
     public class CommonHelpers
@@ -507,6 +508,103 @@ namespace EduOne.Fr.Helpers
                 }
             }
             return result;
+        }
+
+        internal async Task<IEnumerable<ApplicationUsers>> GetApplicationUsersAsync()
+        {
+            var result = new List<ApplicationUsers>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationUsers";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<Models.ApplicationUsers>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+        internal async Task<IEnumerable<ApplicationRoles>> GetApplicationRolesAsync()
+        {
+            var result = new List<ApplicationRoles>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationRoles";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<ApplicationRoles>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+        internal async Task<List<SemesterEnrollmentFees>> GetSemesterEnrollmentFeesAsync()
+        {
+
+            var result = new List<SemesterEnrollmentFees>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "SemesterEnrollmentFees";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<SemesterEnrollmentFees>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+        internal async Task<string> GetSemesterNameAsync(int semestreId)
+        {
+            var semesters = await GetSemestersAsync();
+            var result = semesters.SingleOrDefault(x => x.ID == semestreId);
+            return result.Semestre;
+        }
+
+        public async Task<string> GetStudentLastFirstName(int id)
+        {
+            var students = await GetStudentsAsync();
+            var st = students.SingleOrDefault(x => x.Id == id);
+
+            return string.Concat(st.Nom, " ", st.Prénom);
         }
     }
 }

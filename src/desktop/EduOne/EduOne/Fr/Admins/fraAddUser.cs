@@ -13,12 +13,14 @@ using EduOne.Exts;
 using EduOne.Fr.helpers;
 using System.Net.Http;
 using Config = System.Configuration.ConfigurationManager;
+using EduOne.Fr.Helpers;
 namespace EduOne.Fr.Admins
 {
     public partial class fraAddUser : DevExpress.XtraEditors.XtraForm
     {
         private IRepository<ApplicationRoles> repository = new ApplicationRolesRepository();
-
+        private readonly CommonHelpers helper = new CommonHelpers();
+        readonly string _email;
         public fraAddUser()
         {
             InitializeComponent();
@@ -27,7 +29,8 @@ namespace EduOne.Fr.Admins
         private async void fraAddUser_Load(object sender, EventArgs e)
         {
             //drproles.Properties.Columns["Id"].Visible = false;
-            var roles = await repository.GetAllAsync();
+
+            var roles = await helper.GetApplicationRolesAsync();
             var needed_roles = roles.Select(x => new
             {
                x.NomRole,x.Description,x.Id
@@ -94,8 +97,14 @@ namespace EduOne.Fr.Admins
             }
             else
             {
-                 // "https://localhost:7027/api/ApplicationUsers";//local test only
-
+                var users = await helper.GetApplicationUsersAsync();
+                var user = users.SingleOrDefault(x => x.Email == email);
+                if (user != null)
+                {
+                    "".DisplayDialog("Ce nom d'utilisateur existe déjà, entrez-en un autre.");
+                }
+                else
+                {
                 var data =new
                 {
                     RoleId=await GetRoleIdAsync(role),
@@ -112,29 +121,39 @@ namespace EduOne.Fr.Admins
                 };
 
                 string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationUsers";
-                using (var client = new HttpClient())
-                {
-                    try
+                    using (var client = new HttpClient())
                     {
-                        var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
-
-                        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                        var response = await client.PostAsync(apiUrl,content).ConfigureAwait(false);
-
-                        if (response.IsSuccessStatusCode)
+                        try
                         {
-                            var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            "".DisplayDialog("L'utilisateur a été créé");
-                            btnadd.Enabled = false;
+                            var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+
+                            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                            var response = await client.PostAsync(apiUrl, content).ConfigureAwait(false);
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                                Invoke(new Action(() =>
+                                {
+                                    "".DisplayDialog("L'utilisateur a été créé");
+                                    btnadd.Enabled = false;
+                                }));
+                            }
+                            else
+                            {
+                                Invoke(new Action(() =>
+                                {
+                                    XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                                }));
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                            Invoke(new Action(() =>
+                            {
+                                XtraMessageBox.Show($"An error occurred: {ex.Message}");
+                            }));
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        XtraMessageBox.Show($"An error occurred: {ex.Message}");
                     }
                 }
             }

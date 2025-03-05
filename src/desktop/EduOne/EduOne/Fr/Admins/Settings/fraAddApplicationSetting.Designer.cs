@@ -91,6 +91,7 @@
             // 
             // ckstatus
             // 
+            this.ckstatus.EditValue = true;
             this.ckstatus.Location = new System.Drawing.Point(113, 176);
             this.ckstatus.Name = "ckstatus";
             this.ckstatus.Properties.Caption = "";

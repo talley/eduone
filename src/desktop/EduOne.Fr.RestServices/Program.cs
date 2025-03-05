@@ -95,7 +95,6 @@ namespace EduOne.Fr.RestServices
 
             app.MapControllers();
 
-            app.MapApplicationUsersEndpoints();
             app.MapApplicationRolesEndpoints();
             app.MapCommonEndpoints();
             app.MapCoursesEndpoints();
@@ -125,6 +124,10 @@ namespace EduOne.Fr.RestServices
                         app.MapApplicationUserExportPermissionsEndpoints();
 
                         app.MapApplicationSettingsEndpoints();
+
+                        app.MapApplicationUsersEndpoints();
+
+                        app.MapSemesterEnrollmentFeesEndpoints();
 
 
 

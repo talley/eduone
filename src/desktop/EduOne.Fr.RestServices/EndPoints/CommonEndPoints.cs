@@ -38,7 +38,6 @@ namespace EduOne.Fr.RestServices.EndPoints
                 .RequireCors("ApplicationPolicy");
 
 
-
             group.MapGet("/Security/DecryptPassword/{password}", static async Task<Results<Ok<string>, NotFound>> (byte[] password, EduOne_FrContext db) =>
             {
                 var result = await DecryptPasswordAsync(password);
@@ -48,10 +47,11 @@ namespace EduOne.Fr.RestServices.EndPoints
                 .WithOpenApi()
                 .RequireCors("ApplicationPolicy");
 
-            group.MapGet("/Security/Authenticate/{email}/{password}", static async Task<Results<Ok<bool>, NotFound>> (string email,string password, EduOne_FrContext db) =>
+            //https://localhost:7027/api/Commons/Security/Authenticate/talleyouro@gmail.com/test
+            group.MapGet("/Security/Authenticate/{email}/{password}", static async Task<Results<Ok<bool>, BadRequest>> (string email,string password, EduOne_FrContext db) =>
             {
                 var result = await AuthenticateUserAsync(email, password);
-                return result==true? TypedResults.Ok(result):TypedResults.NotFound();
+                return TypedResults.Ok(result);//:TypedResults.NotFound();
             })
             .WithName("Authenticate")
             .WithOpenApi()

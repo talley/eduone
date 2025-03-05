@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="C:\Program Files (x86)\InstallShield\2021\Support\0409\buildreport.xsl"?>
+<BuildReport ProductName="EduOne(French)" ProductVersion="1.00.0000" Built="3-4-2025 06-37-47 PM" Config="Product Configuration 1" Media="Release 1" Uncompressed="0.00 MB">
+  <Features>
+    <Feature Title="##ID_STRING1##">PROJECT_ASSISTANT_DEFAULT_FEATURE</Feature>
+  </Features>
+  <Components>
+    <Component x64="32" KeyPath="eduone.primary_output">PROJECT_ASSISTANT_DEFAULT_COMPONENT</Component>
+  </Components>
+  <Prerequisites>
+    <Prerequisite>Microsoft .NET Framework 4.8 Full</Prerequisite>
+  </Prerequisites>
+  <MergeModules />
+  <DynamicLinks />
+  <Files />
+</BuildReport>

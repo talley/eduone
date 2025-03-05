@@ -173,6 +173,7 @@
       <LastGenOutput>EduOneFrModel.cs</LastGenOutput>
     </Content>
     <Content Include="Fr\EduOne_Fr.sql" />
+    <Content Include="Fr\Reports.sql" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
   </ItemGroup>
   <ItemGroup>

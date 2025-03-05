@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using EduOne.Data.Fr;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
+using EduOne.Fr.Helpers;
 using EduOne.Helpers;
 using Newtonsoft.Json;
 
@@ -21,6 +22,7 @@ namespace EduOne.Fr.Admins
 {
     public partial class fraUsersList : DevExpress.XtraEditors.XtraForm
     {
+        readonly CommonHelpers helpers = new CommonHelpers();
         public fraUsersList()
         {
             InitializeComponent();
@@ -50,23 +52,27 @@ namespace EduOne.Fr.Admins
         public async Task<List<CustomData>> SearchData()
         {
             var result = new List<CustomData>();
-            var users = await GetUsersAsync();
-            var needed_users = users.Select(x => new
-            {
-                x.Id,
-                Rôle = GetRoleId(x.RoleId),
-                x.Utilisateur,
-                x.Statut,
-                x.Nom,
-                x.Prenom,
-                x.DateNaissance,
-                x.Notes,
-                x.Email,
-                x.AjouterAu,
-                x.AjouterPar
-            });
+            var users = await helpers.GetApplicationUsersAsync();// GetUsersAsync();
 
-            foreach (var u in needed_users)
+            var xneeded_users = await Task.WhenAll(
+
+                users.Select(async x => new
+                {
+                    x.Id,
+                    Rôle = await GetRoleIdAsync(x.RoleId),
+                    x.Utilisateur,
+                    x.Statut,
+                    x.Nom,
+                    x.Prenom,
+                    x.DateNaissance,
+                    x.Notes,
+                    x.Email,
+                    x.AjouterAu,
+                    x.AjouterPar
+                }));
+
+
+            foreach (var u in xneeded_users)
             {
                 result.Add(new CustomData
                 {
@@ -89,25 +95,30 @@ namespace EduOne.Fr.Admins
         {
             //txtsearch.Properties.NullValuePrompt = "Entrer nom du l`utilisateur..";
             Text = "Liste des Utilisateurs";
-            var users = await GetUsersAsync();
-            var needed_users = users.Select(x => new
-            {
-                x.Id,
-                Rôle = GetRoleId(x.RoleId),
-                x.Utilisateur,
-                x.Statut,
-                x.Nom,
-                x.Prenom,
-                x.DateNaissance,
-                x.Notes,
-                x.Email,
-                x.AjouterAu,
-                x.AjouterPar
-            });
-            gridControl1.DataSource=needed_users.ToList();
+            var users = await helpers.GetApplicationUsersAsync();// GetUsersAsync();
+
+            var xneeded_users = await Task.WhenAll(
+
+              users.Select(async x => new
+              {
+                  x.Id,
+                  Rôle = await GetRoleIdAsync(x.RoleId),
+                  x.Utilisateur,
+                  x.Statut,
+                  x.Nom,
+                  x.Prenom,
+                  x.DateNaissance,
+                  x.Notes,
+                  x.Email,
+                  x.AjouterAu,
+                  x.AjouterPar
+              }));
+
+
+            gridControl1.DataSource= xneeded_users.ToList();
             gridView1.BestFitColumns();
 
-            var usernames = needed_users.Select(x =>new
+            var usernames = xneeded_users.Select(x =>new
             {
                 x.Utilisateur,x.Nom,x.Prenom
             }).ToList();
@@ -117,87 +128,14 @@ namespace EduOne.Fr.Admins
             drpsearch.Properties.DisplayMember = "Utilisateur";
             drpsearch.Properties.ValueMember = "Utilisateur";
         }
-        public  string GetRoleId(Guid RoleId)
-        {
-            string result = "";
-            var cs = DbHelpers.CS;
-            var query = $"SELECT NomRole FROM ApplicationRoles WHERE Id='{RoleId}'";
-            using (IDbConnection sqlcon = new SqlConnection(cs))
-            {
-                var oresult = sqlcon.ExecuteScalar(sql: query, commandType: CommandType.Text);
-                result=oresult.ToString();
-            }
-            return result;
-        }
+
         public async Task<string> GetRoleIdAsync(Guid RoleId)
         {
             string result = "";
-            var roles = await GetRolesAsync();
+            var roles = await helpers.GetApplicationRolesAsync();// GetRolesAsync();
             var role = roles.SingleOrDefault(x => x.Id == RoleId);
             result= role.NomRole;
             return result;
-        }
-
-        private async Task<List<ApplicationRoles>> GetRolesAsync()
-        {
-            const string apiUrl = "https://localhost:7027/api/ApplicationRoles";//local test only
-            List<ApplicationRoles> roles = new List<ApplicationRoles>();
-            using (var client = new HttpClient())
-            {
-                try
-                {
-
-                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                        roles = JsonConvert.DeserializeObject<List<ApplicationRoles>>(responseData);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
-                }
-            }
-
-            return roles;
-        }
-
-        public async Task<List<ApplicationUsers>> GetUsersAsync()
-        {
-             string apiUrl = WebServerHelpers.GetApiApplicationUrl(false)+"ApplicationUsers";//local test only
-            List<ApplicationUsers> users = new List<ApplicationUsers>();
-            using (var client = new HttpClient())
-            {
-                try
-                {
-
-                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                        users = JsonConvert.DeserializeObject<List<ApplicationUsers>>(responseData);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
-                }
-            }
-
-            return users;
         }
 
         private void btnpdf_Click(object sender, EventArgs e)

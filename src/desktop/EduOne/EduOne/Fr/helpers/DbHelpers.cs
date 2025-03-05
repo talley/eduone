@@ -1,12 +1,24 @@
 ﻿
 
-namespace EduOne.Fr.RestServices.Helpers
+namespace EduOne.Fr.Helpers
 {
     /// <summary>
     ///  Helpers for db access
     /// </summary>
     public class DbHelpers
     {
+        /*
+         *  string server = DbHelpers.DbHost;
+            string database = DbHelpers.DbName;
+            string userID = DbHelpers.DbUser;
+            string password = DbHelpers.DbUserPass;
+            string table = DbHelpers.DbTableName;
+        */
+        public static string DbHost { get; } = "localhost";
+        public static string DbName { get; } = "EduOne_Fr";
+        public static string DbUser { get; } = "eduone";
+        public static string DbUserPass { get; } = "Iamsmart27!";
+        public static string DbTableName { get; } = "localhost";
         /// <summary>
         /// Gets the connection string(will be moved to  appsettings.json in production)
         /// </summary>

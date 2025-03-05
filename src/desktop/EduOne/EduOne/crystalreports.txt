@@ -1,0 +1,91 @@
+﻿
+   public static TableLogOnInfos GetLogOnInfos()
+        {
+            string server = DbHelpers.DbHost;
+            string database = DbHelpers.DbName;
+            string userID = DbHelpers.DbUser;
+            string password = DbHelpers.DbUserPass;
+            string table = DbHelpers.DbTableName;
+            TableLogOnInfo logOnInfo = new TableLogOnInfo();
+
+            logOnInfo.ConnectionInfo.ServerName = server;
+            logOnInfo.ConnectionInfo.DatabaseName = database;
+            logOnInfo.ConnectionInfo.UserID = userID;
+            logOnInfo.ConnectionInfo.Password = password;
+            logOnInfo.TableName = table;
+
+            return new TableLogOnInfos
+            {
+                logOnInfo
+            };
+        }
+
+2-Add CrystalReportDocument to UI and bind it to report viewer
+
+3-
+private void frarptAllUsers_Load(object sender, EventArgs e)
+        {
+            rptAllUsers1.SetDatabaseLogon(DbHelpers.DbUserPass, DbHelpers.DbUserPass);
+            crystalReportViewer1.LogOnInfo = ReportsHelper.GetLogOnInfos();
+        }
+
+            private void crystalReportViewer1_ReportRefresh(object source, CrystalDecisions.Windows.Forms.ViewerEventArgs e)
+        {
+            // did not help
+            // reportTopCustomersRpt1.SetDatabaseLogon(DatabaseHelpers.DbUserPass, DatabaseHelpers.DbUserPass);
+            crystalReportViewer1.LogOnInfo = CrystalReportManager.GetLogOnInfos();
+        }
+
+==============================================================================================================================
+ToolPanelView ->false (hide left side panel)
+
+ShowLog=false to hide logo
+
+Page Setup/Unit  change horizontal value to desire value to change layout size
+
+---------------stop database login popup---
+
+ reportTopCustomersRpt1.SetDatabaseLogon("", "");
+ reportTopCustomersRpt1 is ReportDocument added to crystal report viewer.
+
+  internal static TableLogOnInfos GetLogOnInfos()
+        {
+            string server = DatabaseHelpers.DbHost;
+            string database = DatabaseHelpers.DbName;
+            string userID = DatabaseHelpers.DbUser;
+            string password = DatabaseHelpers.DbUserPass;
+            string table = DatabaseHelpers.DbTableName;
+            TableLogOnInfo logOnInfo = new TableLogOnInfo();
+
+            logOnInfo.ConnectionInfo.ServerName = server;
+            logOnInfo.ConnectionInfo.DatabaseName = database;
+            logOnInfo.ConnectionInfo.UserID = userID;
+            logOnInfo.ConnectionInfo.Password = password;
+            logOnInfo.TableName = table;
+
+            return new TableLogOnInfos
+            {
+                logOnInfo
+            };
+        }
+
+         private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            reportTopCustomersRpt1.SetDatabaseLogon(DatabaseHelpers.DbUserPass, DatabaseHelpers.DbUserPass);
+            crystalReportViewer1.LogOnInfo = CrystalReportManager.GetLogOnInfos();
+        }
+
+        private void crystalReportViewer1_ReportRefresh(object source, CrystalDecisions.Windows.Forms.ViewerEventArgs e)
+        {
+            // did not help
+            // reportTopCustomersRpt1.SetDatabaseLogon(DatabaseHelpers.DbUserPass, DatabaseHelpers.DbUserPass);
+            crystalReportViewer1.LogOnInfo = CrystalReportManager.GetLogOnInfos();
+        }
+
+         private void CrystalReportViewer1_ReportRefresh(object source, CrystalDecisions.Windows.Forms.ViewerEventArgs e)
+        {
+            // did not help
+            // reportTopCustomersRpt1.SetDatabaseLogon(DatabaseHelpers.DbUserPass, DatabaseHelpers.DbUserPass);
+            crystalReportViewer1.LogOnInfo = ReportsHelper.GetLogOnInfos();
+            crystalReportViewer1.ReportSource = rptAllUsers1;
+        }

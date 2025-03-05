@@ -1,19 +1,21 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
+using Eduone.Fr.Data.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.OpenApi;
 namespace EduOne.Fr.RestServices.EndPoints;
 
 public static class ApplicationUsersEndpoints
 {
-    public static void MapApplicationUsersEndpoints(this IEndpointRouteBuilder routes)
+    public static void MapApplicationUsersEndpoints (this IEndpointRouteBuilder routes)
     {
         var group = routes.MapGroup("/api/ApplicationUsers").WithTags(nameof(ApplicationUsers));
 
         group.MapGet("/", async (EduOne_FrContext db) =>
-            {
-                return await db.ApplicationUsers.ToListAsync();
-            })
-            .WithName("GetAllApplicationUsers")
-            .WithOpenApi()
-            .RequireCors("ApplicationPolicy");
+        {
+            return await db.ApplicationUsers.ToListAsync();
+        })
+        .WithName("GetAllApplicationUsers")
+        .WithOpenApi();
 
         group.MapGet("/{id}", async Task<Results<Ok<ApplicationUsers>, NotFound>> (Guid id, EduOne_FrContext db) =>
         {
@@ -24,15 +26,14 @@ public static class ApplicationUsersEndpoints
                     : TypedResults.NotFound();
         })
         .WithName("GetApplicationUsersById")
-        .WithOpenApi()
-        .RequireCors("ApplicationPolicy");
+        .WithOpenApi();
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (Guid id, ApplicationUsers applicationUsers, EduOne_FrContext db) =>
         {
             var affected = await db.ApplicationUsers
                 .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters => setters
-                    //.SetProperty(m => m.Id, applicationUsers.Id)
+                   // .SetProperty(m => m.Id, applicationUsers.Id)
                     .SetProperty(m => m.RoleId, applicationUsers.RoleId)
                     .SetProperty(m => m.Utilisateur, applicationUsers.Utilisateur)
                     .SetProperty(m => m.Password, applicationUsers.Password)
@@ -50,18 +51,16 @@ public static class ApplicationUsersEndpoints
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
         .WithName("UpdateApplicationUsers")
-        .WithOpenApi()
-        .RequireCors("ApplicationPolicy");
+        .WithOpenApi();
 
         group.MapPost("/", async (ApplicationUsers applicationUsers, EduOne_FrContext db) =>
         {
             db.ApplicationUsers.Add(applicationUsers);
             await db.SaveChangesAsync();
-            return TypedResults.Created($"/api/ApplicationUsers/{applicationUsers.Id}", applicationUsers);
+            return TypedResults.Created($"/api/ApplicationUsers/{applicationUsers.Id}",applicationUsers);
         })
         .WithName("CreateApplicationUsers")
-        .WithOpenApi()
-        .RequireCors("ApplicationPolicy");
+        .WithOpenApi();
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (Guid id, EduOne_FrContext db) =>
         {
@@ -71,7 +70,6 @@ public static class ApplicationUsersEndpoints
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
         .WithName("DeleteApplicationUsers")
-        .WithOpenApi()
-        .RequireCors("ApplicationPolicy");
+        .WithOpenApi();
     }
 }

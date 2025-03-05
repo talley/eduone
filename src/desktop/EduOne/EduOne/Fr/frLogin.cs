@@ -44,10 +44,15 @@ namespace EduOne.Fr
                         if (response.IsSuccessStatusCode)
                         {
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            "".DisplayDialog("L'utilisateur a été authentifié.");
-                            var welcomeForm = new fraWelcome(email);
-                            Hide();
-                            welcomeForm.ShowDialog();
+
+                            Invoke(new Action(() =>
+                            {
+
+                                "".DisplayDialog("L'utilisateur a été authentifié.");
+                                var welcomeForm = new fraWelcome(email);
+                                Hide();
+                                welcomeForm.ShowDialog();
+                            }));
                         }
                         else
                         {

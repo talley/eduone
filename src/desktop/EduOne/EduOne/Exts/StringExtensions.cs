@@ -1,25 +1,53 @@
 ﻿using System;
+using System.Data.Entity.Core.Objects;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using DevExpress.XtraEditors;
 using EduOne.Fr.helpers;
+using EduOne.Fr.Helpers;
 
 namespace EduOne.Exts
 {
     public static class StringExtensions
     {
-        public static void DisplayErrorFrDialog(this string field,string message)
+        readonly static CommonHelpers helper = new CommonHelpers();
+
+       public static bool IsNull(this string s)
         {
-            XtraMessageBox.Show($"Veuillez entrer ou choisir :{message}", ApplicationHelpers.AppName);
+            return s.Length == 0;
         }
 
-        public static void DisplayDialog(this string field, string message)
+       public static bool IsNull(this object o)
         {
-            XtraMessageBox.Show($"{message}", ApplicationHelpers.AppName);
+            return o==null;
+        }
+        public static async Task<string> GetAppInfo()
+        {
+            string result = "";
+            var appsettings = await helper.GetApplicationSettings();
+            var setting1 = appsettings.SingleOrDefault(x => x.AppKey == "APPLICATION.NAME");
+            var setting2= appsettings.SingleOrDefault(x => x.AppKey == "APPLICATION.VERSION");
+
+            result = setting1.AppValue + ":" + setting2.AppValue;
+            return result;
+        }
+        public static async void DisplayErrorFrDialog(this string field,string message)
+        {
+            var result = await GetAppInfo();
+            XtraMessageBox.Show($"Veuillez entrer ou choisir :{message}", result);
         }
 
-        public static void DisplayExportErrorDialog(this string field, string program)
+        public static async void DisplayDialog(this string field, string message)
         {
-            XtraMessageBox.Show($"Ce fichier est ouvert dans {program}. Veuillez d'abord le fermer.", ApplicationHelpers.AppName);
+            var result = await GetAppInfo();
+            XtraMessageBox.Show($"{message}", result);
+        }
+
+        public static async void DisplayExportErrorDialog(this string field, string program)
+        {
+            var result = await GetAppInfo();
+            XtraMessageBox.Show($"Ce fichier est ouvert dans {program}. Veuillez d'abord le fermer.", result);
         }
         public static bool IsEmailValid(this string email)
         {

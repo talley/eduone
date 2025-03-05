@@ -35,7 +35,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
@@ -162,6 +186,8 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -179,11 +205,35 @@
     <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutMe.Designer.cs">
+      <DependentUpon>AboutMe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crAllUsers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crAllUsers.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\GalleryViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomControls\GalleryViewer.Designer.cs">
       <DependentUpon>GalleryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="En\enLogin.cs">
       <SubType>Form</SubType>
@@ -300,11 +350,23 @@
     <Compile Include="Fr\Admins\Enrollments\fraEnrollmentManager.Designer.cs">
       <DependentUpon>fraEnrollmentManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraStudentEnrollementFeesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Enrollments\fraStudentEnrollementFeesManager.Designer.cs">
+      <DependentUpon>fraStudentEnrollementFeesManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr\Admins\Enrollments\frNewEnrollment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fr\Admins\Enrollments\frNewEnrollment.Designer.cs">
       <DependentUpon>frNewEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\fraEditStudentSemesterFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\fraEditStudentSemesterFee.Designer.cs">
+      <DependentUpon>fraEditStudentSemesterFee.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\Finances\fraFeesManager.cs">
       <SubType>Form</SubType>
@@ -323,6 +385,12 @@
     </Compile>
     <Compile Include="Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.Designer.cs">
       <DependentUpon>fraEditSemesterFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraSemesterEnrollmentFees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Finances\SemestersFees\fraSemesterEnrollmentFees.Designer.cs">
+      <DependentUpon>fraSemesterEnrollmentFees.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\fraAddUser.cs">
       <SubType>Form</SubType>
@@ -359,6 +427,30 @@
     </Compile>
     <Compile Include="Fr\Admins\frGalleryViewer.Designer.cs">
       <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptAllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptAllUsers.Designer.cs">
+      <DependentUpon>frarptAllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptDepartments.Designer.cs">
+      <DependentUpon>frarptDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frarptStaffs.Designer.cs">
+      <DependentUpon>frarptStaffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frDepartmentHeads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admins\Reports\frDepartmentHeads.Designer.cs">
+      <DependentUpon>frDepartmentHeads.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Admins\Semesters\fraAddSemester.cs">
       <SubType>Form</SubType>
@@ -463,12 +555,16 @@
       <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Fr\Helpers\ApplicationHelpers.cs" />
+    <Compile Include="Fr\Helpers\ReportsHelper.cs" />
+    <Compile Include="Fr\Models\ApplicationRoles.cs" />
     <Compile Include="Fr\Models\ApplicationSettings.cs" />
     <Compile Include="Fr\Helpers\ApplicationUsersHelper.cs" />
     <Compile Include="Fr\Helpers\CommonHelpers.cs" />
     <Compile Include="Fr\Helpers\DbHelpers.cs" />
     <Compile Include="Fr\Helpers\EmailHelpers.cs" />
+    <Compile Include="Fr\Models\ApplicationUsers.cs" />
     <Compile Include="Fr\Models\SemesestersFees.cs" />
+    <Compile Include="Fr\Models\SemesterEnrollmentFees.cs" />
     <Compile Include="Fr\Models\Semesters.cs" />
     <Compile Include="Fr\Models\ClassRooms.cs" />
     <Compile Include="Fr\Models\Courses.cs" />
@@ -480,18 +576,43 @@
     <Compile Include="Fr\Models\Staffs.cs" />
     <Compile Include="Fr\Models\StudentIdentifications.cs" />
     <Compile Include="Fr\Models\Students.cs" />
-    <Compile Include="Helpers\DbHelpers.cs" />
     <Compile Include="Helpers\WebServerHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptDepartmentHeadsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDepartmentHeadsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SfattReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SfattReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ToolbarForm1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ToolbarForm1.Designer.cs">
       <DependentUpon>ToolbarForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutMe.resx">
+      <DependentUpon>AboutMe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crAllUsers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crAllUsers.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\GalleryViewer.resx">
       <DependentUpon>GalleryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DepartmentsReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="En\enLogin.resx">
       <DependentUpon>enLogin.cs</DependentUpon>
@@ -550,8 +671,14 @@
     <EmbeddedResource Include="Fr\Admins\Enrollments\fraEnrollmentManager.resx">
       <DependentUpon>fraEnrollmentManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Enrollments\fraStudentEnrollementFeesManager.resx">
+      <DependentUpon>fraStudentEnrollementFeesManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Enrollments\frNewEnrollment.resx">
       <DependentUpon>frNewEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Finances\fraEditStudentSemesterFee.resx">
+      <DependentUpon>fraEditStudentSemesterFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Finances\fraFeesManager.resx">
       <DependentUpon>fraFeesManager.cs</DependentUpon>
@@ -561,6 +688,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.resx">
       <DependentUpon>fraEditSemesterFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Finances\SemestersFees\fraSemesterEnrollmentFees.resx">
+      <DependentUpon>fraSemesterEnrollmentFees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\fraAddUser.resx">
       <DependentUpon>fraAddUser.cs</DependentUpon>
@@ -579,6 +709,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\frGalleryViewer.resx">
       <DependentUpon>frGalleryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Reports\frarptAllUsers.resx">
+      <DependentUpon>frarptAllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Reports\frarptDepartments.resx">
+      <DependentUpon>frarptDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Reports\frarptStaffs.resx">
+      <DependentUpon>frarptStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admins\Reports\frDepartmentHeads.resx">
+      <DependentUpon>frDepartmentHeads.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr\Admins\Semesters\fraAddSemester.resx">
       <DependentUpon>fraAddSemester.cs</DependentUpon>
@@ -640,10 +782,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptDepartmentHeadsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDepartmentHeadsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SfattReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SfattReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolbarForm1.resx">
       <DependentUpon>ToolbarForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Logos\spillter bg.webp" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -660,13 +812,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fr\Users\" />
-    <Folder Include="Logos\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Fr\Authentication\" />
+    <Folder Include="Fr\Users\Reports\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="crystalreports.txt" />
     <Content Include="cs.txt" />
     <Content Include="DevExpress.Notes.txt" />
+    <Content Include="Fr\Admins\users.txt" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <Content Include="Logos\school_background %281%29.ico" />
+    <Content Include="Logos\school_background %282%29.ico" />
+    <Content Include="Logos\school_background.ico" />
+    <Content Include="Logos\school_background.jpg" />
+    <Content Include="Logos\school_background.png" />
+    <None Include="Resources\1715966311695.jpeg" />
+    <Content Include="Tricks.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EduOne.Data\EduOne.Data.csproj">
@@ -681,6 +843,9 @@
       <Project>{a05fffbb-f15a-45fe-b284-f587dfce31a9}</Project>
       <Name>EduOne.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

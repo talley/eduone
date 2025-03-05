@@ -2,7 +2,7 @@
  var view = gridView1;
             //MessageBox.Show((string)gridView1.GetFocusedRowCellValue("Id"));
 
-            if (gridControl1.MainView is GridView)
+              if (gridControl1.MainView is DevExpress.XtraGrid.Views.Grid.GridView)
             {
                 DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr de vouloir mettre à jour les informations utilisateur?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
                 if (ds == DialogResult.Yes)

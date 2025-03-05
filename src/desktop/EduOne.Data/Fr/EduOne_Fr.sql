@@ -380,3 +380,18 @@ ModifierAu datetime2 null,
 ModifierPar nvarchar(80)  null,
 Primary Key(ID)
 )
+
+CREATE TABLE SemesterEnrollmentFees
+(
+GID uniqueidentifier not null default newid(),
+ Id int identity(1,1) not null,
+ EleveId int not null,
+ SemestreId int not null,
+ Statut bit  not null default 1,
+ MontantReçu decimal not null,
+AjouterAu datetime2  not null default getdate(),
+AjouterPar nvarchar(80) not null default system_user,
+ModifierAu datetime2 null,
+ModifierPar nvarchar(80)  null,
+Primary Key(ID)
+)
