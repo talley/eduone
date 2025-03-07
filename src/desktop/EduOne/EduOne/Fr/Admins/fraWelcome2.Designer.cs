@@ -62,8 +62,8 @@
             System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Gestion Des Cours");
             System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Nouvelle Inscription");
             System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Gestion Des Inscriptions");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Lancer");
             System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Lancer");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Lancer");
             this.radSplitContainer1 = new Telerik.WinControls.UI.RadSplitContainer();
             this.splitPanel1 = new Telerik.WinControls.UI.SplitPanel();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
@@ -90,15 +90,15 @@
             this.radPageViewPage11 = new Telerik.WinControls.UI.RadPageViewPage();
             this.kryptonTreeView9 = new Krypton.Toolkit.KryptonTreeView();
             this.radPageViewPage6 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.kryptonTreeView13 = new Krypton.Toolkit.KryptonTreeView();
             this.radPageViewPage7 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.kryptonTreeView12 = new Krypton.Toolkit.KryptonTreeView();
             this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.crystalTheme1 = new Telerik.WinControls.Themes.CrystalTheme();
             this.crystalDarkTheme1 = new Telerik.WinControls.Themes.CrystalDarkTheme();
             this.office2007SilverTheme1 = new Telerik.WinControls.Themes.Office2007SilverTheme();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.kryptonTreeView12 = new Krypton.Toolkit.KryptonTreeView();
-            this.kryptonTreeView13 = new Krypton.Toolkit.KryptonTreeView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel1)).BeginInit();
@@ -132,7 +132,7 @@
             this.radSplitContainer1.Location = new System.Drawing.Point(0, 0);
             this.radSplitContainer1.Name = "radSplitContainer1";
             this.radSplitContainer1.Size = new System.Drawing.Size(1685, 692);
-            this.radSplitContainer1.SplitterWidth = 76;
+            this.radSplitContainer1.SplitterWidth = 149;
             this.radSplitContainer1.TabIndex = 0;
             this.radSplitContainer1.TabStop = false;
             // 
@@ -141,9 +141,9 @@
             this.splitPanel1.Controls.Add(this.radPageView1);
             this.splitPanel1.Location = new System.Drawing.Point(0, 0);
             this.splitPanel1.Name = "splitPanel1";
-            this.splitPanel1.Size = new System.Drawing.Size(247, 692);
-            this.splitPanel1.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(-0.3464286F, 0F);
-            this.splitPanel1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-479, 0);
+            this.splitPanel1.Size = new System.Drawing.Size(455, 692);
+            this.splitPanel1.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(-0.2037037F, 0F);
+            this.splitPanel1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-255, 0);
             this.splitPanel1.TabIndex = 0;
             this.splitPanel1.TabStop = false;
             this.splitPanel1.Text = "splitPanel1";
@@ -166,10 +166,10 @@
             this.radPageView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
-            this.radPageView1.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
+            this.radPageView1.Margin = new System.Windows.Forms.Padding(94, 94, 94, 94);
             this.radPageView1.Name = "radPageView1";
             this.radPageView1.SelectedPage = this.radPageViewPage6;
-            this.radPageView1.Size = new System.Drawing.Size(247, 692);
+            this.radPageView1.Size = new System.Drawing.Size(455, 692);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.ThemeName = "Crystal";
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Outlook;
@@ -177,18 +177,18 @@
             // radPageViewPage12
             // 
             this.radPageViewPage12.Controls.Add(this.kryptonTreeView10);
-            this.radPageViewPage12.ItemSize = new System.Drawing.SizeF(247F, 32F);
+            this.radPageViewPage12.ItemSize = new System.Drawing.SizeF(455F, 33F);
             this.radPageViewPage12.Location = new System.Drawing.Point(7, 40);
-            this.radPageViewPage12.Margin = new System.Windows.Forms.Padding(705, 705, 705, 705);
+            this.radPageViewPage12.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
             this.radPageViewPage12.Name = "radPageViewPage12";
-            this.radPageViewPage12.Size = new System.Drawing.Size(235, 171);
+            this.radPageViewPage12.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage12.Text = "Administration";
             // 
             // kryptonTreeView10
             // 
             this.kryptonTreeView10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView10.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView10.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView10.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView10.Name = "kryptonTreeView10";
             treeNode1.Name = "Node1";
             treeNode1.Text = "Ajouter Clé";
@@ -205,25 +205,25 @@
             this.kryptonTreeView10.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode6});
-            this.kryptonTreeView10.Size = new System.Drawing.Size(235, 171);
+            this.kryptonTreeView10.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView10.TabIndex = 1;
             this.kryptonTreeView10.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView10_AfterSelect);
             // 
             // radPageViewPage13
             // 
             this.radPageViewPage13.Controls.Add(this.kryptonTreeView11);
-            this.radPageViewPage13.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage13.Location = new System.Drawing.Point(55, 298);
-            this.radPageViewPage13.Margin = new System.Windows.Forms.Padding(185, 185, 185, 185);
+            this.radPageViewPage13.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage13.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage13.Margin = new System.Windows.Forms.Padding(1376, 1376, 1376, 1376);
             this.radPageViewPage13.Name = "radPageViewPage13";
-            this.radPageViewPage13.Size = new System.Drawing.Size(1788, 1280);
+            this.radPageViewPage13.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage13.Text = "Rapports";
             // 
             // kryptonTreeView11
             // 
             this.kryptonTreeView11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView11.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView11.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView11.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView11.Name = "kryptonTreeView11";
             treeNode7.Name = "Node0";
             treeNode7.Text = "Rapport Des Utilisateurs";
@@ -238,25 +238,25 @@
             treeNode8,
             treeNode9,
             treeNode10});
-            this.kryptonTreeView11.Size = new System.Drawing.Size(1788, 1280);
+            this.kryptonTreeView11.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView11.TabIndex = 1;
             this.kryptonTreeView11.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView11_AfterSelect);
             // 
             // radPageViewPage3
             // 
             this.radPageViewPage3.Controls.Add(this.kryptonTreeView3);
-            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(247F, 32F);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(455F, 33F);
             this.radPageViewPage3.Location = new System.Drawing.Point(7, 40);
-            this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage3.Name = "radPageViewPage3";
-            this.radPageViewPage3.Size = new System.Drawing.Size(235, 171);
+            this.radPageViewPage3.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage3.Text = "Personnel";
             // 
             // kryptonTreeView3
             // 
             this.kryptonTreeView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView3.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView3.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView3.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView3.Name = "kryptonTreeView3";
             treeNode11.Name = "Node0";
             treeNode11.Text = "Ajouter Un Personnel";
@@ -265,18 +265,18 @@
             this.kryptonTreeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode11,
             treeNode12});
-            this.kryptonTreeView3.Size = new System.Drawing.Size(235, 171);
+            this.kryptonTreeView3.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView3.TabIndex = 0;
             this.kryptonTreeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView3_AfterSelect);
             // 
             // radPageViewPage1
             // 
             this.radPageViewPage1.Controls.Add(this.kryptonTreeView1);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage1.Location = new System.Drawing.Point(5998, 32274);
-            this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage1.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage1.Text = "Chefs Départements";
             // 
             // kryptonTreeView1
@@ -284,7 +284,7 @@
             this.kryptonTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView1.ItemStyle = Krypton.Toolkit.ButtonStyle.BreadCrumb;
             this.kryptonTreeView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView1.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView1.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView1.Name = "kryptonTreeView1";
             treeNode13.Name = "Node0";
             treeNode13.Text = "Ajouter Chef Département";
@@ -293,18 +293,18 @@
             this.kryptonTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode13,
             treeNode14});
-            this.kryptonTreeView1.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView1.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView1.TabIndex = 0;
             this.kryptonTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView1_AfterSelect);
             // 
             // radPageViewPage2
             // 
             this.radPageViewPage2.Controls.Add(this.kryptonTreeView2);
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage2.Location = new System.Drawing.Point(5998, 32274);
-            this.radPageViewPage2.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage2.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage2.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage2.Name = "radPageViewPage2";
-            this.radPageViewPage2.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage2.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage2.Text = "Départements";
             // 
             // kryptonTreeView2
@@ -312,7 +312,7 @@
             this.kryptonTreeView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView2.ItemStyle = Krypton.Toolkit.ButtonStyle.BreadCrumb;
             this.kryptonTreeView2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView2.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView2.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView2.Name = "kryptonTreeView2";
             treeNode15.Name = "Node0";
             treeNode15.Text = "Ajouter Un Département";
@@ -321,25 +321,25 @@
             this.kryptonTreeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode15,
             treeNode16});
-            this.kryptonTreeView2.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView2.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView2.TabIndex = 1;
             this.kryptonTreeView2.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView2_AfterSelect);
             // 
             // radPageViewPage8
             // 
             this.radPageViewPage8.Controls.Add(this.kryptonTreeView6);
-            this.radPageViewPage8.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage8.Location = new System.Drawing.Point(5998, 32274);
-            this.radPageViewPage8.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage8.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage8.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage8.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage8.Name = "radPageViewPage8";
-            this.radPageViewPage8.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage8.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage8.Text = "Salles &&  Inscriptions";
             // 
             // kryptonTreeView6
             // 
             this.kryptonTreeView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView6.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView6.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView6.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView6.Name = "kryptonTreeView6";
             treeNode17.Name = "Node0";
             treeNode17.Text = "Nouvelle Salle De Classe";
@@ -354,17 +354,17 @@
             treeNode18,
             treeNode19,
             treeNode20});
-            this.kryptonTreeView6.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView6.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView6.TabIndex = 0;
             // 
             // radPageViewPage9
             // 
             this.radPageViewPage9.Controls.Add(this.kryptonTreeView7);
-            this.radPageViewPage9.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage9.Location = new System.Drawing.Point(3070, 16524);
-            this.radPageViewPage9.Margin = new System.Windows.Forms.Padding(2688, 2688, 2688, 2688);
+            this.radPageViewPage9.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage9.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage9.Margin = new System.Windows.Forms.Padding(20024, 20024, 20024, 20024);
             this.radPageViewPage9.Name = "radPageViewPage9";
-            this.radPageViewPage9.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage9.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage9.Text = "Semestres";
             // 
             // kryptonTreeView7
@@ -372,7 +372,7 @@
             this.kryptonTreeView7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView7.ItemStyle = Krypton.Toolkit.ButtonStyle.BreadCrumb;
             this.kryptonTreeView7.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView7.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView7.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView7.Name = "kryptonTreeView7";
             treeNode21.Name = "Node0";
             treeNode21.Text = "Ajouter Semestre";
@@ -381,18 +381,18 @@
             this.kryptonTreeView7.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode21,
             treeNode22});
-            this.kryptonTreeView7.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView7.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView7.TabIndex = 1;
             this.kryptonTreeView7.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView7_AfterSelect);
             // 
             // radPageViewPage10
             // 
             this.radPageViewPage10.Controls.Add(this.kryptonTreeView8);
-            this.radPageViewPage10.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage10.Location = new System.Drawing.Point(3070, 16524);
-            this.radPageViewPage10.Margin = new System.Windows.Forms.Padding(1376, 1376, 1376, 1376);
+            this.radPageViewPage10.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage10.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage10.Margin = new System.Windows.Forms.Padding(10252, 10252, 10252, 10252);
             this.radPageViewPage10.Name = "radPageViewPage10";
-            this.radPageViewPage10.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage10.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage10.Text = "Frais Semestres";
             // 
             // kryptonTreeView8
@@ -400,31 +400,31 @@
             this.kryptonTreeView8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView8.ItemStyle = Krypton.Toolkit.ButtonStyle.BreadCrumb;
             this.kryptonTreeView8.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView8.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView8.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView8.Name = "kryptonTreeView8";
             treeNode23.Name = "Node1";
             treeNode23.Text = "Gestion Des Frais Semestres";
             this.kryptonTreeView8.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode23});
-            this.kryptonTreeView8.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView8.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView8.TabIndex = 2;
             this.kryptonTreeView8.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView8_AfterSelect);
             // 
             // radPageViewPage5
             // 
             this.radPageViewPage5.Controls.Add(this.kryptonTreeView5);
-            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage5.Location = new System.Drawing.Point(5998, 32274);
-            this.radPageViewPage5.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage5.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage5.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage5.Name = "radPageViewPage5";
-            this.radPageViewPage5.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage5.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage5.Text = "Éleves(Étudiants)";
             // 
             // kryptonTreeView5
             // 
             this.kryptonTreeView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView5.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView5.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView5.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView5.Name = "kryptonTreeView5";
             treeNode24.Name = "Node0";
             treeNode24.Text = "Ajouter Un Eleve";
@@ -433,25 +433,25 @@
             this.kryptonTreeView5.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode24,
             treeNode25});
-            this.kryptonTreeView5.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView5.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView5.TabIndex = 1;
             this.kryptonTreeView5.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView5_AfterSelect);
             // 
             // radPageViewPage4
             // 
             this.radPageViewPage4.Controls.Add(this.kryptonTreeView4);
-            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage4.Location = new System.Drawing.Point(5998, 32274);
-            this.radPageViewPage4.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage4.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage4.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage4.Name = "radPageViewPage4";
-            this.radPageViewPage4.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage4.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage4.Text = "Cours";
             // 
             // kryptonTreeView4
             // 
             this.kryptonTreeView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView4.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView4.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView4.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView4.Name = "kryptonTreeView4";
             treeNode26.Name = "Node0";
             treeNode26.Text = "Ajouter Un Cours";
@@ -460,25 +460,25 @@
             this.kryptonTreeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode26,
             treeNode27});
-            this.kryptonTreeView4.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView4.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView4.TabIndex = 0;
             this.kryptonTreeView4.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView4_AfterSelect);
             // 
             // radPageViewPage11
             // 
             this.radPageViewPage11.Controls.Add(this.kryptonTreeView9);
-            this.radPageViewPage11.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage11.Location = new System.Drawing.Point(3070, 16524);
-            this.radPageViewPage11.Margin = new System.Windows.Forms.Padding(1376, 1376, 1376, 1376);
+            this.radPageViewPage11.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage11.Location = new System.Drawing.Point(7, 40);
+            this.radPageViewPage11.Margin = new System.Windows.Forms.Padding(10252, 10252, 10252, 10252);
             this.radPageViewPage11.Name = "radPageViewPage11";
-            this.radPageViewPage11.Size = new System.Drawing.Size(65535, 65535);
+            this.radPageViewPage11.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage11.Text = "Inscriptions";
             // 
             // kryptonTreeView9
             // 
             this.kryptonTreeView9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView9.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView9.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.kryptonTreeView9.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.kryptonTreeView9.Name = "kryptonTreeView9";
             treeNode28.Name = "Node0";
             treeNode28.Text = "Nouvelle Inscription";
@@ -487,83 +487,85 @@
             this.kryptonTreeView9.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode28,
             treeNode29});
-            this.kryptonTreeView9.Size = new System.Drawing.Size(65535, 65535);
+            this.kryptonTreeView9.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView9.TabIndex = 1;
             this.kryptonTreeView9.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView9_AfterSelect);
             // 
             // radPageViewPage6
             // 
             this.radPageViewPage6.Controls.Add(this.kryptonTreeView13);
-            this.radPageViewPage6.ItemSize = new System.Drawing.SizeF(247F, 32F);
+            this.radPageViewPage6.ItemSize = new System.Drawing.SizeF(455F, 33F);
             this.radPageViewPage6.Location = new System.Drawing.Point(7, 40);
-            this.radPageViewPage6.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
+            this.radPageViewPage6.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
             this.radPageViewPage6.Name = "radPageViewPage6";
-            this.radPageViewPage6.Size = new System.Drawing.Size(233, 184);
+            this.radPageViewPage6.Size = new System.Drawing.Size(441, 171);
             this.radPageViewPage6.Text = "Documentation";
-            // 
-            // radPageViewPage7
-            // 
-            this.radPageViewPage7.Controls.Add(this.kryptonTreeView12);
-            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(247F, 32F);
-            this.radPageViewPage7.Location = new System.Drawing.Point(7, 40);
-            this.radPageViewPage7.Margin = new System.Windows.Forms.Padding(5250, 5250, 5250, 5250);
-            this.radPageViewPage7.Name = "radPageViewPage7";
-            this.radPageViewPage7.Size = new System.Drawing.Size(235, 171);
-            this.radPageViewPage7.Text = "À Propos";
-            // 
-            // splitPanel2
-            // 
-            this.splitPanel2.Controls.Add(this.pictureBox1);
-            this.splitPanel2.Location = new System.Drawing.Point(323, 0);
-            this.splitPanel2.Name = "splitPanel2";
-            this.splitPanel2.Size = new System.Drawing.Size(1362, 692);
-            this.splitPanel2.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.3464286F, 0F);
-            this.splitPanel2.SizeInfo.SplitterCorrection = new System.Drawing.Size(479, 0);
-            this.splitPanel2.TabIndex = 1;
-            this.splitPanel2.TabStop = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // kryptonTreeView12
-            // 
-            this.kryptonTreeView12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTreeView12.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTreeView12.Name = "kryptonTreeView12";
-            treeNode31.Name = "Node0";
-            treeNode31.Text = "Lancer";
-            this.kryptonTreeView12.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode31});
-            this.kryptonTreeView12.Size = new System.Drawing.Size(235, 171);
-            this.kryptonTreeView12.TabIndex = 0;
-            this.kryptonTreeView12.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView12_AfterSelect);
             // 
             // kryptonTreeView13
             // 
             this.kryptonTreeView13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTreeView13.Location = new System.Drawing.Point(0, 0);
+            this.kryptonTreeView13.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
             this.kryptonTreeView13.Name = "kryptonTreeView13";
             treeNode30.Name = "Node0";
             treeNode30.Text = "Lancer";
             this.kryptonTreeView13.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode30});
-            this.kryptonTreeView13.Size = new System.Drawing.Size(233, 184);
+            this.kryptonTreeView13.Size = new System.Drawing.Size(441, 171);
             this.kryptonTreeView13.TabIndex = 1;
             this.kryptonTreeView13.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView13_AfterSelect);
+            // 
+            // radPageViewPage7
+            // 
+            this.radPageViewPage7.Controls.Add(this.kryptonTreeView12);
+            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(455F, 33F);
+            this.radPageViewPage7.Location = new System.Drawing.Point(55, 298);
+            this.radPageViewPage7.Margin = new System.Windows.Forms.Padding(39110, 39110, 39110, 39110);
+            this.radPageViewPage7.Name = "radPageViewPage7";
+            this.radPageViewPage7.Size = new System.Drawing.Size(1756, 1280);
+            this.radPageViewPage7.Text = "À Propos";
+            // 
+            // kryptonTreeView12
+            // 
+            this.kryptonTreeView12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonTreeView12.Location = new System.Drawing.Point(0, 0);
+            this.kryptonTreeView12.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.kryptonTreeView12.Name = "kryptonTreeView12";
+            treeNode31.Name = "Node0";
+            treeNode31.Text = "Lancer";
+            this.kryptonTreeView12.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode31});
+            this.kryptonTreeView12.Size = new System.Drawing.Size(1756, 1280);
+            this.kryptonTreeView12.TabIndex = 0;
+            this.kryptonTreeView12.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.kryptonTreeView12_AfterSelect);
+            // 
+            // splitPanel2
+            // 
+            this.splitPanel2.Controls.Add(this.pictureBox1);
+            this.splitPanel2.Location = new System.Drawing.Point(604, 0);
+            this.splitPanel2.Name = "splitPanel2";
+            this.splitPanel2.Size = new System.Drawing.Size(1081, 692);
+            this.splitPanel2.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.2037037F, 0F);
+            this.splitPanel2.SizeInfo.SplitterCorrection = new System.Drawing.Size(255, 0);
+            this.splitPanel2.TabIndex = 1;
+            this.splitPanel2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::EduOne.Properties.Resources.school_background;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(19);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(75, 75, 75, 75);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1362, 692);
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 692);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // fraWelcome2
             // 

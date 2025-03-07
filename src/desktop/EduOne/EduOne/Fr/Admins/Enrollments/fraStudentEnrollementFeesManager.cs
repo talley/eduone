@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using EduOne.Fr.Helpers;
-using EduOne.Fr.Admins.Semesters;
 using EduOne.Exts;
 using System.Diagnostics;
 using System.IO;
 using EduOne.Fr.helpers;
-using EduOne.Repositories.Fr;
 using EduOne.Fr.Admins.Finances;
 
 namespace EduOne.Fr.Admins.Enrollments

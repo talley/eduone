@@ -2,6 +2,7 @@
 using System.Text.Json;
 using EduOne.Fr.RestServices.EndPoints;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using EduOne.Middlewares;
 
 namespace EduOne.Fr.RestServices
 {
@@ -90,6 +91,10 @@ namespace EduOne.Fr.RestServices
 
             app.UseHttpsRedirection();
 
+            app.UseHttpsRedirection();   // Redirect HTTP to HTTPS (important for security)
+
+            app.UseAuthentication();      // Authenticate the request (JWT or Identity)
+            app.UseMiddleware<ApiKeyMiddleware>(); // Check API Key (before authorization)
             app.UseAuthorization();
 
 
@@ -128,6 +133,8 @@ namespace EduOne.Fr.RestServices
                         app.MapApplicationUsersEndpoints();
 
                         app.MapSemesterEnrollmentFeesEndpoints();
+
+                        app.MapUserThemesEndpoints();
 
 
 

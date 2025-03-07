@@ -38,6 +38,7 @@
             this.txtnotes = new DevExpress.XtraRichEdit.RichEditControl();
             this.btnadd = new DevExpress.XtraEditors.SimpleButton();
             this.btnclose = new DevExpress.XtraEditors.SimpleButton();
+            this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             ((System.ComponentModel.ISupportInitialize)(this.txtkey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtvalue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckstatus.Properties)).BeginInit();
@@ -45,7 +46,8 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(28, 46);
+            this.labelControl1.Location = new System.Drawing.Point(35, 58);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(18, 16);
             this.labelControl1.TabIndex = 0;
@@ -53,7 +55,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(28, 109);
+            this.labelControl2.Location = new System.Drawing.Point(35, 136);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 16);
             this.labelControl2.TabIndex = 1;
@@ -61,7 +64,8 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(28, 178);
+            this.labelControl3.Location = new System.Drawing.Point(35, 222);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(34, 16);
             this.labelControl3.TabIndex = 2;
@@ -69,7 +73,8 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(28, 252);
+            this.labelControl4.Location = new System.Drawing.Point(35, 315);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(32, 16);
             this.labelControl4.TabIndex = 3;
@@ -77,25 +82,28 @@
             // 
             // txtkey
             // 
-            this.txtkey.Location = new System.Drawing.Point(113, 43);
+            this.txtkey.Location = new System.Drawing.Point(141, 54);
+            this.txtkey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtkey.Name = "txtkey";
-            this.txtkey.Size = new System.Drawing.Size(853, 22);
+            this.txtkey.Size = new System.Drawing.Size(830, 22);
             this.txtkey.TabIndex = 4;
             // 
             // txtvalue
             // 
-            this.txtvalue.Location = new System.Drawing.Point(113, 106);
+            this.txtvalue.Location = new System.Drawing.Point(141, 132);
+            this.txtvalue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtvalue.Name = "txtvalue";
-            this.txtvalue.Size = new System.Drawing.Size(853, 22);
+            this.txtvalue.Size = new System.Drawing.Size(830, 22);
             this.txtvalue.TabIndex = 5;
             // 
             // ckstatus
             // 
             this.ckstatus.EditValue = true;
-            this.ckstatus.Location = new System.Drawing.Point(113, 176);
+            this.ckstatus.Location = new System.Drawing.Point(141, 220);
+            this.ckstatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckstatus.Name = "ckstatus";
             this.ckstatus.Properties.Caption = "";
-            this.ckstatus.Size = new System.Drawing.Size(94, 19);
+            this.ckstatus.Size = new System.Drawing.Size(10, 19);
             this.ckstatus.TabIndex = 6;
             // 
             // txtnotes
@@ -103,23 +111,25 @@
             this.txtnotes.Location = new System.Drawing.Point(113, 252);
             this.txtnotes.Name = "txtnotes";
             this.txtnotes.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
-            this.txtnotes.Size = new System.Drawing.Size(853, 393);
+            this.txtnotes.Size = new System.Drawing.Size(858, 393);
             this.txtnotes.TabIndex = 7;
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(113, 661);
+            this.btnadd.Location = new System.Drawing.Point(141, 826);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(94, 29);
+            this.btnadd.Size = new System.Drawing.Size(10, 36);
             this.btnadd.TabIndex = 8;
             this.btnadd.Text = "Ajouter";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnclose
             // 
-            this.btnclose.Location = new System.Drawing.Point(223, 661);
+            this.btnclose.Location = new System.Drawing.Point(279, 826);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(94, 29);
+            this.btnclose.Size = new System.Drawing.Size(10, 36);
             this.btnclose.TabIndex = 9;
             this.btnclose.Text = "Fermer";
             // 
@@ -161,5 +171,6 @@
         private DevExpress.XtraRichEdit.RichEditControl txtnotes;
         private DevExpress.XtraEditors.SimpleButton btnadd;
         private DevExpress.XtraEditors.SimpleButton btnclose;
+        private Telerik.WinControls.Themes.AquaTheme aquaTheme1;
     }
 }

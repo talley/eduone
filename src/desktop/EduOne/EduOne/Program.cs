@@ -2,15 +2,10 @@
 using System.Windows.Forms;
 using EduOne.En;
 using EduOne.Fr.Admins;
-using EduOne.Fr.Admins.Enrollments;
-using EduOne.Fr.Admins.Finances.SemestersFees;
-using EduOne.Fr.Admins.Semesters;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls;
 using Config = System.Configuration.ConfigurationManager;
-using EduOne.Fr.Admins.Settings;
-using EduOne.Fr;
-using EduOne.Fr.Admins.Reports;
+using EduOne.Fr.Tools;
 namespace EduOne
 {
     internal static class Program
@@ -30,7 +25,7 @@ namespace EduOne
             if (appLang == "fr")
             {
                 //fraWelcome2
-                Application.Run(new fraWelcome2(""));// fraManageStaffs("test@test.com"));
+                Application.Run(new fraWelcome3("test@test.com"));// fraManageStaffs("test@test.com"));
             }
             else
             {

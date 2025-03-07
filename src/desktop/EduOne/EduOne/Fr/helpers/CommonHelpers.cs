@@ -10,7 +10,6 @@ using EduOne.Helpers;
 using Config = System.Configuration.ConfigurationManager;
 using Newtonsoft.Json;
 using System.Globalization;
-using EduOne.Fr.Admins.Finances.SemestersFees;
 namespace EduOne.Fr.Helpers
 {
     public class CommonHelpers
@@ -26,6 +25,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -55,6 +56,15 @@ namespace EduOne.Fr.Helpers
             return courses;
         }
 
+        private async Task<string> GetAppApiAsync()
+        {
+            string result="";
+            var settings = await GetApplicationSettings();
+            var setting = settings.SingleOrDefault(x => x.AppKey == "APPLICATION.SECURITY.APIKEY");
+            result = setting.AppValue;
+            return result;
+        }
+
         public bool IsAppInProd()
         {
             bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
@@ -70,6 +80,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
 
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
@@ -109,6 +121,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
 
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
@@ -158,7 +172,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -207,7 +222,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -245,7 +261,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -291,7 +308,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -331,6 +349,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -358,6 +378,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -385,6 +407,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -412,6 +436,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -439,6 +465,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -466,6 +494,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -493,6 +523,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -520,6 +552,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -547,6 +581,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -575,6 +611,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -605,6 +643,36 @@ namespace EduOne.Fr.Helpers
             var st = students.SingleOrDefault(x => x.Id == id);
 
             return string.Concat(st.Nom, " ", st.Prénom);
+        }
+
+        internal async Task<List<UserThemes>> GetUsersThemesAsync()
+        {
+
+            var result = new List<UserThemes>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "UserThemes";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<UserThemes>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
         }
     }
 }

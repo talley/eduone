@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DevExpress.XtraEditors;
-using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
 
 namespace EduOne.Exts

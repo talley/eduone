@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dapper;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using EduOne.Data.Fr;
 using EduOne.Exts;
 using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
-using EduOne.Helpers;
-using Newtonsoft.Json;
 
 namespace EduOne.Fr.Admins
 {

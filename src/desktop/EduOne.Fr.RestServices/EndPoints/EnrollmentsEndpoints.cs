@@ -17,10 +17,10 @@ public static class EnrollmentsEndpoints
         .WithName("GetAllEnrollments")
         .WithOpenApi();
 
-        group.MapGet("/{id}", async Task<Results<Ok<Enrollments>, NotFound>> (int inscriptionid, EduOne_FrContext db) =>
+        group.MapGet("/{id}", async Task<Results<Ok<Enrollments>, NotFound>> (int id, EduOne_FrContext db) =>
         {
             return await db.Enrollments.AsNoTracking()
-                .FirstOrDefaultAsync(model => model.InscriptionID == inscriptionid)
+                .FirstOrDefaultAsync(model => model.InscriptionID ==id)
                 is Enrollments model
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
