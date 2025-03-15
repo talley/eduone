@@ -55,6 +55,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[EnrollmentNotes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Enrollments]",
          "ObjectType": 0
       },
@@ -160,6 +164,7 @@
    "UseHandleBars": false,
    "UseHierarchyId": false,
    "UseInflector": false,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
    "UseLegacyPluralizer": false,
    "UseManyToManyEntity": false,
    "UseNoDefaultConstructor": false,

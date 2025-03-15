@@ -80,8 +80,10 @@ namespace EduOne.Fr.Admins.Enrollments
                 if (ds == DialogResult.Yes)
                 {
                     var oid = view.GetRowCellValue(view.FocusedRowHandle, "InscriptionID");
+                    var EleveId= view.GetRowCellValue(view.FocusedRowHandle, "EleveId");
                     var id = int.Parse(oid.ToString());
-                    var edit_user_form = new fraEditEnrollment("test@test.com", id);
+                    var iEleveId = int.Parse(EleveId.ToString());
+                    var edit_user_form = new fraEditEnrollment2("test@test.com", id);
                     edit_user_form.ShowDialog();
 
                 }
@@ -95,7 +97,26 @@ namespace EduOne.Fr.Admins.Enrollments
 
         private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            var view = gridView1;
 
+            if (gridControl1.MainView is GridView)
+            {
+                DialogResult ds = XtraMessageBox.Show(this, "Êtes-vous sûr de vouloir voir les notes de l`inscription?", ApplicationHelpers.AppName, MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    var oid = view.GetRowCellValue(view.FocusedRowHandle, "InscriptionID");
+                   // var EleveId = view.GetRowCellValue(view.FocusedRowHandle, "EleveId");
+                    var id = int.Parse(oid.ToString());
+                    //var iEleveId = int.Parse(EleveId.ToString());
+                    var edit_user_form = new fraEnrollmentNotes("test@test.com", id);
+                    edit_user_form.ShowDialog();
+
+                }
+                else
+                {
+                    "".DisplayDialog("La transaction a été annulée.");
+                }
+            }
         }
 
         private void btnexcel_Click(object sender, EventArgs e)

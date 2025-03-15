@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2025-03-13T20:04:02.854-04:00" lasteditedby="Abibou" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Nouvelle Salle De Classe</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Nouvelle Salle De Classe</para>
+    </header>
+    <para styleclass="Normal">Veuillez suivre les instructions ci-dessous.</para>
+  </body>
+</topic>

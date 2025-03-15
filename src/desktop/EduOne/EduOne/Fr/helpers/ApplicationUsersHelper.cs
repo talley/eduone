@@ -16,17 +16,7 @@ namespace EduOne.Fr.Helpers
     /// </summary>
     public static class ApplicationUsersHelper
     {
-        /// <summary>
-        /// Determines whether [is application in production or not.
-        /// </summary>
-        /// <returns>
-        ///   <c>true</c> if [is application in product]; otherwise, <c>false</c>.
-        /// </returns>
-        private static bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
+
         /// <summary>
         /// Gets the application users asynchronously.
         /// </summary>
@@ -34,7 +24,7 @@ namespace EduOne.Fr.Helpers
         public static async Task<List<ApplicationUsers>> GetApplicationUsersAsync()
         {
             List <ApplicationUsers> users = new List <ApplicationUsers>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationUsers";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "ApplicationUsers";
             using (var client = new HttpClient())
             {
                 try
@@ -72,7 +62,7 @@ namespace EduOne.Fr.Helpers
             Guid roleId =Guid.Empty;
 
             List<ApplicationUsers> users = new List<ApplicationUsers>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"/Commons/Roles/{role}";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"/Commons/Roles/{role}";
             using (var client = new HttpClient())
             {
                 try
@@ -108,7 +98,7 @@ namespace EduOne.Fr.Helpers
             var roles=new List<ApplicationRoles>();
 
             List<ApplicationUsers> users = new List<ApplicationUsers>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"ApplicationRoles";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"ApplicationRoles";
             using (var client = new HttpClient())
             {
                 try
@@ -138,7 +128,7 @@ namespace EduOne.Fr.Helpers
         public static async Task<List<ApplicationUsers>> DecryptPassword(string password)
         {
             List<ApplicationUsers> users = new List<ApplicationUsers>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Commons/Security/DecryptPassword/";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Commons/Security/DecryptPassword/";
             using (var client = new HttpClient())
             {
                 try

@@ -103,7 +103,7 @@ namespace EduOne.Fr.Admins.Courses
                     ModifierPar=ApplicationHelpers.GetSystemUser(_email)
                 };
 
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"Courses/{_id}";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"Courses/{_id}";
 
                 using (var client = new HttpClient())
                 {
@@ -167,7 +167,7 @@ namespace EduOne.Fr.Admins.Courses
         private async Task<List<Models.Departments>> GetDepartmentAsync()
         {
             var dpts = new List<Models.Departments>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Departments";
 
             using (var client = new HttpClient())
             {
@@ -202,11 +202,6 @@ namespace EduOne.Fr.Admins.Courses
             return dpts;
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
 
     }
 }

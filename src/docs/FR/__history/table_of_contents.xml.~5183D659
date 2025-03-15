@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XInclude">
+  <topicref type="topic" id="421579986017862" modified="2015-06-02T18:56:53.338Z" icon="0" href="Stylesheet-for-Style-Test">
+    <caption translate="true">Stylesheet for Style Test</caption>
+  </topicref>
+  <topicref type="topic" id="457217487418307" build="ALL" modified="2025-03-05T14:26:11.736Z" icon="0" href="Introduction">
+    <caption translate="true">Introduction</caption>
+    <topicref type="topic" id="457217574098935" build="ALL" modified="2025-03-05T14:37:20.437Z" icon="0" href="Second-topic">
+      <caption translate="true">Auteur</caption>
+    </topicref>
+    <topicref type="topic" id="457217647125749" build="ALL" modified="2025-03-05T14:35:44.783Z" icon="0" href="Welcome-topic">
+      <caption translate="true">Configurations</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457216862008679" build="ALL" modified="2025-03-08T16:38:14.380Z" icon="0" href="Chapter-2">
+    <caption translate="true">Personnel</caption>
+    <topicref type="topic" id="457217902265590" build="ALL" modified="2025-03-08T16:38:48.028Z" icon="0" href="Overview">
+      <caption translate="true">Ajouter Un Personnel</caption>
+    </topicref>
+    <topicref type="topic" id="457254227486502" build="ALL" modified="2025-03-09T12:34:30.523Z" icon="0" href="Gestion-Du-Personnel">
+      <caption translate="true">Gestion Du Personnel</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457256067363621" build="ALL" modified="2025-03-09T18:40:23.702Z" icon="0" href="Chef-Departements">
+    <caption translate="true">Chef Départements</caption>
+    <topicref type="topic" id="457259896944052" build="ALL" modified="2025-03-09T18:40:47.152Z" icon="0" href="Ajouter-Chef-Du-Departement">
+      <caption translate="true">Ajouter Chef Du Département</caption>
+    </topicref>
+    <topicref type="topic" id="457258586450580" build="ALL" modified="2025-03-09T19:08:58.469Z" icon="0" href="Gestion-Des-Chef-Du-Departemen">
+      <caption translate="true">Gestion Des Chef Du Département</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457277379650195" build="ALL" modified="2025-03-11T14:55:49.547Z" icon="0" href="Departements">
+    <caption translate="true">Départements</caption>
+    <topicref type="topic" id="45726492083985" build="ALL" modified="2025-03-11T14:56:07.854Z" icon="0" href="Ajouter-Un-Departement">
+      <caption translate="true">Ajouter Un Département</caption>
+    </topicref>
+    <topicref type="topic" id="457278118058037" build="ALL" modified="2025-03-11T15:21:03.746Z" icon="0" href="Gestion-Des-Departement">
+      <caption translate="true">Gestion Des Département</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457297931419921" build="ALL" modified="2025-03-13T19:46:58.560Z" icon="0" href="Salles---Inscriptions">
+    <caption translate="true">Salles &amp;&amp;  Inscriptions</caption>
+    <topicref type="topic" id="457299269183249" build="ALL" modified="2025-03-13T20:02:22.471Z" icon="0" href="Nouvelle-Salle-De-Classe">
+      <caption translate="true">Nouvelle Salle De Classe</caption>
+    </topicref>
+  </topicref>
+</map>

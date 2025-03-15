@@ -219,5 +219,94 @@ namespace EduOne.Fr.Admins.Enrollments
             drpcourseid.Text = course.courseName;
             "".DisplayDialog("Cours:"+course.courseName+",Id:"+course.courseId);
         }
+
+        private void btnclose2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private async void btnedit2_Click(object sender, EventArgs e)
+        {
+            string courseid = drpcourseid.Text;
+            string studentid = drpstudentid.Text;
+            string grade = txtgrade.Text;
+            string notes = txtnotes.Text;
+
+            if (courseid.Length == 0)
+            {
+                "".DisplayErrorFrDialog(" Cour");
+            }
+            else if (studentid.Length == 0)
+            {
+                "".DisplayErrorFrDialog(ApplicationHelpers.GetAppDomain());
+            }
+            else if (grade.Length == 0)
+            {
+                "".DisplayErrorFrDialog(" Grade");
+            }
+            else if (notes.Length == 0)
+            {
+                "".DisplayErrorFrDialog(" Notes");
+            }
+            else
+            {
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(helper.IsAppInProd()) + $"Enrollments/{_id}";
+                using (HttpClient client = new HttpClient())
+                {
+                    try
+                    {
+                        JsonSerializerOptions options = new JsonSerializerOptions()
+                        {
+                            ReferenceHandler = ReferenceHandler.IgnoreCycles,
+                            WriteIndented = true
+                        };
+                        List<Models.Enrollments> enrollements = await helper.GetEnrollmentsAsync();
+                        Models.Enrollments edit = enrollements.SingleOrDefault(x => x.InscriptionID == _id);
+                        var data = new
+                        {
+                            InscriptionID = _id,
+                            EleveId = int.Parse(drpstudentid.EditValue.ToString()),
+                            CoursId = int.Parse(drpcourseid.EditValue.ToString()),
+                            Date_Inscription = DateTime.Parse(dtdateinsc.EditValue.ToString()),
+                            Grade = double.Parse(grade),
+                            Statut = ckstatus.Checked,
+                            Notes = notes,
+                            ModifierAu = DateTime.Now,
+                            ModifierPar = ApplicationHelpers.GetSystemUser(_email),
+                            AjouterAu = edit.AjouterAu,
+                            AjouterPar = edit.AjouterPar
+                        };
+
+                        string jsonData = JsonSerializer.Serialize(data, options);
+
+                        StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                        HttpResponseMessage response = await client.PutAsync(apiUrl, content).ConfigureAwait(false);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                            Invoke(new Action(() =>
+                            {
+                                "".DisplayDialog("La Nouvelle inscription a été mis a jour");
+                                btnadd.Enabled = false;
+                            }));
+                        }
+                        else
+                        {
+                            Invoke(new Action(() =>
+                            {
+                                XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                            }));
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+            }
+                }
     }
 }

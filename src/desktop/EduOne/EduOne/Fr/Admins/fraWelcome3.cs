@@ -1,4 +1,9 @@
 ﻿using DevExpress.XtraEditors;
+using EduOne.Fr.Admins.Classrooms;
+using EduOne.Fr.Admins.DepartmentHeads;
+using EduOne.Fr.Admins.Departments;
+using EduOne.Fr.Admins.Enrollments;
+using EduOne.Fr.Admins.Staffs;
 using EduOne.Fr.Tools;
 using System;
 using System.Collections.Generic;
@@ -38,7 +43,7 @@ namespace EduOne.Fr.Admins
                     break;
                 case "Visionneuse PDF":
                     var form2 = new frPdfViewer();
-                    ShowFormInPanel(form2,splitPanel2);//frExceViewer
+                    ShowFormInPanel(form2, splitPanel2);//frExceViewer
                     break;
                 case "Visionneuse Excel":
                     var form3 = new frExceViewer();
@@ -88,6 +93,102 @@ namespace EduOne.Fr.Admins
             else
             {
                 frm.Visible = true;
+            }
+        }
+
+        private void kryptonTreeView3_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView3.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Un Personnel":
+                        var form1 = new fraNewStaff(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Du Personnel":
+                        var form2 = new fraManageStaffs(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView1.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Chef Département":
+                        var form1 = new fraAddDepartmentHead(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Chefs Départements":
+                        var form2 = new fraDepartmentHeads(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView2_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView2.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Un Département":
+                        var form1 = new fraAddDepartment(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Des Départements":
+                        var form2 = new fraDepartments2(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView6_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView6.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Nouvelle Salle De Classe":
+                        var form1 = new fraAddClassRoom(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Des Salle De Classe":
+                        var form2 = new frManageClassRooms(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    case "Nouvelle Inscription":
+                        var form3 = new frNewEnrollment(_email);
+                        ShowFormInPanel(form3, splitPanel2);
+                        break;
+                    case "Gestion Des Inscriptions":
+                        var form4 = new fraEnrollmentManager(_email);
+                        ShowFormInPanel(form4, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

@@ -67,9 +67,21 @@ namespace EduOne.Fr.Helpers
 
         public bool IsAppInProd()
         {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
+            var value = Config.AppSettings["IS_PROD"];
+
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("IS_PROD setting is missing or empty in App.config");
+            }
+
+            if (!bool.TryParse(value, out bool isAppInProd))
+            {
+                throw new Exception($"Invalid boolean value for IS_PROD: {value}");
+            }
+
             return isAppInProd;
         }
+
 
         public async Task<List<Departments>> GetDepartmentAsync()
         {
@@ -308,8 +320,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-                    var secret = await GetAppApiAsync();
-                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+                   // var secret = await GetAppApiAsync();
+                    //client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -523,8 +535,8 @@ namespace EduOne.Fr.Helpers
             {
                 try
                 {
-                    var secret = await GetAppApiAsync();
-                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+                   // var secret = await GetAppApiAsync();
+                   // client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
                     var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
@@ -664,6 +676,37 @@ namespace EduOne.Fr.Helpers
                     {
                         var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                         result = JsonConvert.DeserializeObject<List<UserThemes>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+
+        internal async Task<List<EnrollmentNotes>> GetEnrollmentNotesAsync()
+        {
+
+            var result = new List<EnrollmentNotes>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "EnrollmentNotes";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var secret = await GetAppApiAsync();
+                    client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<EnrollmentNotes>>(responseData);
                     }
                 }
                 catch (Exception ex)

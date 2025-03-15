@@ -87,8 +87,48 @@ namespace EduOne.Fr.RestServices.EndPoints
                 .RequireCors("ApplicationPolicy");
 
 
+            group.MapGet("/GetTables", static async Task<Results<Ok<List<string>>, NotFound>> (EduOne_FrContext db) =>
+            {
+                var result = await GetSyncTablesAsync();
+                return TypedResults.Ok(result.ToList());
+            })
+                .WithName("GetTables")
+                .WithOpenApi()
+                .RequireCors("ApplicationPolicy");
 
-        } //end class
+
+            group.MapGet("/System/AppUrl/{isprod}", static async Task<Results<Ok<string>, NotFound>> (bool isprod, EduOne_FrContext db) =>
+            {
+                string result;
+                var settings = await db.ApplicationSettings.ToListAsync();
+                var prodUrl = settings.SingleOrDefault(x => x.AppKey == "APPLICATION.APPPROD.URL");
+                var devUrl = settings.SingleOrDefault(x => x.AppKey == "APPLICATION.APPDEV.URL");
+                if (isprod)
+                {
+                    result = prodUrl?.AppValue;
+                }
+                else
+                {
+                    result = devUrl?.AppValue;
+                }
+                return TypedResults.Ok(result);
+            })
+               .WithName("GetAppUrl")
+               .WithOpenApi()
+               .RequireCors("ApplicationPolicy");
+
+            group.MapGet("/System/Prod", static async Task<Results<Ok<int>, NotFound>> (EduOne_FrContext db) =>
+            {
+            var settings = await db.ApplicationSettings.ToListAsync();
+            var result = settings.SingleOrDefault(x => x.AppKey == "");
+            var val = int.Parse(result?.AppValue.ToString());
+                return TypedResults.Ok(val);
+            })
+                .WithName("CheckIfInProd")
+                .WithOpenApi()
+                .RequireCors("ApplicationPolicy");
+
+        } //end endpoint class
 
         private static async Task<string> DecryptPasswordAsync(byte[] password)
         {
@@ -156,6 +196,18 @@ namespace EduOne.Fr.RestServices.EndPoints
                             await sqlcon.CloseAsync();
                         }
                 }
+            }
+            return result;
+        }
+
+        public static async Task<IEnumerable<string>> GetSyncTablesAsync()
+        {
+            IEnumerable<string> result = new List<string>();
+            var sql = "SELECT name FROM sys.tables";
+            using (IDbConnection sqlcon = new SqlConnection(DbHelpers.CS))
+            {
+
+                result = await sqlcon.QueryAsync<string>(sql);
             }
             return result;
         }

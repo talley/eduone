@@ -27,7 +27,7 @@ namespace EduOne.Fr.Admins.Staffs
 
         private async void fraNewStaff_Load(object sender, EventArgs e)
         {
-            var roles = await helpers.GettStaffRolesAsync();
+            var roles = await helpers.GettStaffRolesAsync().ConfigureAwait(false);
 
             var needed_roles = roles.Select(x => new {x.Id,x.Role}).ToList();
 
@@ -38,15 +38,19 @@ namespace EduOne.Fr.Admins.Staffs
                 needed_genders.Add(new MyRoles { Role = g });
             }
 
-            drproles.Properties.DataSource = needed_roles;
-            drproles.Properties.DisplayMember = "Role";
-            drproles.Properties.ValueMember = "Role";
-            drproles.Properties.BestFit();
+            Invoke(new Action(() =>
+            {
+                drproles.Properties.DataSource = needed_roles;
+                drproles.Properties.DisplayMember = "Role";
+                drproles.Properties.ValueMember = "Role";
+                drproles.Properties.BestFit();
 
-            drpgenders.Properties.DataSource = needed_genders;
-            drpgenders.Properties.DisplayMember = "Role";
-            drpgenders.Properties.ValueMember = "Role";
-            drpgenders.Properties.BestFit();
+                drpgenders.Properties.DataSource = needed_genders;
+                drpgenders.Properties.DisplayMember = "Role";
+                drpgenders.Properties.ValueMember = "Role";
+                drpgenders.Properties.BestFit();
+            }));
+          
         }
 
         private void btnclose_Click(object sender, EventArgs e)

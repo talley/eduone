@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpressVSDemo", "..\..\.
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EduOne.Fr.Setup", "EduOne.Fr.Setup\EduOne.Fr.Setup.vdproj", "{F95037E6-F2F2-0C53-6F82-B8CC29368798}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.Fr.Sync", "..\EduOne.Sync\EduOne.Fr.Sync\EduOne.Fr.Sync.csproj", "{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduOne.Fr.Exceptions", "EduOne.Fr.Exceptions\EduOne.Fr.Exceptions.csproj", "{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,22 @@ Global
 		{F95037E6-F2F2-0C53-6F82-B8CC29368798}.Release|Any CPU.ActiveCfg = Release
 		{F95037E6-F2F2-0C53-6F82-B8CC29368798}.Release|x86.ActiveCfg = Release
 		{F95037E6-F2F2-0C53-6F82-B8CC29368798}.Release|x86.Build.0 = Release
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Debug|x86.Build.0 = Debug|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Release|x86.ActiveCfg = Release|Any CPU
+		{66A7C2E9-3B8C-4BB8-805D-8A0E6AC6AAA6}.Release|x86.Build.0 = Release|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Debug|x86.Build.0 = Debug|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Release|x86.ActiveCfg = Release|Any CPU
+		{A900E53F-D4E3-45EE-BF1E-5E279684EFBA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

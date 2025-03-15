@@ -3,6 +3,7 @@ using System.Net.Http;
 using DevExpress.XtraEditors;
 using EduOne.Exts;
 using EduOne.Fr.Admins;
+using EduOne.Fr.Helpers;
 using EduOne.Helpers;
 using Config = System.Configuration.ConfigurationManager;
 
@@ -31,7 +32,7 @@ namespace EduOne.Fr
             }
             else
             {
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"Commons/Security/Authenticate/{email}/{password}";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"Commons/Security/Authenticate/{email}/{password}";
                 using (var client = new HttpClient())
                 {
                     try
@@ -71,6 +72,7 @@ namespace EduOne.Fr
 
         private async void btnlogin_Click(object sender, EventArgs e)
         {
+            var url = WebServerHelpers.GetApplicationUrl();
             var email = txtemail.Text.Trim();
             var password = txtpass.Text.Trim();
 
@@ -84,7 +86,7 @@ namespace EduOne.Fr
             }
             else
             {
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"Commons/Security/Authenticate/{email}/{password}";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"Commons/Security/Authenticate/{email}/{password}";
                 using (var client = new HttpClient())
                 {
                     try
@@ -125,10 +127,5 @@ namespace EduOne.Fr
             }
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
     }
 }

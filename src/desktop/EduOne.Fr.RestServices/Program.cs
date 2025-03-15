@@ -94,7 +94,7 @@ namespace EduOne.Fr.RestServices
             app.UseHttpsRedirection();   // Redirect HTTP to HTTPS (important for security)
 
             app.UseAuthentication();      // Authenticate the request (JWT or Identity)
-            app.UseMiddleware<ApiKeyMiddleware>(); // Check API Key (before authorization)
+           // app.UseMiddleware<ApiKeyMiddleware>(); // Check API Key (before authorization)
             app.UseAuthorization();
 
 
@@ -135,6 +135,8 @@ namespace EduOne.Fr.RestServices
                         app.MapSemesterEnrollmentFeesEndpoints();
 
                         app.MapUserThemesEndpoints();
+
+                        app.MapEnrollmentNotesEndpoints();
 
 
 

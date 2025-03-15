@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EduOne.Fr.Admins.Courses.SplashScreen2), true, true, true);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnhtml = new DevExpress.XtraEditors.SimpleButton();
+            this.btnpdf = new DevExpress.XtraEditors.SimpleButton();
+            this.btnexcel = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -59,20 +64,16 @@
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnhtml = new DevExpress.XtraEditors.SimpleButton();
-            this.btnpdf = new DevExpress.XtraEditors.SimpleButton();
-            this.btnexcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -84,6 +85,44 @@
             this.groupControl1.Size = new System.Drawing.Size(1470, 100);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Options";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.btnhtml);
+            this.groupControl3.Controls.Add(this.btnpdf);
+            this.groupControl3.Controls.Add(this.btnexcel);
+            this.groupControl3.Location = new System.Drawing.Point(1102, 28);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(356, 66);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "Exportations";
+            // 
+            // btnhtml
+            // 
+            this.btnhtml.Location = new System.Drawing.Point(233, 28);
+            this.btnhtml.Name = "btnhtml";
+            this.btnhtml.Size = new System.Drawing.Size(94, 29);
+            this.btnhtml.TabIndex = 23;
+            this.btnhtml.Text = "HTML";
+            this.btnhtml.Click += new System.EventHandler(this.btnhtml_Click);
+            // 
+            // btnpdf
+            // 
+            this.btnpdf.Location = new System.Drawing.Point(133, 28);
+            this.btnpdf.Name = "btnpdf";
+            this.btnpdf.Size = new System.Drawing.Size(94, 29);
+            this.btnpdf.TabIndex = 24;
+            this.btnpdf.Text = "PDF";
+            this.btnpdf.Click += new System.EventHandler(this.btnpdf_Click);
+            // 
+            // btnexcel
+            // 
+            this.btnexcel.Location = new System.Drawing.Point(17, 28);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(94, 29);
+            this.btnexcel.TabIndex = 22;
+            this.btnexcel.Text = "Excel";
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // panelControl1
             // 
@@ -272,7 +311,7 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Notes", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Notes", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -292,49 +331,15 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Modifier", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Modifier", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
-            // groupControl3
+            // splashScreenManager1
             // 
-            this.groupControl3.Controls.Add(this.btnhtml);
-            this.groupControl3.Controls.Add(this.btnpdf);
-            this.groupControl3.Controls.Add(this.btnexcel);
-            this.groupControl3.Location = new System.Drawing.Point(1102, 28);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(356, 66);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "Exportations";
-            // 
-            // btnhtml
-            // 
-            this.btnhtml.Location = new System.Drawing.Point(233, 28);
-            this.btnhtml.Name = "btnhtml";
-            this.btnhtml.Size = new System.Drawing.Size(94, 29);
-            this.btnhtml.TabIndex = 23;
-            this.btnhtml.Text = "HTML";
-            this.btnhtml.Click += new System.EventHandler(this.btnhtml_Click);
-            // 
-            // btnpdf
-            // 
-            this.btnpdf.Location = new System.Drawing.Point(133, 28);
-            this.btnpdf.Name = "btnpdf";
-            this.btnpdf.Size = new System.Drawing.Size(94, 29);
-            this.btnpdf.TabIndex = 24;
-            this.btnpdf.Text = "PDF";
-            this.btnpdf.Click += new System.EventHandler(this.btnpdf_Click);
-            // 
-            // btnexcel
-            // 
-            this.btnexcel.Location = new System.Drawing.Point(17, 28);
-            this.btnexcel.Name = "btnexcel";
-            this.btnexcel.Size = new System.Drawing.Size(94, 29);
-            this.btnexcel.TabIndex = 22;
-            this.btnexcel.Text = "Excel";
-            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // fraEnrollmentManager
             // 
@@ -348,14 +353,14 @@
             this.Load += new System.EventHandler(this.fraEnrollmentManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

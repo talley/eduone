@@ -71,7 +71,7 @@ namespace EduOne.Fr.Admins.Departments
                     AjouterPar = ApplicationHelpers.GetSystemUser(_email)
                 };
 
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Departments";
                 using (var client = new HttpClient())
                 {
                     try
@@ -114,10 +114,6 @@ namespace EduOne.Fr.Admins.Departments
             }
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
+
     }
 }

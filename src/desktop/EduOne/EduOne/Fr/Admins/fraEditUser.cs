@@ -132,7 +132,7 @@ namespace EduOne.Fr.Admins
             }
             else
             {
-                var apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + $"ApplicationUsers/{Id}";
+                var apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"ApplicationUsers/{Id}";
                 var user = await GetApplicationUserAsync().ConfigureAwait(false);
                 byte[] apipassword = null;
                 var currentPass=user.Password;
@@ -215,7 +215,7 @@ namespace EduOne.Fr.Admins
         {
             byte[] result = null;
             ////api/Commons/Security/EncryptPassword/{password}
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Commons/";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Commons/";
             using (var client = new HttpClient())
             {
                 try
@@ -247,11 +247,7 @@ namespace EduOne.Fr.Admins
             return result;
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd =bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
+
 
 
         //THESE METHODS WILL BE MOVED TO THE API

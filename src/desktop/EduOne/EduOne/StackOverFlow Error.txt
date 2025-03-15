@@ -1,0 +1,4 @@
+This line below was causing this issue
+
+  var secret = await GetAppApiAsync();
+  client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);

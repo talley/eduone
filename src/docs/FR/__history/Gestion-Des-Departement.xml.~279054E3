@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2025-03-11T15:21:45.645-04:00" lasteditedby="Abibou" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Gestion Des Département</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Gestion Des Département</para>
+    </header>
+    <para styleclass="Normal">1-</para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><image src="modifier department.png" imagestyleclass="Default" scale="100.00%" styleclass="Image Caption" figurelistinclude="0"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

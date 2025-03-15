@@ -76,7 +76,7 @@ namespace EduOne.Fr.Admins.Courses
 
                 };
 
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Courses";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Courses";
 
                 using (var client = new HttpClient())
                 {
@@ -114,10 +114,5 @@ namespace EduOne.Fr.Admins.Courses
             }
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
     }
 }

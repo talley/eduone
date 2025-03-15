@@ -1,5 +1,16 @@
 ﻿namespace EduOne.Helpers
 {
+    using DevExpress.XtraEditors;
+    using EduOne.Exts;
+    using System;
+    using System.Net.Http;
+    using System.Text.Json.Serialization;
+    using System.Text.Json;
+    using System.Text;
+    using System.Threading.Tasks;
+    using static Humanizer.On;
+    using Config = System.Configuration.ConfigurationManager;
+
     public static class WebServerHelpers
     {
 
@@ -15,8 +26,9 @@
             }
         }
 
-        public static string GetApplicationUrl(bool IsProd)
+        public  static string GetApplicationUrl()
         {
+            bool IsProd = bool.Parse(Config.AppSettings["IS_PROD"]);// await GetApplicationModeAsync();
             if (IsProd)
             {
                 return "";

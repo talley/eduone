@@ -120,7 +120,7 @@ namespace EduOne.Fr.Admins
                     AjouterPar=ApplicationHelpers.GetSystemUser(email)
                 };
 
-                string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "ApplicationUsers";
+                string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "ApplicationUsers";
                     using (var client = new HttpClient())
                     {
                         try
@@ -159,11 +159,7 @@ namespace EduOne.Fr.Admins
             }
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
+
 
         //WILL BE MOVED TO API
         private async Task<Guid> GetRoleIdAsync(string role)

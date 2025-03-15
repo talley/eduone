@@ -6,16 +6,21 @@ using Telerik.WinControls.Themes;
 using Telerik.WinControls;
 using Config = System.Configuration.ConfigurationManager;
 using EduOne.Fr.Tools;
+using EduOne.Fr.helpers;
+using EduOne.Fr.Helpers;
+using EduOne.Helpers;
 namespace EduOne
 {
     internal static class Program
     {
+        static CommonHelpers helper = new CommonHelpers();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -24,6 +29,7 @@ namespace EduOne
             var appLang = Config.AppSettings["APP_LANG"] as string;
             if (appLang == "fr")
             {
+
                 //fraWelcome2
                 Application.Run(new fraWelcome3("test@test.com"));// fraManageStaffs("test@test.com"));
             }

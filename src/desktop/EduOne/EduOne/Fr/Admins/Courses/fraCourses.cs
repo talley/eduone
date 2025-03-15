@@ -15,6 +15,7 @@ using System.IO;
 using System.Diagnostics;
 using DevExpress.XtraGrid.Views.Grid;
 using EduOne.Fr.helpers;
+using EduOne.Fr.Helpers;
 
 namespace EduOne.Fr.Admins.Courses
 {
@@ -62,7 +63,7 @@ namespace EduOne.Fr.Admins.Courses
         private async Task<List<Models.Departments>> GetDepartmentAsync()
         {
             var dpts = new List<Models.Departments>();
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Departments";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Departments";
 
             using (var client = new HttpClient())
             {
@@ -105,17 +106,13 @@ namespace EduOne.Fr.Admins.Courses
             return department;
         }
 
-        private bool IsAppInProd()
-        {
-            bool isAppInProd = bool.Parse(Config.AppSettings["IS_PROD"]);
-            return isAppInProd;
-        }
+
 
         private async Task<List<EduOne.Fr.Models.Courses>> GetCoursesAsync()
         {
             var courses=new List<Models.Courses>();
 
-            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "Courses";
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + "Courses";
 
             using (var client = new HttpClient())
             {
