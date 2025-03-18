@@ -1,0 +1,3 @@
+﻿1. for insert, load data in it
+
+2. for update, use labels or textboxes

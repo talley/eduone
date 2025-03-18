@@ -717,5 +717,22 @@ namespace EduOne.Fr.Helpers
             }
             return result;
         }
+
+        internal async Task<string> GetCourseNameAsync(int courseId)
+        {
+            string result="";
+
+            var courses = await GetCoursesAsync();
+            if (courses.Any())
+            {
+                var course = courses.SingleOrDefault(x => x.Cours_Id == courseId);
+                if (course != null)
+                {
+                    result = course.Nom_Cours;
+                }
+            }
+
+            return result;
+        }
     }
 }

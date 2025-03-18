@@ -149,7 +149,6 @@
       <config-value name="make4include">PDF</config-value>
       <config-value name="make4status">*</config-value>
       <config-value name="author" translate="true">Talley Ouro</config-value>
-      <config-group name="bookmarks"/>
     </config-group>
     <config-group name="pdf">
       <config-value name="style">0</config-value>

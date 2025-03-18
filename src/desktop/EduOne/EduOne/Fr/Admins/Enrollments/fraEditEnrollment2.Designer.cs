@@ -30,12 +30,11 @@
         {
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnaddnote = new DevExpress.XtraEditors.SimpleButton();
             this.btnclose2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.lkactualcourseid = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lkactualstudentid = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.drpcourseid = new DevExpress.XtraEditors.LookUpEdit();
-            this.drpstudentid = new DevExpress.XtraEditors.LookUpEdit();
             this.btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.btnadd = new DevExpress.XtraEditors.SimpleButton();
             this.txtnotes = new DevExpress.XtraRichEdit.RichEditControl();
@@ -51,17 +50,18 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.txtnote2 = new DevExpress.XtraRichEdit.RichEditControl();
             this.btnnewnote = new DevExpress.XtraEditors.SimpleButton();
-            this.btnaddnote = new DevExpress.XtraEditors.SimpleButton();
+            this.txtstudentid = new DevExpress.XtraEditors.TextEdit();
+            this.txtcourseid = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpcourseid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpstudentid.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckstatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdateinsc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdateinsc.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgrade.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtstudentid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcourseid.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -78,13 +78,13 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.txtcourseid);
+            this.xtraTabPage1.Controls.Add(this.txtstudentid);
             this.xtraTabPage1.Controls.Add(this.btnaddnote);
             this.xtraTabPage1.Controls.Add(this.btnclose2);
             this.xtraTabPage1.Controls.Add(this.btnedit);
             this.xtraTabPage1.Controls.Add(this.lkactualcourseid);
             this.xtraTabPage1.Controls.Add(this.lkactualstudentid);
-            this.xtraTabPage1.Controls.Add(this.drpcourseid);
-            this.xtraTabPage1.Controls.Add(this.drpstudentid);
             this.xtraTabPage1.Controls.Add(this.btnclose);
             this.xtraTabPage1.Controls.Add(this.btnadd);
             this.xtraTabPage1.Controls.Add(this.txtnotes);
@@ -100,6 +100,15 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1308, 852);
             this.xtraTabPage1.Text = "Modifier l\'inscription";
+            // 
+            // btnaddnote
+            // 
+            this.btnaddnote.Location = new System.Drawing.Point(370, 806);
+            this.btnaddnote.Name = "btnaddnote";
+            this.btnaddnote.Size = new System.Drawing.Size(139, 29);
+            this.btnaddnote.TabIndex = 50;
+            this.btnaddnote.Text = "Ajouter Note";
+            this.btnaddnote.Click += new System.EventHandler(this.btnaddnote_Click);
             // 
             // btnclose2
             // 
@@ -136,28 +145,6 @@
             this.lkactualstudentid.Size = new System.Drawing.Size(35, 16);
             this.lkactualstudentid.TabIndex = 46;
             this.lkactualstudentid.Text = "Actuel";
-            // 
-            // drpcourseid
-            // 
-            this.drpcourseid.Location = new System.Drawing.Point(259, 73);
-            this.drpcourseid.Margin = new System.Windows.Forms.Padding(5);
-            this.drpcourseid.Name = "drpcourseid";
-            this.drpcourseid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpcourseid.Properties.NullText = "";
-            this.drpcourseid.Size = new System.Drawing.Size(862, 22);
-            this.drpcourseid.TabIndex = 45;
-            // 
-            // drpstudentid
-            // 
-            this.drpstudentid.Location = new System.Drawing.Point(259, 25);
-            this.drpstudentid.Margin = new System.Windows.Forms.Padding(5);
-            this.drpstudentid.Name = "drpstudentid";
-            this.drpstudentid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpstudentid.Properties.NullText = "";
-            this.drpstudentid.Size = new System.Drawing.Size(862, 22);
-            this.drpstudentid.TabIndex = 44;
             // 
             // btnclose
             // 
@@ -197,6 +184,7 @@
             // dtdateinsc
             // 
             this.dtdateinsc.EditValue = null;
+            this.dtdateinsc.Enabled = false;
             this.dtdateinsc.Location = new System.Drawing.Point(255, 129);
             this.dtdateinsc.Margin = new System.Windows.Forms.Padding(5);
             this.dtdateinsc.Name = "dtdateinsc";
@@ -298,14 +286,21 @@
             this.btnnewnote.Text = "Ajouter La Note";
             this.btnnewnote.Click += new System.EventHandler(this.btnnewnote_Click);
             // 
-            // btnaddnote
+            // txtstudentid
             // 
-            this.btnaddnote.Location = new System.Drawing.Point(370, 806);
-            this.btnaddnote.Name = "btnaddnote";
-            this.btnaddnote.Size = new System.Drawing.Size(139, 29);
-            this.btnaddnote.TabIndex = 50;
-            this.btnaddnote.Text = "Ajouter Note";
-            this.btnaddnote.Click += new System.EventHandler(this.btnaddnote_Click);
+            this.txtstudentid.Enabled = false;
+            this.txtstudentid.Location = new System.Drawing.Point(255, 36);
+            this.txtstudentid.Name = "txtstudentid";
+            this.txtstudentid.Size = new System.Drawing.Size(608, 22);
+            this.txtstudentid.TabIndex = 51;
+            // 
+            // txtcourseid
+            // 
+            this.txtcourseid.Enabled = false;
+            this.txtcourseid.Location = new System.Drawing.Point(255, 73);
+            this.txtcourseid.Name = "txtcourseid";
+            this.txtcourseid.Size = new System.Drawing.Size(608, 22);
+            this.txtcourseid.TabIndex = 52;
             // 
             // fraEditEnrollment2
             // 
@@ -321,13 +316,13 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpcourseid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpstudentid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckstatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdateinsc.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdateinsc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgrade.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtstudentid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcourseid.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,8 +334,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.HyperlinkLabelControl lkactualcourseid;
         private DevExpress.XtraEditors.HyperlinkLabelControl lkactualstudentid;
-        private DevExpress.XtraEditors.LookUpEdit drpcourseid;
-        private DevExpress.XtraEditors.LookUpEdit drpstudentid;
         private DevExpress.XtraEditors.SimpleButton btnclose;
         private DevExpress.XtraEditors.SimpleButton btnadd;
         private DevExpress.XtraRichEdit.RichEditControl txtnotes;
@@ -358,5 +351,7 @@
         private DevExpress.XtraRichEdit.RichEditControl txtnote2;
         private DevExpress.XtraEditors.SimpleButton btnnewnote;
         private DevExpress.XtraEditors.SimpleButton btnaddnote;
+        private DevExpress.XtraEditors.TextEdit txtstudentid;
+        private DevExpress.XtraEditors.TextEdit txtcourseid;
     }
 }

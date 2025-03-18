@@ -1083,6 +1083,7 @@
     <Content Include="Logos\school_background.jpg" />
     <Content Include="Logos\school_background.png" />
     <None Include="Resources\1715966311695.jpeg" />
+    <Content Include="LookUpEdit.Usage.txt" />
     <Content Include="repo_path.txt" />
     <Content Include="StackOverFlow Error.txt" />
     <Content Include="Tricks.sql" />

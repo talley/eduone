@@ -53,5 +53,8 @@
     <topicref type="topic" id="457299743060033" build="ALL" modified="2025-03-13T21:00:30.337Z" icon="0" href="Gestion-Des-Inscriptions">
       <caption translate="true">Gestion Des Inscriptions</caption>
     </topicref>
+    <topicref type="topic" id="457315754254589" build="ALL" modified="2025-03-15T14:47:18.734Z" icon="0" href="Notes-Sur-Inscription">
+      <caption translate="true">Notes Sur Inscription</caption>
+    </topicref>
   </topicref>
 </map>

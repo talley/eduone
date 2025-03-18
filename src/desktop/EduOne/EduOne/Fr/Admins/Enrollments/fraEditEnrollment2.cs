@@ -33,32 +33,10 @@ namespace EduOne.Fr.Admins.Enrollments
 
         private async void fraEditEnrollment2_Load(object sender, EventArgs e)
         {
-            var courses = await helper.GetCoursesAsync();
-            var students = await helper.GetStudentsAsync();
-
-            var needed_students = students.Select(x => new
-            {
-                x.Id,
-                Nom = x.Nom + x.Prénom,
-                x.TelePhone,
-                x.Ville,
-                x.État,
-                x.DateNaissance,
-                x.Date_Inscription,
-                x.Email
-            }).ToList();
-
-            drpstudentid.Properties.DataSource = needed_students;
-            drpstudentid.Properties.ValueMember = "Id";
-            drpstudentid.Properties.DisplayMember = "Nom";
-
-
-            drpcourseid.Properties.DataSource = courses;
-            drpcourseid.Properties.DisplayMember = "Nom_Cours";
-            drpcourseid.Properties.ValueMember = "Cours_Id";
-
             var enrollements = await helper.GetEnrollmentsAsync();
             var edit = enrollements.SingleOrDefault(x => x.InscriptionID == _id);
+
+
 
             Invoke(new Action(() =>
             {
@@ -66,17 +44,8 @@ namespace EduOne.Fr.Admins.Enrollments
                 txtnotes.Text = edit.Notes;
                 dtdateinsc.Text = edit.Date_Inscription.ToString();
 
-
-            }));
-
-
-            var courseName = await GetCourseName2(edit.CoursId).ConfigureAwait(false);
-            var studentName = await GetStudentAsync2(edit.EleveId).ConfigureAwait(false);
-
-            Invoke(new Action(() =>
-            {
-                drpcourseid.Text = courseName.courseName;
-                drpstudentid.Text = studentName.studentName;
+                txtcourseid.Text = edit.CoursId.ToString();
+                txtstudentid.Text = edit.EleveId.ToString();
 
                 if (edit.Statut)
                 {
@@ -178,8 +147,8 @@ namespace EduOne.Fr.Admins.Enrollments
 
         private async void btnedit_Click(object sender, EventArgs e)
         {
-            string courseid = drpcourseid.Text;
-            string studentid = drpstudentid.Text;
+            string courseid = txtcourseid.Text;
+            string studentid = txtstudentid.Text;
             string grade = txtgrade.Text;
             string notes = txtnotes.Text;
 
@@ -216,8 +185,8 @@ namespace EduOne.Fr.Admins.Enrollments
                         var data = new
                         {
                             InscriptionID = _id,
-                            EleveId = int.Parse(drpstudentid.EditValue.ToString()),
-                            CoursId = int.Parse(drpcourseid.EditValue.ToString()),
+                            EleveId = int.Parse(txtstudentid.Text),
+                            CoursId = int.Parse(txtcourseid.Text),
                             Date_Inscription = DateTime.Parse(dtdateinsc.EditValue.ToString()),
                             Grade = double.Parse(grade),
                             Statut = ckstatus.Checked,
@@ -240,7 +209,7 @@ namespace EduOne.Fr.Admins.Enrollments
                             Invoke(new Action(() =>
                             {
                                 "".DisplayDialog("La Nouvelle inscription a été mis a jour");
-                                btnadd.Enabled = false;
+                                btnedit.Enabled = false;
                             }));
                         }
                         else
@@ -259,5 +228,7 @@ namespace EduOne.Fr.Admins.Enrollments
                 }
             }
         }
+
+
     }
 }

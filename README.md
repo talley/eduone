@@ -3,7 +3,7 @@
 1:SQL Server 2016 or higher
 2: .NET Framework 4.8/4.8.1
 3: SQLite for Data Synchronization
-4: Licensed copy of DevExpress Version 23.1.13 for development
+4: Licensed copy of DevExpress Version 23.1.13/Syncfusion for development
  The software is in development.
  5. NET Core 9 or Higher
  6. Adobe Reader
