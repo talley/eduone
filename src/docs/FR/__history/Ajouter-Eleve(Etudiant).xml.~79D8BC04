@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" status="" lasteditedby="Abibou" modified="2025-03-19T19:35:52.211-04:00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Ajouter Éleve(Étudiant)</title>
+  <body>
+    <header><para styleclass="Heading1">Ajouter Éleve(Étudiant)</para></header>
+    <para styleclass="Normal">Enter topic text here.</para>
+  </body>
+</topic>

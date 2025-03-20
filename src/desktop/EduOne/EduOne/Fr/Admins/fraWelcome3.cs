@@ -3,7 +3,10 @@ using EduOne.Fr.Admins.Classrooms;
 using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
 using EduOne.Fr.Admins.Enrollments;
+using EduOne.Fr.Admins.Finances.SemestersFees;
+using EduOne.Fr.Admins.Semesters;
 using EduOne.Fr.Admins.Staffs;
+using EduOne.Fr.Admins.Students;
 using EduOne.Fr.Tools;
 using System;
 using System.Collections.Generic;
@@ -185,6 +188,68 @@ namespace EduOne.Fr.Admins
                     case "Gestion Des Inscriptions":
                         var form4 = new fraEnrollmentManager(_email);
                         ShowFormInPanel(form4, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView7_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView7.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Semestre":
+                        var form1 = new fraAddSemester(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Des Semestres":
+                        var form2 = new fraSemesters(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView8_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView8.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Gestion Des Frais Semestres":
+                        var form2 = new fraAddSemesterFee2(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView5_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView5.SelectedNode.Text;
+
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Ajouter Un Eleve":
+                        var form1 = new fraAddStudent(_email);
+                        ShowFormInPanel(form1, splitPanel2);
+                        break;
+                    case "Gestion Des Eleves":
+                        var form2 = new fraManageStudents(_email);
+                        ShowFormInPanel(form2, splitPanel2);
                         break;
                     default:
                         break;

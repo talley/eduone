@@ -85,7 +85,7 @@ namespace EduOne.Fr.Admins.Finances.SemestersFees
             }
             else
             {
-                lblmsg.Text = "IL N'Y A RIEN À FAIRE ICI";
+                //lblmsg.Text = "IL N'Y A RIEN À FAIRE ICI";
                 if (semesters != null)
                 {
                     var needed = semesters.Select(x => new
