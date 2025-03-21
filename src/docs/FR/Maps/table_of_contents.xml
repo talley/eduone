@@ -87,4 +87,28 @@
       <caption translate="true">Modifier Éleve(Étudiant)</caption>
     </topicref>
   </topicref>
+  <topicref type="topic" id="457367710265685" build="ALL" modified="2025-03-20T20:23:30.679Z" icon="0" href="Cours">
+    <caption translate="true">Cours</caption>
+    <topicref type="topic" id="457367025894822" build="ALL" modified="2025-03-20T20:23:48.419Z" icon="0" href="Ajouter-un-cours">
+      <caption translate="true">Ajouter un cours</caption>
+    </topicref>
+    <topicref type="topic" id="457370233592105" build="ALL" modified="2025-03-20T20:25:44.025Z" icon="0" href="Modifier-un-cours">
+      <caption translate="true">Modifier un cours</caption>
+    </topicref>
+    <topicref type="topic" id="457368937744418" build="ALL" modified="2025-03-20T20:50:30.774Z" icon="0" href="Gestion--Recherche-des-cours">
+      <caption translate="true">Gestion &amp; Recherche des cours</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457375056983559" build="ALL" modified="2025-03-21T11:54:49.901Z" icon="0" href="Inscriptions">
+    <caption translate="true">Inscriptions</caption>
+    <topicref type="topic" id="457375415944932" build="ALL" modified="2025-03-21T11:55:04.321Z" icon="0" href="Nouvelle-Inscription2">
+      <caption translate="true">Nouvelle Inscription</caption>
+    </topicref>
+    <topicref type="topic" id="457373973699737" build="ALL" modified="2025-03-21T11:57:19.070Z" icon="0" href="Modifier-Inscription">
+      <caption translate="true">Modifier Inscription</caption>
+    </topicref>
+    <topicref type="topic" id="457373091948774" build="ALL" modified="2025-03-21T12:02:03.205Z" icon="0" href="Liste-Des-Inscriptions">
+      <caption translate="true">Liste Des Inscriptions</caption>
+    </topicref>
+  </topicref>
 </map>

@@ -57,4 +57,55 @@
       <caption translate="true">Notes Sur Inscription</caption>
     </topicref>
   </topicref>
+  <topicref type="topic" id="457349638137175" build="ALL" modified="2025-03-18T19:43:00.056Z" icon="0" href="Semestres">
+    <caption translate="true">Semestres</caption>
+    <topicref type="topic" id="457348384948232" build="ALL" modified="2025-03-18T19:43:17.913Z" icon="0" href="Ajouter-Semestre">
+      <caption translate="true">Ajouter Semestre</caption>
+    </topicref>
+    <topicref type="topic" id="457347976725958" build="ALL" modified="2025-03-18T19:44:46.101Z" icon="0" href="Gestion-Des-Semestres">
+      <caption translate="true">Gestion Des Semestres</caption>
+    </topicref>
+    <topicref type="topic" id="457358301132531" build="ALL" modified="2025-03-19T19:18:13.723Z" icon="0" href="Ajouter-Frais-Semestre">
+      <caption translate="true">Ajouter Frais Semestre</caption>
+    </topicref>
+    <topicref type="topic" id="457358054199949" build="ALL" modified="2025-03-19T19:19:23.151Z" icon="0" href="Modifier--Frais-Semestre">
+      <caption translate="true">Modifier  Frais Semestre</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457360175464208" build="ALL" modified="2025-03-19T19:35:30.427Z" icon="0" href="Eleves(Etudiants)">
+    <caption translate="true">Éleves(Étudiants)</caption>
+    <topicref type="topic" id="457360311396976" build="ALL" modified="2025-03-19T19:35:52.225Z" icon="0" href="Ajouter-Eleve(Etudiant)">
+      <caption translate="true">Ajouter Éleve(Étudiant)</caption>
+    </topicref>
+    <topicref type="topic" id="457358689424138" build="ALL" modified="2025-03-19T19:46:21.333Z" icon="0" href="Liste-Des-Eleves(Etudiants)">
+      <caption translate="true">Liste Des Éleves(Étudiants)</caption>
+    </topicref>
+    <topicref type="topic" id="457358660839280" build="ALL" modified="2025-03-19T19:49:28.555Z" icon="0" href="Recherche-Des-Eleves(Etudiants">
+      <caption translate="true">Recherche Des Éleves(Étudiants)</caption>
+    </topicref>
+    <topicref type="topic" id="457359565397514" build="ALL" modified="2025-03-19T20:25:17.911Z" icon="0" href="Modifier-Eleve(Etudiant)">
+      <caption translate="true">Modifier Éleve(Étudiant)</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457367710265685" build="ALL" modified="2025-03-20T20:23:30.679Z" icon="0" href="Cours">
+    <caption translate="true">Cours</caption>
+    <topicref type="topic" id="457367025894822" build="ALL" modified="2025-03-20T20:23:48.419Z" icon="0" href="Ajouter-un-cours">
+      <caption translate="true">Ajouter un cours</caption>
+    </topicref>
+    <topicref type="topic" id="457370233592105" build="ALL" modified="2025-03-20T20:25:44.025Z" icon="0" href="Modifier-un-cours">
+      <caption translate="true">Modifier un cours</caption>
+    </topicref>
+    <topicref type="topic" id="457368937744418" build="ALL" modified="2025-03-20T20:50:30.774Z" icon="0" href="Gestion--Recherche-des-cours">
+      <caption translate="true">Gestion &amp; Recherche des cours</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="457375056983559" build="ALL" modified="2025-03-21T11:54:49.901Z" icon="0" href="Inscriptions">
+    <caption translate="true">Inscriptions</caption>
+    <topicref type="topic" id="457375415944932" build="ALL" modified="2025-03-21T11:55:04.321Z" icon="0" href="Nouvelle-Inscription2">
+      <caption translate="true">Nouvelle Inscription</caption>
+    </topicref>
+    <topicref type="topic" id="457373973699737" build="ALL" modified="2025-03-21T11:57:19.070Z" icon="0" href="Modifier-Inscription">
+      <caption translate="true">Modifier Inscription</caption>
+    </topicref>
+  </topicref>
 </map>
