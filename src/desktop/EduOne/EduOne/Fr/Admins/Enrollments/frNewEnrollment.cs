@@ -32,12 +32,22 @@ namespace EduOne.Fr.Admins.Enrollments
         {
             var courses = await helper.GetCoursesAsync();
             var students = await helper.GetStudentsAsync();
+            var semesters = await helper.GetSemestersAsync();
+
 
             var needed_students = students.Select(x => new
             {
                 x.Id,x.Nom,x.Prénom,x.TelePhone,
                 x.Ville,x.État,x.DateNaissance,x.Date_Inscription,x.Email
             }).ToList();
+
+            var needed_semesters = semesters.Select(x => new { x.ID, x.Semestre, x.Statut }).ToList();
+
+
+
+            drpsemesters.Properties.DataSource = needed_students;
+            drpsemesters.Properties.DisplayMember = "Semestre";
+            drpsemesters.Properties.ValueMember = "ID";
 
             drpstudentid.Properties.DataSource = needed_students;
             drpstudentid.Properties.DisplayMember = "Nom";
@@ -55,8 +65,13 @@ namespace EduOne.Fr.Admins.Enrollments
             var studentid = drpstudentid.Text;
             var grade = txtgrade.Text;
             var notes = txtnotes.Text;
+            var semester = drpsemesters.Text;
 
-            if (courseid.Length == 0)
+            if (semester.Length == 0)
+            {
+                "".DisplayErrorFrDialog(" Semestre");
+            }
+            else if (courseid.Length == 0)
             {
                 "".DisplayErrorFrDialog(" Cour");
             }
@@ -94,6 +109,7 @@ namespace EduOne.Fr.Admins.Enrollments
                             Grade = double.Parse(grade),
                             Statut = ckstatus.Checked,
                             Notes = notes,
+                            SemestreID=int.Parse(drpsemesters.EditValue.ToString()),
                             AjouterAu = DateTime.Now,
                             AjouterPar=ApplicationHelpers.GetSystemUser(_email)
                         };

@@ -72,9 +72,11 @@ namespace EduOne.Fr.Admins.Semesters
                         {
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+
                             Invoke(new Action(() =>
                             {
                                 "".DisplayDialog($"Ce semestre a été créé");
+
                                 btnadd.Enabled = false;
                             }));
                           ;

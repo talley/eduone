@@ -1,0 +1,12 @@
+﻿https://docs.lextudio.com/obfuscar/getting-started/configurationhttps://docs.lextudio.com/obfuscar/getting-started/configuration
+
+
+https://www.obfuscar.com/
+
+https://github.com/Rustemsoft/Skater-.NET-Obfuscator/releases
+
+
+https://github.com/NotPrab/.NET-Obfuscator
+
+
+https://github.com/NotPrab/.NET-Obfuscator?tab=readme-ov-file#open-source

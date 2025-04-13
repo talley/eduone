@@ -61,7 +61,8 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(40, 42);
+            this.labelControl1.Location = new System.Drawing.Point(50, 52);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 16);
             this.labelControl1.TabIndex = 0;
@@ -69,7 +70,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(40, 105);
+            this.labelControl2.Location = new System.Drawing.Point(50, 131);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 16);
             this.labelControl2.TabIndex = 1;
@@ -77,7 +79,8 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(40, 176);
+            this.labelControl3.Location = new System.Drawing.Point(50, 220);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(44, 16);
             this.labelControl3.TabIndex = 2;
@@ -85,7 +88,8 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(487, 45);
+            this.labelControl4.Location = new System.Drawing.Point(609, 56);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(55, 16);
             this.labelControl4.TabIndex = 3;
@@ -93,7 +97,8 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(488, 102);
+            this.labelControl5.Location = new System.Drawing.Point(610, 128);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(26, 16);
             this.labelControl5.TabIndex = 4;
@@ -101,7 +106,8 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(488, 173);
+            this.labelControl6.Location = new System.Drawing.Point(610, 216);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(57, 16);
             this.labelControl6.TabIndex = 5;
@@ -109,7 +115,8 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(40, 239);
+            this.labelControl7.Location = new System.Drawing.Point(50, 299);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(31, 16);
             this.labelControl7.TabIndex = 6;
@@ -117,7 +124,8 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(487, 239);
+            this.labelControl8.Location = new System.Drawing.Point(609, 299);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(25, 16);
             this.labelControl8.TabIndex = 7;
@@ -125,7 +133,8 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(40, 301);
+            this.labelControl9.Location = new System.Drawing.Point(50, 376);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(32, 16);
             this.labelControl9.TabIndex = 8;
@@ -133,99 +142,109 @@
             // 
             // txtusername
             // 
-            this.txtusername.Location = new System.Drawing.Point(159, 42);
+            this.txtusername.Location = new System.Drawing.Point(199, 52);
+            this.txtusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(266, 22);
+            this.txtusername.Size = new System.Drawing.Size(332, 22);
             this.txtusername.TabIndex = 9;
             // 
             // txtfname
             // 
-            this.txtfname.Location = new System.Drawing.Point(159, 170);
+            this.txtfname.Location = new System.Drawing.Point(199, 212);
+            this.txtfname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtfname.Name = "txtfname";
-            this.txtfname.Size = new System.Drawing.Size(266, 22);
+            this.txtfname.Size = new System.Drawing.Size(332, 22);
             this.txtfname.TabIndex = 10;
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(159, 236);
+            this.txtemail.Location = new System.Drawing.Point(199, 295);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(266, 22);
+            this.txtemail.Size = new System.Drawing.Size(332, 22);
             this.txtemail.TabIndex = 11;
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(569, 42);
+            this.txtpass.Location = new System.Drawing.Point(711, 52);
+            this.txtpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtpass.Name = "txtpass";
-            this.txtpass.Size = new System.Drawing.Size(266, 22);
+            this.txtpass.Size = new System.Drawing.Size(332, 22);
             this.txtpass.TabIndex = 12;
             // 
             // txtlname
             // 
-            this.txtlname.Location = new System.Drawing.Point(569, 102);
+            this.txtlname.Location = new System.Drawing.Point(711, 128);
+            this.txtlname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtlname.Name = "txtlname";
-            this.txtlname.Size = new System.Drawing.Size(266, 22);
+            this.txtlname.Size = new System.Drawing.Size(332, 22);
             this.txtlname.TabIndex = 13;
             // 
             // ckstatus
             // 
-            this.ckstatus.Location = new System.Drawing.Point(159, 104);
+            this.ckstatus.Location = new System.Drawing.Point(199, 130);
+            this.ckstatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckstatus.Name = "ckstatus";
             this.ckstatus.Properties.Caption = "Oui/Non";
-            this.ckstatus.Size = new System.Drawing.Size(94, 20);
+            this.ckstatus.Size = new System.Drawing.Size(118, 20);
             this.ckstatus.TabIndex = 15;
             // 
             // txtnotes
             // 
-            this.txtnotes.Location = new System.Drawing.Point(159, 301);
+            this.txtnotes.Location = new System.Drawing.Point(197, 376);
             this.txtnotes.Name = "txtnotes";
             this.txtnotes.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
-            this.txtnotes.Size = new System.Drawing.Size(676, 337);
+            this.txtnotes.Size = new System.Drawing.Size(846, 574);
             this.txtnotes.TabIndex = 16;
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(159, 652);
+            this.btnadd.Location = new System.Drawing.Point(199, 957);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(179, 29);
+            this.btnadd.Size = new System.Drawing.Size(224, 36);
             this.btnadd.TabIndex = 17;
             this.btnadd.Text = "Ajouter";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(353, 652);
+            this.btnclear.Location = new System.Drawing.Point(458, 957);
+            this.btnclear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(179, 29);
+            this.btnclear.Size = new System.Drawing.Size(224, 36);
             this.btnclear.TabIndex = 18;
             this.btnclear.Text = "Effacer";
             // 
             // drproles
             // 
-            this.drproles.Location = new System.Drawing.Point(569, 236);
+            this.drproles.Location = new System.Drawing.Point(711, 295);
+            this.drproles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drproles.Name = "drproles";
             this.drproles.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drproles.Properties.NullText = "";
-            this.drproles.Size = new System.Drawing.Size(266, 22);
+            this.drproles.Size = new System.Drawing.Size(332, 22);
             this.drproles.TabIndex = 19;
             // 
             // dtdob
             // 
             this.dtdob.EditValue = null;
-            this.dtdob.Location = new System.Drawing.Point(569, 170);
+            this.dtdob.Location = new System.Drawing.Point(711, 212);
+            this.dtdob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtdob.Name = "dtdob";
             this.dtdob.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtdob.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtdob.Size = new System.Drawing.Size(266, 22);
+            this.dtdob.Size = new System.Drawing.Size(332, 22);
             this.dtdob.TabIndex = 20;
             // 
             // fraAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 693);
+            this.ClientSize = new System.Drawing.Size(1098, 1006);
             this.Controls.Add(this.dtdob);
             this.Controls.Add(this.drproles);
             this.Controls.Add(this.btnclear);

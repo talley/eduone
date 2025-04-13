@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\EduOne.csproj" />
+  <event action="Analyze" type="Success" name="About.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\About.resx" />
+  <event action="Analyze" type="Success" name="AboutMe.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\AboutMe.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\App.config" />
+  <event action="Analyze" type="Success" name="GalleryViewer.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\CustomControls\GalleryViewer.resx" />
+  <event action="Analyze" type="Success" name="enLogin.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\En\enLogin.resx" />
+  <event action="Analyze" type="Success" name="FluentDesignForm1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\FluentDesignForm1.resx" />
+  <event action="Analyze" type="Success" name="Form1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Form1.resx" />
+  <event action="Analyze" type="Success" name="fraAddClassRoom.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Classrooms\fraAddClassRoom.resx" />
+  <event action="Analyze" type="Success" name="fraEditClassRoom.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Classrooms\fraEditClassRoom.resx" />
+  <event action="Analyze" type="Success" name="frManageClassRooms.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Classrooms\frManageClassRooms.resx" />
+  <event action="Analyze" type="Success" name="fraCourses.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Courses\fraCourses.resx" />
+  <event action="Analyze" type="Success" name="fraEditCourse.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Courses\fraEditCourse.resx" />
+  <event action="Analyze" type="Success" name="fraNewCourse.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Courses\fraNewCourse.resx" />
+  <event action="Analyze" type="Success" name="SplashScreen2.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Courses\SplashScreen2.resx" />
+  <event action="Analyze" type="Success" name="fraAddDepartmentHead.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\DepartmentHeads\fraAddDepartmentHead.resx" />
+  <event action="Analyze" type="Success" name="fraDepartmentHeads.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\DepartmentHeads\fraDepartmentHeads.resx" />
+  <event action="Analyze" type="Success" name="fraEditDepartmentChef.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\DepartmentHeads\fraEditDepartmentChef.resx" />
+  <event action="Analyze" type="Success" name="fraAddDepartment.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Departments\fraAddDepartment.resx" />
+  <event action="Analyze" type="Success" name="fraDepartmentCourses.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Departments\fraDepartmentCourses.resx" />
+  <event action="Analyze" type="Success" name="fraDepartments2.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Departments\fraDepartments2.resx" />
+  <event action="Analyze" type="Success" name="fraEditDepartment.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Departments\fraEditDepartment.resx" />
+  <event action="Analyze" type="Success" name="fraEditEnrollment.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\fraEditEnrollment.resx" />
+  <event action="Analyze" type="Success" name="fraEditEnrollment3.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\fraEditEnrollment3.resx" />
+  <event action="Analyze" type="Success" name="fraEnrollmentManager.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\fraEnrollmentManager.resx" />
+  <event action="Analyze" type="Success" name="fraEnrollmentNotes.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\fraEnrollmentNotes.resx" />
+  <event action="Analyze" type="Success" name="fraStudentEnrollementFeesManager.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\fraStudentEnrollementFeesManager.resx" />
+  <event action="Analyze" type="Success" name="frNewEnrollment.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Enrollments\frNewEnrollment.resx" />
+  <event action="Analyze" type="Success" name="fraEditStudentSemesterFee.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\fraEditStudentSemesterFee.resx" />
+  <event action="Analyze" type="Success" name="fraFeesManager.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\fraFeesManager.resx" />
+  <event action="Analyze" type="Success" name="fraAddSemesterFee.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\SemestersFees\fraAddSemesterFee.resx" />
+  <event action="Analyze" type="Success" name="fraAddSemesterFee2.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\SemestersFees\fraAddSemesterFee2.resx" />
+  <event action="Analyze" type="Success" name="fraEditSemesterFee.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\SemestersFees\fraEditSemesterFee.resx" />
+  <event action="Analyze" type="Success" name="fraSemesterEnrollmentFees.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Finances\SemestersFees\fraSemesterEnrollmentFees.resx" />
+  <event action="Analyze" type="Success" name="fraAddUser.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraAddUser.resx" />
+  <event action="Analyze" type="Success" name="fraAdminDashBoard.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraAdminDashBoard.resx" />
+  <event action="Analyze" type="Success" name="fraEditUser.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraEditUser.resx" />
+  <event action="Analyze" type="Success" name="fraUsersList.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraUsersList.resx" />
+  <event action="Analyze" type="Success" name="fraWelcome.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraWelcome.resx" />
+  <event action="Analyze" type="Success" name="fraWelcome2.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraWelcome2.resx" />
+  <event action="Analyze" type="Success" name="fraWelcome3.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\fraWelcome3.resx" />
+  <event action="Analyze" type="Success" name="frGalleryViewer.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\frGalleryViewer.resx" />
+  <event action="Analyze" type="Success" name="frarptAllClassRooms2.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptAllClassRooms2.resx" />
+  <event action="Analyze" type="Success" name="frarptAllClassRooms3.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptAllClassRooms3.resx" />
+  <event action="Analyze" type="Success" name="frarptAllEnrollments.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptAllEnrollments.resx" />
+  <event action="Analyze" type="Success" name="frarptAllUsers.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptAllUsers.resx" />
+  <event action="Analyze" type="Success" name="frarptDepartments.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptDepartments.resx" />
+  <event action="Analyze" type="Success" name="frarptStaffs.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frarptStaffs.resx" />
+  <event action="Analyze" type="Success" name="frDepartmentHeads.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Reports\frDepartmentHeads.resx" />
+  <event action="Analyze" type="Success" name="fraAddSemester.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Semesters\fraAddSemester.resx" />
+  <event action="Analyze" type="Success" name="fraEditSemester.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Semesters\fraEditSemester.resx" />
+  <event action="Analyze" type="Success" name="fraSemesters.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Semesters\fraSemesters.resx" />
+  <event action="Analyze" type="Success" name="fraAddApplicationSetting.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Settings\fraAddApplicationSetting.resx" />
+  <event action="Analyze" type="Success" name="fraEditAppSetting.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Settings\fraEditAppSetting.resx" />
+  <event action="Analyze" type="Success" name="fraManageAppSettings.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Settings\fraManageAppSettings.resx" />
+  <event action="Analyze" type="Success" name="SplashScreen1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\SplashScreen1.resx" />
+  <event action="Analyze" type="Success" name="fraAllStaffNotes.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Staffs\fraAllStaffNotes.resx" />
+  <event action="Analyze" type="Success" name="fraEditStaff.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Staffs\fraEditStaff.resx" />
+  <event action="Analyze" type="Success" name="fraManageStaffs.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Staffs\fraManageStaffs.resx" />
+  <event action="Analyze" type="Success" name="fraNewStaff.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Staffs\fraNewStaff.resx" />
+  <event action="Analyze" type="Success" name="fraStaffNotes.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Staffs\fraStaffNotes.resx" />
+  <event action="Analyze" type="Success" name="fraAddStudent.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Students\fraAddStudent.resx" />
+  <event action="Analyze" type="Success" name="fraEditStudent.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Students\fraEditStudent.resx" />
+  <event action="Analyze" type="Success" name="fraManageStudents.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\Students\fraManageStudents.resx" />
+  <event action="Analyze" type="Success" name="WaitForm1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Admins\WaitForm1.resx" />
+  <event action="Analyze" type="Success" name="frDocs.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\frDocs.resx" />
+  <event action="Analyze" type="Success" name="frLogin.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\frLogin.resx" />
+  <event action="Analyze" type="Success" name="frAddTheme.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Tools\frAddTheme.resx" />
+  <event action="Analyze" type="Success" name="frExceViewer.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Tools\frExceViewer.resx" />
+  <event action="Analyze" type="Success" name="frPdfViewer.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Fr\Tools\frPdfViewer.resx" />
+  <event action="Analyze" type="Success" name="fraClassRoomsReport.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\fraClassRoomsReport.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\packages.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="RadForm1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\RadForm1.resx" />
+  <event action="Analyze" type="Success" name="ToolbarForm1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\ToolbarForm1.resx" />
+  <event action="Analyze" type="Success" name="XtraForm1.resx" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\XtraForm1.resx" />
+  <event action="Analyze" type="Success" name="EduOne" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\EduOne.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\EduOne.Data.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="App.Config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\App.Config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\packages.config" />
+  <event action="Analyze" type="Success" name="EduOne.Data" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Data\EduOne.Data.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\EduOne.Repositories.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\App.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\packages.config" />
+  <event action="Analyze" type="Success" name="EduOne.Repositories" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Repositories\EduOne.Repositories.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.RestServices\EduOne.Fr.RestServices.csproj" />
+  <event action="Analyze" type="Success" name="EduOne.Fr.RestServices" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.RestServices\EduOne.Fr.RestServices.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\Tests\EduOne.Fr.IntegrationTests\EduOne.Fr.IntegrationTests.csproj" />
+  <event action="Analyze" type="Success" name="EduOne.Fr.IntegrationTests" path="C:\MyApps\NET\eduone\src\desktop\Tests\EduOne.Fr.IntegrationTests\EduOne.Fr.IntegrationTests.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\Q438265.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\app.config" />
+  <event action="Analyze" type="Success" name="Form1.resx" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\Form1.resx" />
+  <event action="Analyze" type="Success" name="Form2.resx" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\Form2.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="Q438265" path="C:\Users\Abibou\Downloads\Compressed\dxSample\Q438265\Q438265.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\EduOne.Fr.Logging.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\app.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\packages.config" />
+  <event action="Analyze" type="Success" name="EduOne.Fr.Logging" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Fr.Logging\EduOne.Fr.Logging.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.AppHost\EduOne.AppHost.csproj" />
+  <event action="Analyze" type="Success" name="EduOne.AppHost" path="C:\MyApps\NET\eduone\src\desktop\EduOne.AppHost\EduOne.AppHost.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.ServiceDefaults\EduOne.ServiceDefaults.csproj" />
+  <event action="Analyze" type="Success" name="EduOne.ServiceDefaults" path="C:\MyApps\NET\eduone\src\desktop\EduOne.ServiceDefaults\EduOne.ServiceDefaults.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\source\repos\WebIdentityApp\WebIdentityApp.csproj" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Areas\Identity\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Areas\Identity\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Areas\Identity\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="_Layout.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_Layout.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_LoginPartial.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_LoginPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+  <event action="Analyze" type="Success" name="_ValidationScriptsPartial.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewImports.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewImports.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewImports.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewImports.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" name="_ViewStart.cshtml" path="C:\Users\Abibou\source\repos\WebIdentityApp\Pages\_ViewStart.cshtml" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="WebIdentityApp" path="C:\Users\Abibou\source\repos\WebIdentityApp\WebIdentityApp.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\Eduone.Fr.Data\Eduone.Fr.Data.csproj" />
+  <event action="Analyze" type="Success" name="Eduone.Fr.Data" path="C:\MyApps\NET\eduone\src\desktop\Eduone.Fr.Data\Eduone.Fr.Data.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\DockingDemo.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\app.config" />
+  <event action="Analyze" type="Success" name="frmMain.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\frmMain.resx" />
+  <event action="Analyze" type="Success" name="ucCodeEditor.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucCodeEditor.resx" />
+  <event action="Analyze" type="Success" name="ucOutput.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucOutput.resx" />
+  <event action="Analyze" type="Success" name="ucProperties.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucProperties.resx" />
+  <event action="Analyze" type="Success" name="ucSolutionExplorer.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucSolutionExplorer.resx" />
+  <event action="Analyze" type="Success" name="ucTaskList.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucTaskList.resx" />
+  <event action="Analyze" type="Success" name="ucToolbox.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Modules\ucToolbox.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\App.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="DockingDemo" path="C:\Users\Public\Documents\DevExpress Demos 23.1\Components\WinForms\CS\DockingDemo\DockingDemo.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\DevExpressVSDemo.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\App.config" />
+  <event action="Analyze" type="Success" name="Form1.resx" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\Form1.resx" />
+  <event action="Analyze" type="Success" name="Form2.resx" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\Form2.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="ToolbarForm1.resx" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\ToolbarForm1.resx" />
+  <event action="Analyze" type="Success" name="DevExpressVSDemo" path="C:\Users\Abibou\source\repos\DevExpressVSDemo\DevExpressVSDemo.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\EduOne.Fr.Sync.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\app.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\packages.config" />
+  <event action="Analyze" type="Success" name="EduOne.Fr.Sync" path="C:\MyApps\NET\eduone\src\desktop\EduOne.Sync\EduOne.Fr.Sync\EduOne.Fr.Sync.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne.Fr.Exceptions\EduOne.Fr.Exceptions.csproj" />
+  <event action="Analyze" type="Success" name="EduOne.Fr.Exceptions" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne.Fr.Exceptions\EduOne.Fr.Exceptions.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\LicensesManager\LicensesManager.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\MyApps\NET\LicensesManager\App.config" />
+  <event action="Analyze" type="Success" name="AddApprovedPc.resx" path="C:\MyApps\NET\LicensesManager\Forms\AddApprovedPc.resx" />
+  <event action="Analyze" type="Success" name="AddCompany.resx" path="C:\MyApps\NET\LicensesManager\Forms\AddCompany.resx" />
+  <event action="Analyze" type="Success" name="AddCompanyLicense.resx" path="C:\MyApps\NET\LicensesManager\Forms\AddCompanyLicense.resx" />
+  <event action="Analyze" type="Success" name="CompanyLicensesUI.resx" path="C:\MyApps\NET\LicensesManager\Forms\CompanyLicensesUI.resx" />
+  <event action="Analyze" type="Success" name="SplashScreen1.resx" path="C:\MyApps\NET\LicensesManager\Forms\SplashScreen1.resx" />
+  <event action="Analyze" type="Success" name="Welcome.resx" path="C:\MyApps\NET\LicensesManager\Forms\Welcome.resx" />
+  <event action="Analyze" type="Success" name="Welcome2.resx" path="C:\MyApps\NET\LicensesManager\Forms\Welcome2.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\LicensesManager\packages.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\MyApps\NET\LicensesManager\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="LicensesManager" path="C:\MyApps\NET\LicensesManager\LicensesManager.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\LicensesManager\LicensesManager.Rest\LicensesManager.Rest.csproj" />
+  <event action="Analyze" type="Success" name="LicensesManager.Rest" path="C:\MyApps\NET\LicensesManager\LicensesManager.Rest\LicensesManager.Rest.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\Tvl.VisualStudio.FindInSolutionExplorer.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\packages.config" />
+  <event action="Analyze" type="Success" name="VSPackage.resx" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\VSPackage.resx" />
+  <event action="Analyze" type="Success" name="Tvl.VisualStudio.FindInSolutionExplorer" path="C:\Users\Abibou\Downloads\Compressed\FindInSolutionExplorer-master\FindInSolutionExplorer-master\Tvl.VisualStudio.FindInSolutionExplorer\Tvl.VisualStudio.FindInSolutionExplorer.csproj" />
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Hotelia.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\App.config" />
+  <event action="Analyze" type="Success" name="Form1.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Form1.resx" />
+  <event action="Analyze" type="Success" name="Form2.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Form2.resx" />
+  <event action="Analyze" type="Success" name="fraCustomerNotesUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\CustomerNotes\fraCustomerNotesUI.resx" />
+  <event action="Analyze" type="Success" name="fraAddCustomerUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\CustomersUI\fraAddCustomerUI.resx" />
+  <event action="Analyze" type="Success" name="fraCustomersUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\CustomersUI\fraCustomersUI.resx" />
+  <event action="Analyze" type="Success" name="fraEditCustomerUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\CustomersUI\fraEditCustomerUI.resx" />
+  <event action="Analyze" type="Success" name="fraManageCustomers.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\CustomersUI\fraManageCustomers.resx" />
+  <event action="Analyze" type="Success" name="fraAddUser.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraAddUser.resx" />
+  <event action="Analyze" type="Success" name="fraApplicationSettings.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraApplicationSettings.resx" />
+  <event action="Analyze" type="Success" name="fraDisableUser.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraDisableUser.resx" />
+  <event action="Analyze" type="Success" name="fraEditUser.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraEditUser.resx" />
+  <event action="Analyze" type="Success" name="fraErrorLogsUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraErrorLogsUI.resx" />
+  <event action="Analyze" type="Success" name="fraManageUsers.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraManageUsers.resx" />
+  <event action="Analyze" type="Success" name="fraWelcome.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\fraWelcome.resx" />
+  <event action="Analyze" type="Success" name="fraAddRoom.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\RoomsUI\fraAddRoom.resx" />
+  <event action="Analyze" type="Success" name="fraAddRoomPriceUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\RoomsUI\fraAddRoomPriceUI.resx" />
+  <event action="Analyze" type="Success" name="fraFreeRoomUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\RoomsUI\fraFreeRoomUI.resx" />
+  <event action="Analyze" type="Success" name="fraRoomsUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Admins\RoomsUI\fraRoomsUI.resx" />
+  <event action="Analyze" type="Success" name="fraCustomerOrderAdjustment.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraCustomerOrderAdjustment.resx" />
+  <event action="Analyze" type="Success" name="fraCustomerOrdersUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraCustomerOrdersUI.resx" />
+  <event action="Analyze" type="Success" name="fraCustomerReservations.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraCustomerReservations.resx" />
+  <event action="Analyze" type="Success" name="fraEditCustomerOrder.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraEditCustomerOrder.resx" />
+  <event action="Analyze" type="Success" name="fraInvoicesUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraInvoicesUI.resx" />
+  <event action="Analyze" type="Success" name="fraInvoicesViewPrintTracking.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraInvoicesViewPrintTracking.resx" />
+  <event action="Analyze" type="Success" name="fraManageInvoices.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraManageInvoices.resx" />
+  <event action="Analyze" type="Success" name="fraModifyInvoice.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraModifyInvoice.resx" />
+  <event action="Analyze" type="Success" name="fraModifyInvoices.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraModifyInvoices.resx" />
+  <event action="Analyze" type="Success" name="fraPreviewPdf.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\fraPreviewPdf.resx" />
+  <event action="Analyze" type="Success" name="frCheckoutUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\frCheckoutUI.resx" />
+  <event action="Analyze" type="Success" name="SplashScreen1.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\SplashScreen1.resx" />
+  <event action="Analyze" type="Success" name="WaitForm1.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\CustomerOrders\WaitForm1.resx" />
+  <event action="Analyze" type="Success" name="fraAboutHotelia.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\fraAboutHotelia.resx" />
+  <event action="Analyze" type="Success" name="fraClientConnections.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\fraClientConnections.resx" />
+  <event action="Analyze" type="Success" name="frLogin.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\frLogin.resx" />
+  <event action="Analyze" type="Success" name="frLoginLogs.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\frLoginLogs.resx" />
+  <event action="Analyze" type="Success" name="frPdfPreviewer.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\frPdfPreviewer.resx" />
+  <event action="Analyze" type="Success" name="frSystemRequirements.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\frSystemRequirements.resx" />
+  <event action="Analyze" type="Success" name="frUserManual.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\frUserManual.resx" />
+  <event action="Analyze" type="Success" name="fraActiveUsersReport.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraActiveUsersReport.resx" />
+  <event action="Analyze" type="Success" name="fraInvoicesUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraInvoicesUI.resx" />
+  <event action="Analyze" type="Success" name="fraSalesBetweenTwoDates.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraSalesBetweenTwoDates.resx" />
+  <event action="Analyze" type="Success" name="fraSalesBetweenTwoDates2.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraSalesBetweenTwoDates2.resx" />
+  <event action="Analyze" type="Success" name="fraSalesByCustomerUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraSalesByCustomerUI.resx" />
+  <event action="Analyze" type="Success" name="fraSalesPerUserUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraSalesPerUserUI.resx" />
+  <event action="Analyze" type="Success" name="fraTodaySalesUI.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraTodaySalesUI.resx" />
+  <event action="Analyze" type="Success" name="fraUsersReport.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraUsersReport.resx" />
+  <event action="Analyze" type="Success" name="fraYearlySalesDashBoard.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraYearlySalesDashBoard.resx" />
+  <event action="Analyze" type="Success" name="fraYearlySalesReport.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\fraYearlySalesReport.resx" />
+  <event action="Analyze" type="Success" name="frTodaySales.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\frTodaySales.resx" />
+  <event action="Analyze" type="Success" name="rprtSalesPerUser.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\rprtSalesPerUser.resx" />
+  <event action="Analyze" type="Success" name="rptSalesBetweenDates.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\rptSalesBetweenDates.resx" />
+  <event action="Analyze" type="Success" name="rptSalesPerCustomer.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Reports\Admins\rptSalesPerCustomer.resx" />
+  <event action="Analyze" type="Success" name="fruWelcome.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Fr\Users\fruWelcome.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\packages.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="Hotelia" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Hotelia.csproj" />
+  <event action="Analyze" type="Success" name="EduOne" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne.sln" />
+  <event action="Backup" type="Success" name="EduOne" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\EduOne.csproj" />
+  <event action="Backup" type="Success" name="Hotelia" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Hotelia.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\EduOne.csproj" />
+  <event action="Upgrade" type="Success" name="EduOne" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne\EduOne.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Hotelia.csproj" />
+  <event action="Upgrade" type="Success" name="Hotelia" path="C:\MyApps\NET\hotelia\src\Hotelia\Hotelia\Hotelia.csproj" />
+  <event action="Upgrade" type="Success" name="EduOne" path="C:\MyApps\NET\eduone\src\desktop\EduOne\EduOne.sln" />
+</log>

@@ -164,9 +164,30 @@ namespace EduOne.Fr.Admins.Finances.SemestersFees
                         if (response.IsSuccessStatusCode)
                         {
                             var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                            var semesterfee = new Models.SemesestersFees();
+                            semesterfee = System.Text.Json.JsonSerializer.Deserialize<Models.SemesestersFees>(responseData);
+
+                            var audit = new Models.SemerstersFees_Audit
+                            {
+                                Action = "INSÉRÉ",
+                                Action_Date = DateTime.Now,
+                                Action_Utilisateur = ApplicationHelpers.GetSystemUser(_email),
+                                AjouterAu = semesterfee.AjouterAu,
+                                AjouterPar = semesterfee.AjouterPar,
+                                Frais = semesterfee.Frais,
+                                Gid = Guid.NewGuid(),
+                                Id = semesterfee.Id,
+                                ModifierAu = semesterfee.ModifierAu,
+                                Notes = semesterfee.Notes,
+                                SemestreId = semesterfee.SemestreId
+
+                            };
+                            await helper.AddSemerstersFeesAuditAsync(audit);
+
                             Invoke(new Action(() =>
                             {
-                                "".DisplayDialog($"Ce cours ({s_semester} ) a été créé");
+                                "".DisplayDialog($"Ce prix du semestrer ({s_semester} ) a été créé");
                                 fraAddSemesterFee2_Load(null, null);
                                 btnadd.Enabled = false;
                             }));

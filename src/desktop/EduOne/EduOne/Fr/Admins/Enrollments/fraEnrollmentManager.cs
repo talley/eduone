@@ -83,7 +83,7 @@ namespace EduOne.Fr.Admins.Enrollments
                     var EleveId= view.GetRowCellValue(view.FocusedRowHandle, "EleveId");
                     var id = int.Parse(oid.ToString());
                     var iEleveId = int.Parse(EleveId.ToString());
-                    var edit_user_form = new fraEditEnrollment2("test@test.com", id);
+                    var edit_user_form = new fraEditEnrollment3("test@test.com", id);
                     edit_user_form.ShowDialog();
 
                 }

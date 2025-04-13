@@ -5,6 +5,7 @@ using EduOne.Fr.Admins.DepartmentHeads;
 using EduOne.Fr.Admins.Departments;
 using EduOne.Fr.Admins.Enrollments;
 using EduOne.Fr.Admins.Finances.SemestersFees;
+using EduOne.Fr.Admins.Reports;
 using EduOne.Fr.Admins.Semesters;
 using EduOne.Fr.Admins.Settings;
 using EduOne.Fr.Admins.Staffs;
@@ -329,6 +330,67 @@ namespace EduOne.Fr.Admins
                         break;
                 }
             }
+        }
+
+        private void kryptonTreeView15_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selText = kryptonTreeView15.SelectedNode.Text;
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+
+                    case "Nouvelle Graduation":
+                        var form4 = new frNewEnrollment(_email);
+                        ShowFormInPanel(form4, splitPanel2);//frNewEnrollment
+                        break;
+                    case "Graduations":
+                        var form = new fraEnrollmentManager(_email);
+                        ShowFormInPanel(form, splitPanel2);//frNewEnrollment
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void kryptonTreeView11_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //
+            var selText = kryptonTreeView11.SelectedNode.Text;
+            if (selText.Length > 0)
+            {
+                switch (selText)
+                {
+                    case "Rapport Des Utilisateurs":
+                        var form2 = new frarptAllUsers(_email);
+                        ShowFormInPanel(form2, splitPanel2);
+                        break;
+                    case "Rapport des chefs de département":
+                        var form3 = new frDepartmentHeads(_email);
+                        ShowFormInPanel(form3, splitPanel2);
+                        break;
+                    case "Rapport Des Départements":
+                        var form4 = new frarptDepartments(_email);
+                        ShowFormInPanel(form4, splitPanel2);
+                        break;//
+                    case "Rapport Du Personnel":
+                        var form5 = new frarptStaffs(_email);
+                        ShowFormInPanel(form5, splitPanel2);
+                        break;//Rapport Des Classes
+                    case "Rapport Des Salles De Classe":
+                        var form6 = new frarptAllClassRooms2(_email);
+                        ShowFormInPanel(form6, splitPanel2);
+                        break;//
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void fraWelcome3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

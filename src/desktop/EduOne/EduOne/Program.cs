@@ -9,6 +9,9 @@ using EduOne.Fr.Tools;
 using EduOne.Fr.helpers;
 using EduOne.Fr.Helpers;
 using EduOne.Helpers;
+using EduOne.Fr.Admins.Reports;
+using EduOne.Fr.Admins.Audits;
+using EduOne.Fr;
 namespace EduOne
 {
     internal static class Program
@@ -31,7 +34,7 @@ namespace EduOne
             {
 
                 //fraWelcome2
-                Application.Run(new fraWelcome3("test@test.com"));// fraManageStaffs("test@test.com"));
+                Application.Run(new frLogin());// fraManageStaffs("test@test.com"));
             }
             else
             {

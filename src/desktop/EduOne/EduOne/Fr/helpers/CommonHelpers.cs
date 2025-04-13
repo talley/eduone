@@ -10,6 +10,7 @@ using EduOne.Helpers;
 using Config = System.Configuration.ConfigurationManager;
 using Newtonsoft.Json;
 using System.Globalization;
+using System.Text;
 namespace EduOne.Fr.Helpers
 {
     public class CommonHelpers
@@ -732,6 +733,70 @@ namespace EduOne.Fr.Helpers
                 }
             }
 
+            return result;
+        }
+
+
+        internal async Task<List<TransactionSecurity>> GetTransctionHistoriesAsync()
+        {
+
+            var result = new List<TransactionSecurity>();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "TransactionSecurity";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    //var secret = await GetAppApiAsync();
+                   // client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+                    var response = await client.GetAsync(apiUrl).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<List<TransactionSecurity>>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
+            return result;
+        }
+
+        internal async Task<Models.SemerstersFees_Audit> AddSemerstersFeesAuditAsync(Models.SemerstersFees_Audit data)
+        {
+            var result = new SemerstersFees_Audit();
+
+            string apiUrl = WebServerHelpers.GetApiApplicationUrl(IsAppInProd()) + "SemerstersFees_Audit";
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    //var secret = await GetAppApiAsync();
+                    // client.DefaultRequestHeaders.Add("HOTELIA_X-API-KEY", secret);
+
+                    var jsonData = System.Text.Json.JsonSerializer.Serialize(data);
+
+                    var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync(apiUrl, content).ConfigureAwait(false);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        result = JsonConvert.DeserializeObject<SemerstersFees_Audit>(responseData);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"An error occurred: {ex.Message}");
+
+                }
+            }
             return result;
         }
     }

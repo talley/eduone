@@ -9,6 +9,7 @@ namespace EduOne.Fr.Models
         [Key]
         public int InscriptionID { get; set; }
 
+        public int? SemestreID { get; set; }
         public int EleveId { get; set; }
 
         public int CoursId { get; set; }

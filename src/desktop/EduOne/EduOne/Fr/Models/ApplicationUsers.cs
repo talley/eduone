@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace EduOne.Fr.Models
 {
+    [DebuggerNonUserCode]
     public partial class ApplicationUsers
     {
         [Key]
@@ -17,6 +19,8 @@ namespace EduOne.Fr.Models
 
         [Required]
         public byte[] Password { get; set; }
+
+        public string Password2 { get; set; }
 
         public bool Statut { get; set; }
 

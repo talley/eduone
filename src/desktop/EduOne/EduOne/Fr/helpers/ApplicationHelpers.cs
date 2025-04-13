@@ -9,7 +9,7 @@ namespace EduOne.Fr.helpers
         private static string version = "1.0.0";
         public static string AppName = $"EduOne Version:{version}";
 
-        public static object GetSystemUser(string email)
+        public static string GetSystemUser(string email)
         {
             return string.Concat(email, "_", Environment.MachineName);
         }

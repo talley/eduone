@@ -14,6 +14,8 @@ using EduOne.Fr.helpers;
 using System.Net.Http;
 using Config = System.Configuration.ConfigurationManager;
 using EduOne.Fr.Helpers;
+using Newtonsoft.Json;
+using EduOne.Security.Encryption;
 namespace EduOne.Fr.Admins
 {
     public partial class fraAddUser : DevExpress.XtraEditors.XtraForm
@@ -105,12 +107,35 @@ namespace EduOne.Fr.Admins
                 }
                 else
                 {
-                var data =new
+                    string commonApiUrl = WebServerHelpers.GetApiApplicationUrl(new CommonHelpers().IsAppInProd()) + $"Commons/Security/EncryptPassword/{pass}";
+                    byte[] encrypted_pass=null;
+                    string encrypted_pass2= StringCipherHelper.EncryptString(pass);
+
+                    using (var client = new HttpClient())
+                    {
+                        var response = await client.GetAsync(commonApiUrl).ConfigureAwait(false);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseData = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            pass = JsonConvert.DeserializeObject<string>(responseData);
+                            encrypted_pass = System.Text.Encoding.UTF8.GetBytes(pass);// Convert.FromBase64String(pass);
+                        }
+                        else
+                        {
+                            Invoke(new Action(() =>
+                            {
+                                XtraMessageBox.Show($"Failed to call the web service. Status code: {response.StatusCode}");
+                            }));
+                        }
+                    }
+                 var data =new
                 {
                     RoleId=await GetRoleIdAsync(role),
                     Utilisateur=username,
-                    Password=pass,
-                    Statut=statut,
+                    Password= encrypted_pass,
+                    Password2= encrypted_pass2,
+                    Statut =statut,
                     Nom=lname,
                     Prenom=fname,
                     DateNaissance=dtdob.EditValue,
